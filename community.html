@@ -13,14 +13,14 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Join the OpenFinOps Community">
-    <meta property="og:description" content="Connect with 1000+ developers optimizing AI/ML costs">
+    <meta property="og:description" content="Connect with developers optimizing AI/ML costs through GitHub Discussions">
     <meta property="og:url" content="https://openfinops.org/community.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Join the OpenFinOps Community">
-    <meta name="twitter:description" content="Connect with developers optimizing AI/ML infrastructure costs">
+    <meta name="twitter:description" content="Connect with developers optimizing AI/ML infrastructure costs on GitHub">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -235,7 +235,8 @@
                     <li><a href="intelligent-recommendations.html">AI Recommendations</a></li>
                     <li><a href="get-started.html">Get Started</a></li>
                     <li><a href="documentation.html">Documentation</a></li>
-                    <li><a href="community.html" class="active">Community</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                     <li><a href="demo.html" class="demo-btn">Live Demo</a></li>
                     <li><a href="https://github.com/rdmurugan/openfinops" target="_blank"><i class="fab fa-github"></i></a></li>
                 </ul>
@@ -248,38 +249,6 @@
         <div class="container">
             <h1 style="font-size: 2.5rem; margin-bottom: 15px;">🤝 Join the OpenFinOps Community</h1>
             <p style="font-size: 1.2rem; opacity: 0.9;">Connect with developers optimizing AI/ML infrastructure costs worldwide</p>
-        </div>
-    </section>
-
-    <!-- Community Stats -->
-    <section style="padding: 80px 0;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">Growing Every Day</h2>
-            <div class="community-stats">
-                <div class="stat-card">
-                    <i class="fab fa-github" style="font-size: 2rem; color: #667eea;"></i>
-                    <div class="stat-number" id="github-stars">Loading...</div>
-                    <div class="stat-label">GitHub Stars</div>
-                </div>
-
-                <div class="stat-card">
-                    <i class="fab fa-discord" style="font-size: 2rem; color: #5865F2;"></i>
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Discord Members</div>
-                </div>
-
-                <div class="stat-card">
-                    <i class="fas fa-code-branch" style="font-size: 2rem; color: #667eea;"></i>
-                    <div class="stat-number" id="contributors-count">Loading...</div>
-                    <div class="stat-label">Contributors</div>
-                </div>
-
-                <div class="stat-card">
-                    <i class="fas fa-download" style="font-size: 2rem; color: #10b981;"></i>
-                    <div class="stat-number">10K+</div>
-                    <div class="stat-label">PyPI Downloads/month</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -480,25 +449,6 @@
 
     <!-- Scripts -->
     <script>
-        // Fetch GitHub stars count
-        fetch('https://api.github.com/repos/rdmurugan/openfinops')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('github-stars').textContent = data.stargazers_count || '0';
-            })
-            .catch(err => {
-                document.getElementById('github-stars').textContent = '500+';
-            });
-
-        // Fetch contributors count
-        fetch('https://api.github.com/repos/rdmurugan/openfinops/contributors')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('contributors-count').textContent = data.length || '10+';
-            })
-            .catch(err => {
-                document.getElementById('contributors-count').textContent = '10+';
-            });
 
         // Fetch recent GitHub activity
         fetch('https://api.github.com/repos/rdmurugan/openfinops/events?per_page=5')
