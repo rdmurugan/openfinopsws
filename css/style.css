@@ -79,6 +79,22 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+    -webkit-text-fill-color: initial;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
+
+.logo span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -541,6 +557,15 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    -webkit-text-fill-color: initial;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
 }
 
 .footer-col p {
