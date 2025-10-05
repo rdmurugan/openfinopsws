@@ -12,6 +12,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -113,6 +114,38 @@
             max-width: 800px;
             margin: 0 auto;
         }
+        .overview-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        .overview-section h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .overview-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #444;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-header {
+            color: #333;
+            font-size: 2em;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            text-align: center;
+        }
         .llm-providers {
             display: flex;
             justify-content: space-around;
@@ -121,12 +154,29 @@
         }
         .llm-provider {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            background: white;
+            border-radius: 12px;
             flex: 1;
             min-width: 150px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #f8f9fa;
+        }
+        .llm-provider:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.2);
+            border-color: #667eea;
+        }
+        .llm-provider h4 {
+            color: #333;
+            margin: 10px 0 5px 0;
+            font-size: 1.2em;
+        }
+        .llm-provider p {
+            color: #666;
+            margin: 0;
         }
         .llm-provider img {
             width: 80px;
@@ -148,17 +198,37 @@
             background: #5568d3;
         }
         .recommendation-types {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 50px;
+            border-radius: 12px;
             margin: 40px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
         }
         .rec-type {
-            margin: 20px 0;
-            padding: 20px;
+            margin: 25px 0;
+            padding: 30px;
             background: white;
-            border-left: 4px solid #667eea;
-            border-radius: 4px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .rec-type:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(102,126,234,0.15);
+        }
+        .rec-type h3 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .rec-type ul {
+            color: #666;
+            line-height: 1.8;
+        }
+        .rec-type ul li {
+            margin: 10px 0;
         }
         .benefits-list {
             display: grid;
@@ -170,10 +240,31 @@
             display: flex;
             align-items: start;
             gap: 15px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #667eea;
+        }
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(102,126,234,0.15);
+        }
+        .benefit-item h4 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .benefit-item p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
         }
         .benefit-icon {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #667eea;
+            flex-shrink: 0;
         }
     </style>
 </head>
@@ -208,15 +299,17 @@
     </div>
 
     <div class="container">
-        <h2>Overview</h2>
-        <p style="font-size: 1.1em;">
-            OpenFinOps provides intelligent, AI-powered recommendations to optimize your AI/ML infrastructure.
-            Configure your preferred LLM provider (OpenAI, Anthropic, Azure OpenAI, Ollama) or use our built-in
-            rule-based engine for hardware optimization, scaling strategies, and cost reduction opportunities.
-        </p>
+        <div class="overview-section">
+            <h2>Overview</h2>
+            <p>
+                OpenFinOps provides intelligent, AI-powered recommendations to optimize your AI/ML infrastructure.
+                Configure your preferred LLM provider (OpenAI, Anthropic, Azure OpenAI, Ollama) or use our built-in
+                rule-based engine for hardware optimization, scaling strategies, and cost reduction opportunities.
+            </p>
+        </div>
 
         <div class="recommendation-types">
-            <h2>Recommendation Types</h2>
+            <h2 style="text-align: center; color: #333; margin-bottom: 30px;">Recommendation Types</h2>
 
             <div class="rec-type">
                 <h3>🖥️ Hardware Recommendations</h3>
@@ -256,7 +349,7 @@
             </div>
         </div>
 
-        <h2>Supported LLM Providers</h2>
+        <h2 class="section-header">Supported LLM Providers</h2>
         <div class="llm-providers">
             <div class="llm-provider">
                 <div style="font-size: 3em;">🤖</div>
@@ -391,7 +484,7 @@ print(f"⚡ High Priority Items: {recommendations['summary']['high_priority_coun
             </p>
         </div>
 
-        <h2>Key Benefits</h2>
+        <h2 class="section-header">Key Benefits</h2>
         <div class="benefits-list">
             <div class="benefit-item">
                 <div class="benefit-icon">💡</div>
@@ -437,9 +530,9 @@ print(f"⚡ High Priority Items: {recommendations['summary']['high_priority_coun
             </div>
         </div>
 
-        <h2>Advanced Configuration</h2>
+        <h2 class="section-header">Advanced Configuration</h2>
 
-        <h3>Custom LLM Configuration</h3>
+        <h3 style="color: #333; font-size: 1.4em; margin-top: 30px; margin-bottom: 20px;">Custom LLM Configuration</h3>
         <div class="code-block">
 from openfinops.observability.llm_config import LLMConfig, LLMProvider
 from openfinops.observability.intelligent_recommendations import IntelligentRecommendationsCoordinator
@@ -465,7 +558,7 @@ recs = coordinator.get_all_recommendations(
 )
         </div>
 
-        <h3>Export Recommendations</h3>
+        <h3 style="color: #333; font-size: 1.4em; margin-top: 30px; margin-bottom: 20px;">Export Recommendations</h3>
         <div class="code-block">
 # Export as Markdown report
 markdown_report = coordinator.export_recommendations(recommendations, format='markdown')
@@ -477,7 +570,7 @@ html_report = coordinator.export_recommendations(recommendations, format='html')
 json_report = coordinator.export_recommendations(recommendations, format='json')
         </div>
 
-        <h2>Example Recommendations</h2>
+        <h2 class="section-header">Example Recommendations</h2>
         <div class="feature-grid">
             <div class="feature-card">
                 <h3>GPU Optimization</h3>
@@ -519,21 +612,21 @@ json_report = coordinator.export_recommendations(recommendations, format='json')
             </div>
         </div>
 
-        <h2>Learn More</h2>
-        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; margin: 40px 0;">
-            <h3>Resources</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin: 15px 0;">
-                    📚 <a href="documentation.html" style="color: #667eea; text-decoration: none;">Full Documentation</a>
+        <h2 class="section-header">Learn More</h2>
+        <div style="background: white; padding: 40px; border-radius: 12px; margin: 40px 0; box-shadow: 0 3px 12px rgba(0,0,0,0.1); border: 2px solid #f8f9fa;">
+            <h3 style="text-align: center; color: #333; margin-top: 0; margin-bottom: 30px; font-size: 1.5em;">Resources</h3>
+            <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto;">
+                <li style="margin: 20px 0; font-size: 1.1em;">
+                    📚 <a href="documentation.html" style="color: #667eea; text-decoration: none; font-weight: 500; transition: color 0.3s;">Full Documentation</a>
                 </li>
-                <li style="margin: 15px 0;">
-                    🔧 <a href="api.html" style="color: #667eea; text-decoration: none;">API Reference</a>
+                <li style="margin: 20px 0; font-size: 1.1em;">
+                    🔧 <a href="api.html" style="color: #667eea; text-decoration: none; font-weight: 500; transition: color 0.3s;">API Reference</a>
                 </li>
-                <li style="margin: 15px 0;">
-                    💬 <a href="https://github.com/openfinops/openfinops" style="color: #667eea; text-decoration: none;">GitHub Repository</a>
+                <li style="margin: 20px 0; font-size: 1.1em;">
+                    💬 <a href="https://github.com/openfinops/openfinops" style="color: #667eea; text-decoration: none; font-weight: 500; transition: color 0.3s;">GitHub Repository</a>
                 </li>
-                <li style="margin: 15px 0;">
-                    🎯 <a href="demo.html" style="color: #667eea; text-decoration: none;">Live Demo</a>
+                <li style="margin: 20px 0; font-size: 1.1em;">
+                    🎯 <a href="demo.html" style="color: #667eea; text-decoration: none; font-weight: 500; transition: color 0.3s;">Live Demo</a>
                 </li>
             </ul>
         </div>
