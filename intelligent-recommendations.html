@@ -52,11 +52,66 @@
         .code-block {
             background: #1e1e1e;
             color: #d4d4d4;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             overflow-x: auto;
             margin: 20px 0;
             font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+            border: 1px solid #333;
+        }
+        .step-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+        }
+        .step-section h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .step-description {
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .quick-start-intro {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .quick-start-intro h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .quick-start-intro p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .llm-providers {
             display: flex;
@@ -230,76 +285,110 @@
             </div>
         </div>
 
-        <h2 id="get-started">Quick Start</h2>
+        <div class="quick-start-intro" id="get-started">
+            <h2>Quick Start Guide</h2>
+            <p>Get up and running with AI-powered recommendations in 4 simple steps</p>
+        </div>
 
-        <h3>1. Install OpenFinOps</h3>
-        <div class="code-block">
+        <div class="step-section">
+            <h3><span class="step-number">1</span> Install OpenFinOps</h3>
+            <p class="step-description">
+                Install the OpenFinOps package with all dependencies, or choose specific LLM providers based on your needs.
+            </p>
+            <div class="code-block"># Install with all LLM providers
 pip install openfinops[all]
 
-# Or with specific LLM provider
-pip install openfinops openai  # For OpenAI
-pip install openfinops anthropic  # For Anthropic
+# Or install with specific LLM provider
+pip install openfinops openai      # For OpenAI (GPT-4, GPT-3.5)
+pip install openfinops anthropic   # For Anthropic (Claude)
+pip install openfinops              # No LLM (rule-based only)</div>
         </div>
 
-        <h3>2. Configure LLM (Optional)</h3>
-        <div class="code-block">
-# Environment variables
-export OPENAI_API_KEY="sk-..."
+        <div class="step-section">
+            <h3><span class="step-number">2</span> Configure LLM Provider (Optional)</h3>
+            <p class="step-description">
+                Choose your preferred LLM provider or skip this step to use the built-in rule-based recommendation engine. You can configure the LLM using environment variables or a configuration file.
+            </p>
+
+            <h4 style="color: #333; margin-top: 25px;">Option A: Environment Variables</h4>
+            <div class="code-block"># Set your API key and model
+export OPENAI_API_KEY="sk-your-api-key-here"
 export OPENAI_MODEL="gpt-4-turbo-preview"
 
-# Or use config file (llm_config.json)
-{
+# Or for Anthropic Claude
+export ANTHROPIC_API_KEY="sk-ant-your-api-key-here"
+export ANTHROPIC_MODEL="claude-3-opus-20240229"</div>
+
+            <h4 style="color: #333; margin-top: 25px;">Option B: Configuration File</h4>
+            <p style="color: #666; margin-bottom: 15px;">Create a file named <code style="background: #f8f9fa; padding: 3px 8px; border-radius: 3px;">llm_config.json</code></p>
+            <div class="code-block">{
   "provider": "openai",
   "model_name": "gpt-4-turbo-preview",
-  "api_key": "sk-...",
+  "api_key": "sk-your-api-key-here",
   "temperature": 0.3,
   "max_tokens": 1000
-}
+}</div>
         </div>
 
-        <h3>3. Get Recommendations</h3>
-        <div class="code-block">
-from openfinops.observability.intelligent_recommendations import get_recommendations
+        <div class="step-section">
+            <h3><span class="step-number">3</span> Get Recommendations</h3>
+            <p class="step-description">
+                Provide your current infrastructure metrics and receive intelligent, actionable recommendations for optimization.
+            </p>
+            <div class="code-block">from openfinops.observability.intelligent_recommendations import get_recommendations
 
-# Your current infrastructure metrics
+# Define your current infrastructure metrics
 current_metrics = {
     'instance_count': 4,
-    'avg_cpu_utilization': 65,
-    'avg_gpu_utilization': 45,
-    'gpu_count': 1,
-    'cost_per_instance_hour': 3.06,
-    'workload_type': 'inference'
+    'avg_cpu_utilization': 65,         # Average CPU usage percentage
+    'avg_gpu_utilization': 45,         # Average GPU usage percentage
+    'gpu_count': 1,                    # GPUs per instance
+    'cost_per_instance_hour': 3.06,    # Hourly cost per instance
+    'workload_type': 'inference'       # 'training' or 'inference'
 }
 
 # Get intelligent recommendations
 recommendations = get_recommendations(
     current_metrics=current_metrics,
     workload_type='inference',
-    cloud_provider='aws'
+    cloud_provider='aws'               # 'aws', 'azure', 'gcp', or 'on-prem'
 )
 
-# Display recommendations
+# Display the recommendations
 for rec in recommendations:
-    print(f"\n{rec.title}")
-    print(f"Priority: {rec.priority}")
-    print(f"Impact: ${rec.impact['cost_monthly_usd']}/month")
-    print(f"Description: {rec.description}")
+    print(f"\n{'='*60}")
+    print(f"📌 {rec.title}")
+    print(f"   Priority: {rec.priority}")
+    print(f"   Impact: ${rec.impact['cost_monthly_usd']}/month savings")
+    print(f"   {rec.description}")</div>
         </div>
 
-        <h3>4. Use in Dashboard</h3>
-        <div class="code-block">
-from openfinops.dashboard import COODashboard
+        <div class="step-section">
+            <h3><span class="step-number">4</span> View in Dashboard</h3>
+            <p class="step-description">
+                Integrate recommendations directly into your executive dashboards for easy visualization and tracking of potential savings.
+            </p>
+            <div class="code-block">from openfinops.dashboard import COODashboard
 
+# Initialize the dashboard
 dashboard = COODashboard()
 
-# Get recommendations directly in dashboard
+# Get recommendations with summary statistics
 recommendations = dashboard.get_intelligent_recommendations(
     current_metrics=current_metrics
 )
 
-# Display in dashboard
-print(f"Total Recommendations: {recommendations['summary']['total_recommendations']}")
-print(f"Potential Savings: ${recommendations['summary']['potential_monthly_savings']:.2f}/month")
+# Display summary
+print(f"📊 Total Recommendations: {recommendations['summary']['total_recommendations']}")
+print(f"💰 Potential Monthly Savings: ${recommendations['summary']['potential_monthly_savings']:.2f}")
+print(f"⚡ High Priority Items: {recommendations['summary']['high_priority_count']}")</div>
+        </div>
+
+        <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 20px; margin: 30px 0; border-radius: 4px;">
+            <h4 style="color: #1976D2; margin-top: 0;">💡 Pro Tip</h4>
+            <p style="margin-bottom: 0; color: #555;">
+                Start with the rule-based engine (no LLM required) to get immediate recommendations, then upgrade to LLM-powered recommendations for more contextual and nuanced insights.
+            </p>
         </div>
 
         <h2>Key Benefits</h2>
