@@ -127,6 +127,8 @@ limitations under the License.
             }
         }
     </style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -240,13 +242,52 @@ limitations under the License.
                 </ul>
                 <p>To exercise these rights, contact us at <a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a>.</p>
 
-                <h2>7. Cookies and Tracking</h2>
-                <p>Our website uses:</p>
+                <h2 id="cookies">7. Cookies and Tracking</h2>
+
+                <h3>7.1 GDPR Cookie Consent</h3>
+                <p>In compliance with GDPR and ePrivacy Directive, we obtain your explicit consent before placing non-essential cookies on your device. Upon visiting our website, you will see a cookie consent banner with the following options:</p>
                 <ul>
-                    <li><strong>Google Analytics Cookies:</strong> To track website usage and performance (_ga, _gid, _gat)</li>
-                    <li><strong>Functional Cookies:</strong> For website functionality (session management)</li>
+                    <li><strong>Accept All:</strong> Allows all cookies including analytics</li>
+                    <li><strong>Decline:</strong> Blocks non-essential cookies; only strictly necessary cookies are used</li>
                 </ul>
-                <p>You can disable cookies in your browser settings, though this may affect website functionality.</p>
+                <p>Your choice is stored for 365 days. You can change your preference anytime using the "Cookie Settings" link at the bottom left of any page.</p>
+
+                <h3>7.2 Types of Cookies We Use</h3>
+                <p><strong>Essential Cookies (Always Active):</strong></p>
+                <ul>
+                    <li><strong>Cookie Consent Cookie (openfinops_cookie_consent):</strong> Stores your cookie preference (365 days)</li>
+                    <li><strong>Session Cookies:</strong> For basic website functionality</li>
+                </ul>
+
+                <p><strong>Analytics Cookies (Requires Consent):</strong></p>
+                <ul>
+                    <li><strong>Google Analytics (_ga, _gid, _gat):</strong> Track website usage, page views, and user behavior
+                        <ul>
+                            <li>_ga: 2 years (user identification)</li>
+                            <li>_gid: 24 hours (session tracking)</li>
+                            <li>_gat: 1 minute (request throttling)</li>
+                        </ul>
+                    </li>
+                    <li><strong>IP Anonymization:</strong> We enable IP anonymization in Google Analytics to protect your privacy</li>
+                </ul>
+
+                <h3>7.3 How to Manage Cookies</h3>
+                <p>You can control cookies through:</p>
+                <ul>
+                    <li><strong>Our Cookie Banner:</strong> Accept or decline on your first visit</li>
+                    <li><strong>Cookie Settings:</strong> Click the "Cookie Settings" link (bottom left) to change preferences</li>
+                    <li><strong>Browser Settings:</strong> Disable cookies entirely in your browser (may affect functionality)</li>
+                    <li><strong>Opt-Out Tools:</strong> Use <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a></li>
+                </ul>
+
+                <h3>7.4 Google Analytics Consent Mode</h3>
+                <p>We use Google Analytics Consent Mode v2, which:</p>
+                <ul>
+                    <li>Defaults to denying analytics storage until you consent</li>
+                    <li>Only loads tracking when you click "Accept All"</li>
+                    <li>Respects your privacy choices across our entire website</li>
+                    <li>Complies with GDPR, ePrivacy Directive, and CCPA requirements</li>
+                </ul>
 
                 <h2>8. Third-Party Links</h2>
                 <p>Our website contains links to third-party sites (GitHub, PyPI, cloud provider documentation). We are not responsible for the privacy practices of these external sites. Please review their privacy policies.</p>
@@ -355,5 +396,29 @@ limitations under the License.
     </footer>
 
     <script src="js/main.js"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-text">
+                <h3><span class="cookie-icon">🍪</span> We Value Your Privacy</h3>
+                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. You can also choose to decline non-essential cookies.</p>
+                <p><a href="privacy.html">Privacy Policy</a> • <a href="privacy.html#cookies">Cookie Policy</a></p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">
+                    <i class="fas fa-check"></i> Accept All
+                </button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">
+                    <i class="fas fa-times"></i> Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="cookie-settings" class="cookie-settings-link" style="display: none;">
+        <i class="fas fa-cookie-bite"></i> Cookie Settings
+    </a>
+
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>

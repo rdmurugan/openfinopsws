@@ -25,14 +25,21 @@ limitations under the License.
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics with Consent Mode -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCTB1YQQEM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-GCTB1YQQEM');
+      // Set default consent to denied (GDPR compliant)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+      
+      gtag('config', 'G-GCTB1YQQEM', {
+        'anonymize_ip': true
+      });
     </script>
     <style>
         .demo-page {
@@ -167,6 +174,8 @@ limitations under the License.
             }
         }
     </style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -490,5 +499,29 @@ limitations under the License.
     </footer>
 
     <script src="js/main.js"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-text">
+                <h3><span class="cookie-icon">🍪</span> We Value Your Privacy</h3>
+                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. You can also choose to decline non-essential cookies.</p>
+                <p><a href="privacy.html">Privacy Policy</a> • <a href="privacy.html#cookies">Cookie Policy</a></p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">
+                    <i class="fas fa-check"></i> Accept All
+                </button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">
+                    <i class="fas fa-times"></i> Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="cookie-settings" class="cookie-settings-link" style="display: none;">
+        <i class="fas fa-cookie-bite"></i> Cookie Settings
+    </a>
+
+    <script src="js/cookie-consent.js"></script>
 </body>
 </html>

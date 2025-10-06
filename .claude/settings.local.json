@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(for file in get-started.html demo.html intelligent-recommendations.html changelog.html faq.html)",
+      "Bash(do)",
+      "Bash(if grep -q \"nav-menu\" \"$file\")",
+      "Bash(then)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(for file in index.html features.html documentation.html get-started.html demo.html faq.html)",
+      "Bash(git rm:*)",
+      "Bash(for file in api.html community.html intelligent-recommendations.html)",
+      "Bash(if [ -f \"$file\" ])",
+      "Bash(git pull:*)",
+      "Bash(for file in features.html documentation.html demo.html pricing.html api.html)",
+      "Bash(if grep -q \"<h4>Community</h4>\" \"$file\")",
+      "Bash(if grep -q \"<h4>Community</h4>\" get-started.html)",
+      "Bash(else)",
+      "Bash(for file in index.html features.html documentation.html demo.html pricing.html api.html get-started.html)",
+      "Bash(if grep -q \"<h4>Resources</h4>\" \"$file\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
