@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Complete GPU Cost Optimization Guide: A100, H100, L4 Comparison | OpenFinOps</title>
+    <meta name="description" content="Comprehensive guide to GPU cost optimization for AI/ML workloads. Compare A100, H100, L4, T4 prices. Learn when to use each GPU type and save up to 85% on compute costs.">
+    <meta name="keywords" content="gpu cost optimization, a100 vs h100, l4 gpu price, t4 vs a100, gpu pricing comparison, ai gpu costs, ml gpu optimization, nvidia gpu pricing">
+    <meta name="author" content="OpenFinOps Contributors">
+    <meta name="robots" content="index, follow">
+    <meta name="publish-date" content="2025-10-06">
+    <link rel="canonical" href="https://openfinops.org/blog/gpu-cost-optimization-guide.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://openfinops.org/blog/gpu-cost-optimization-guide.html">
+    <meta property="og:title" content="Complete GPU Cost Optimization Guide: A100, H100, L4 Comparison">
+    <meta property="og:description" content="Learn which GPU to use for training, inference, and fine-tuning to save up to 85% on AI infrastructure costs.">
+    <meta property="og:image" content="https://openfinops.org/images/og-image.png">
+    <meta property="article:published_time" content="2025-10-06">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPU Cost Optimization Guide: A100 vs H100 vs L4">
+    <meta name="twitter:description" content="Complete comparison of GPU prices and when to use each type">
+    <meta name="twitter:image" content="https://openfinops.org/images/twitter-card.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+        .blog-content h2 {
+            color: #1f2937;
+            font-size: 2rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        .blog-content h3 {
+            color: #374151;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .gpu-comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .gpu-comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        .gpu-comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .gpu-comparison-table tr:hover {
+            background: #f9fafb;
+        }
+        .highlight-box {
+            background: #f3f4f6;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        .decision-tree {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .use-case-card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+        .savings-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/finops-logo.png" alt="OpenFinOps Logo"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../features.html">Features</a></li>
+                    <li><a href="../documentation.html">Documentation</a></li>
+                    <li><a href="https://github.com/rdmurugan/openfinops" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Complete GPU Cost Optimization Guide: A100, H100, L4 Comparison</h1>
+            <div style="margin-top: 20px; opacity: 0.9;">
+                <span><i class="far fa-calendar"></i> October 6, 2025</span> •
+                <span><i class="far fa-clock"></i> 12 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <article class="blog-content">
+        <p class="lead" style="font-size: 1.2rem; color: #1f2937;">
+            Choosing the wrong GPU for your AI/ML workload can waste thousands of dollars per month. This comprehensive guide breaks down when to use A100, H100, L4, T4, and other GPUs, with real pricing and ROI calculations.
+        </p>
+
+        <h2>GPU Pricing Comparison (AWS, GCP, Azure Average)</h2>
+
+        <table class="gpu-comparison-table">
+            <thead>
+                <tr>
+                    <th>GPU Model</th>
+                    <th>Memory</th>
+                    <th>On-Demand ($/hr)</th>
+                    <th>Spot ($/hr)</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>H100</strong></td>
+                    <td>80GB</td>
+                    <td>$8.20</td>
+                    <td>$0.82</td>
+                    <td>Large model training, LLM fine-tuning</td>
+                </tr>
+                <tr>
+                    <td><strong>A100</strong></td>
+                    <td>80GB</td>
+                    <td>$4.10</td>
+                    <td>$1.23</td>
+                    <td>Training, large batch inference</td>
+                </tr>
+                <tr>
+                    <td><strong>A100</strong></td>
+                    <td>40GB</td>
+                    <td>$3.06</td>
+                    <td>$0.92</td>
+                    <td>Medium-size model training</td>
+                </tr>
+                <tr>
+                    <td><strong>L4</strong></td>
+                    <td>24GB</td>
+                    <td>$0.94</td>
+                    <td>$0.28</td>
+                    <td>Inference, video AI, fine-tuning</td>
+                </tr>
+                <tr>
+                    <td><strong>T4</strong></td>
+                    <td>16GB</td>
+                    <td>$0.53</td>
+                    <td>$0.16</td>
+                    <td>Light inference, development</td>
+                </tr>
+                <tr>
+                    <td><strong>V100</strong></td>
+                    <td>16GB</td>
+                    <td>$2.48</td>
+                    <td>$0.74</td>
+                    <td>Legacy training workloads</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <strong>💡 Key Insight:</strong> L4 costs 77% less than A100 for inference workloads with similar performance. That's $2,100/month vs $9,000/month per instance.
+        </div>
+
+        <h2>The Decision Tree: Which GPU Should You Use?</h2>
+
+        <div class="decision-tree">
+            <h3 style="margin-top: 0; color: #667eea;">For Training Large Models (> 20B parameters)</h3>
+            <ul>
+                <li><strong>H100</strong> - Fastest training, 3x faster than A100</li>
+                <li><strong>A100 80GB</strong> - Budget option, excellent performance</li>
+                <li><strong>Use spot instances</strong> with checkpointing for 70-90% discount</li>
+            </ul>
+
+            <h3 style="color: #667eea;">For Training Medium Models (1B-20B parameters)</h3>
+            <ul>
+                <li><strong>A100 40GB</strong> - Best price/performance</li>
+                <li><strong>L4 x2</strong> - If distributed training is possible</li>
+                <li><strong>A100 80GB</strong> - If model barely fits in 40GB</li>
+            </ul>
+
+            <h3 style="color: #667eea;">For Inference</h3>
+            <ul>
+                <li><strong>L4</strong> - Best for most inference workloads (77% cheaper than A100)</li>
+                <li><strong>T4</strong> - For lightweight models, mobile deployment</li>
+                <li><strong>A100</strong> - Only for large batch inference or real-time large models</li>
+            </ul>
+
+            <h3 style="color: #667eea;">For Fine-Tuning</h3>
+            <ul>
+                <li><strong>L4</strong> - Perfect for LoRA, QLoRA fine-tuning</li>
+                <li><strong>A100 40GB</strong> - Full fine-tuning of 7B-13B models</li>
+                <li><strong>H100</strong> - Full fine-tuning of 70B+ models</li>
+            </ul>
+
+            <h3 style="color: #667eea;">For Development/Testing</h3>
+            <ul>
+                <li><strong>T4</strong> - 85% cheaper than A100</li>
+                <li><strong>L4</strong> - If testing production-like workloads</li>
+                <li><strong>Auto-shutdown after hours</strong> - Save 66% by shutting down nights/weekends</li>
+            </ul>
+        </div>
+
+        <h2>Real-World Use Cases & Savings</h2>
+
+        <div class="use-case-card">
+            <h3>🎯 Use Case 1: Computer Vision Inference</h3>
+            <p><strong>Before:</strong> Running 10 A100 instances for real-time object detection</p>
+            <p><strong>Cost:</strong> $4.10/hr × 10 × 730 hours = $29,930/month</p>
+            <p><strong>After:</strong> Switched to L4 instances (same throughput)</p>
+            <p><strong>New Cost:</strong> $0.94/hr × 10 × 730 hours = $6,862/month</p>
+            <p><strong>Annual Savings:</strong> $277,000 <span class="savings-badge">77% reduction</span></p>
+        </div>
+
+        <div class="use-case-card">
+            <h3>🎯 Use Case 2: LLM Fine-Tuning (7B Model)</h3>
+            <p><strong>Before:</strong> A100 80GB on-demand for LoRA fine-tuning</p>
+            <p><strong>Cost:</strong> $4.10/hr × 8 hours = $32.80 per experiment</p>
+            <p><strong>After:</strong> L4 spot instances with same performance</p>
+            <p><strong>New Cost:</strong> $0.28/hr × 10 hours = $2.80 per experiment</p>
+            <p><strong>Savings:</strong> $30 per run <span class="savings-badge">91% reduction</span></p>
+        </div>
+
+        <div class="use-case-card">
+            <h3>🎯 Use Case 3: Training Large Language Model (70B)</h3>
+            <p><strong>Before:</strong> 8x A100 80GB on-demand for 2 weeks</p>
+            <p><strong>Cost:</strong> $4.10/hr × 8 × 336 hours = $11,020.80</p>
+            <p><strong>After:</strong> 8x H100 spot instances with checkpointing</p>
+            <p><strong>Training Time:</strong> 4.5 days instead of 14 days (3x faster)</p>
+            <p><strong>New Cost:</strong> $0.82/hr × 8 × 108 hours = $708.48</p>
+            <p><strong>Savings:</strong> $10,312 per training run <span class="savings-badge">94% reduction</span></p>
+        </div>
+
+        <h2>Common Mistakes & How to Avoid Them</h2>
+
+        <h3>❌ Mistake #1: Using A100 for Everything</h3>
+        <p><strong>Impact:</strong> 77% overspend on inference workloads</p>
+        <p><strong>Solution:</strong> Profile your workload. If GPU utilization is < 40%, downgrade to L4 or T4.</p>
+
+        <h3>❌ Mistake #2: Ignoring Spot Instances</h3>
+        <p><strong>Impact:</strong> Paying 5-10x more for training</p>
+        <p><strong>Solution:</strong> Implement checkpointing every 15-30 minutes. Use spot for all training jobs.</p>
+
+        <h3>❌ Mistake #3: Running Dev Environments 24/7</h3>
+        <p><strong>Impact:</strong> Wasting 66% of dev budget on idle resources</p>
+        <p><strong>Solution:</strong> Auto-shutdown dev GPUs at 6pm, restart at 8am. Schedule-based autoscaling.</p>
+
+        <h3>❌ Mistake #4: Not Using Multi-GPU for Training</h3>
+        <p><strong>Impact:</strong> 3x longer training times, higher costs</p>
+        <p><strong>Solution:</strong> Use distributed training. 4x L4 ($3.76/hr) can match 1x A100 ($4.10/hr) with better fault tolerance.</p>
+
+        <h2>GPU Selection Cheat Sheet</h2>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Quick Reference Guide</h3>
+
+            <p><strong>🚀 For Speed (Training Large Models):</strong></p>
+            <ul>
+                <li>H100 spot instances - Fastest, 90% discount</li>
+                <li>Multi-GPU A100 - If H100 unavailable</li>
+            </ul>
+
+            <p><strong>💰 For Cost (Budget-Conscious):</strong></p>
+            <ul>
+                <li>L4 for inference - 77% cheaper than A100</li>
+                <li>T4 for dev/test - 85% cheaper than A100</li>
+                <li>Always use spot for training - 70-90% discount</li>
+            </ul>
+
+            <p><strong>⚖️ For Balance (Production Workloads):</strong></p>
+            <ul>
+                <li>L4 for most inference (excellent price/performance)</li>
+                <li>A100 40GB for training mid-size models</li>
+                <li>Mix of on-demand and spot for reliability</li>
+            </ul>
+        </div>
+
+        <h2>Monitoring & Optimization</h2>
+
+        <p>Choosing the right GPU is step one. Continuous monitoring ensures you're not overpaying:</p>
+
+        <h3>Key Metrics to Track:</h3>
+        <ul>
+            <li><strong>GPU Utilization:</strong> If < 40%, downgrade to cheaper GPU</li>
+            <li><strong>Memory Usage:</strong> If using < 50%, switch to smaller GPU</li>
+            <li><strong>Training Time:</strong> Compare cost vs time tradeoff</li>
+            <li><strong>Inference Latency:</strong> Ensure L4/T4 meet SLA requirements</li>
+            <li><strong>Spot Interruption Rate:</strong> Track reliability of spot instances</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>OpenFinOps Tip:</strong> OpenFinOps automatically tracks GPU utilization and provides right-sizing recommendations. It calculates exact savings for switching GPU types and shows ROI within 24 hours.
+        </div>
+
+        <h2>Implementation Roadmap</h2>
+
+        <h3>Week 1: Audit Current Usage</h3>
+        <ul>
+            <li>List all GPU instances and their usage patterns</li>
+            <li>Identify training vs inference workloads</li>
+            <li>Calculate current monthly spend</li>
+        </ul>
+
+        <h3>Week 2: Quick Wins</h3>
+        <ul>
+            <li>Switch all inference from A100 to L4 (77% savings)</li>
+            <li>Move dev/test to T4 (85% savings)</li>
+            <li>Enable auto-shutdown for dev environments (66% savings)</li>
+        </ul>
+
+        <h3>Week 3: Advanced Optimization</h3>
+        <ul>
+            <li>Enable spot instances for training with checkpointing</li>
+            <li>Implement distributed training on cheaper GPUs</li>
+            <li>Set up cost alerts and budgets</li>
+        </ul>
+
+        <h3>Week 4: Monitoring & Refinement</h3>
+        <ul>
+            <li>Track GPU utilization and right-sizing opportunities</li>
+            <li>Fine-tune autoscaling policies</li>
+            <li>Document cost savings and present to leadership</li>
+        </ul>
+
+        <h2>Conclusion: The $200K+ Savings Opportunity</h2>
+
+        <p>For a typical AI company spending $50K/month on GPUs, implementing these optimizations can reduce costs to $20-25K/month - an annual savings of $300-360K.</p>
+
+        <p>The key is matching workload requirements to GPU capabilities. Not every job needs an A100, and spot instances can provide 90% discounts with minimal risk.</p>
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 10px; text-align: center; margin: 50px 0;">
+            <h2 style="margin-top: 0; color: white;">Automate Your GPU Cost Optimization</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                OpenFinOps provides automatic GPU right-sizing recommendations, spot instance management, and real-time cost tracking.
+            </p>
+            <a href="../get-started.html" style="display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                Start Optimizing Free →
+            </a>
+        </div>
+
+        <p style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e5e7eb;">
+            <strong>About the Author:</strong> This guide is maintained by the OpenFinOps team, who help organizations optimize AI/ML infrastructure costs. OpenFinOps is open source and free to use. Visit <a href="https://openfinops.org">openfinops.org</a> to learn more.
+        </p>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../images/finops-logo.png" alt="OpenFinOps Logo">
+                    </div>
+                    <p>Open source FinOps platform for AI/ML cost optimization</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../documentation.html">Documentation</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinidatum LLC. Licensed under Apache-2.0</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Blog - OpenFinOps | AI/ML Cost Optimization Guides & Tutorials</title>
+    <meta name="description" content="Expert guides on AI/ML cost optimization, GPU pricing, cloud cost management, and FinOps best practices. Learn how to reduce infrastructure costs by 50%.">
+    <meta name="keywords" content="finops blog, ai cost optimization blog, gpu optimization guides, cloud cost tutorials, ml infrastructure articles">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://openfinops.org/blog/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OpenFinOps Blog - AI/ML Cost Optimization">
+    <meta property="og:description" content="Expert guides on reducing AI/ML infrastructure costs">
+    <meta property="og:url" content="https://openfinops.org/blog/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+        .blog-card-content {
+            padding: 30px;
+        }
+        .blog-card h2 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .blog-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .blog-meta {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .read-more {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        .tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html"><img src="../images/finops-logo.png" alt="OpenFinOps Logo"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../features.html">Features</a></li>
+                    <li><a href="../pricing.html">Pricing</a></li>
+                    <li><a href="../documentation.html">Documentation</a></li>
+                    <li><a href="https://github.com/rdmurugan/openfinops" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>OpenFinOps Blog</h1>
+            <p style="font-size: 1.2rem; margin-top: 20px; opacity: 0.9;">
+                Expert guides on AI/ML cost optimization, GPU pricing, and FinOps best practices
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+        <article class="blog-card">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <i class="far fa-calendar"></i> October 6, 2025 • 10 min read
+                </div>
+                <h2>How to Reduce AI/ML Infrastructure Costs by 50% in 2025</h2>
+                <div>
+                    <span class="tag">Cost Optimization</span>
+                    <span class="tag">Strategy</span>
+                </div>
+                <p>
+                    Learn proven strategies to cut AI/ML infrastructure costs in half through GPU optimization, spot instances, auto-scaling, and intelligent recommendations.
+                </p>
+                <a href="reduce-ai-infrastructure-costs.html" class="read-more">
+                    Read More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <i class="far fa-calendar"></i> October 6, 2025 • 12 min read
+                </div>
+                <h2>Complete GPU Cost Optimization Guide: A100, H100, L4 Comparison</h2>
+                <div>
+                    <span class="tag">GPU</span>
+                    <span class="tag">Comparison</span>
+                </div>
+                <p>
+                    Comprehensive comparison of GPU prices and performance. Learn when to use A100, H100, L4, or T4 GPUs and save up to 85% on compute costs.
+                </p>
+                <a href="gpu-cost-optimization-guide.html" class="read-more">
+                    Read More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <!-- CTA Section -->
+    <div style="background: #f9fafb; padding: 80px 20px; text-align: center; margin-top: 60px;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2 style="color: #1f2937; margin-bottom: 20px;">Start Optimizing Your AI/ML Costs Today</h2>
+            <p style="color: #6b7280; font-size: 1.1rem; margin-bottom: 30px;">
+                OpenFinOps is free, open source, and takes 5 minutes to set up.
+            </p>
+            <a href="../get-started.html" class="btn btn-primary btn-lg" style="display: inline-block; padding: 15px 40px;">
+                Get Started Free
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../images/finops-logo.png" alt="OpenFinOps Logo">
+                    </div>
+                    <p>Open source FinOps platform for AI/ML cost optimization</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../documentation.html">Documentation</a></li>
+                        <li><a href="../api.html">API Reference</a></li>
+                        <li><a href="../faq.html">FAQ</a></li>
+                        <li><a href="index.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                        <li><a href="../license.html">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinidatum LLC. Licensed under Apache-2.0</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
