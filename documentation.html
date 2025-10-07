@@ -290,6 +290,7 @@ limitations under the License.
                         <li><a href="#observability">Observability Hub</a></li>
                         <li><a href="#dashboards">Dashboards</a></li>
                         <li><a href="#telemetry">Cloud Telemetry Agents</a></li>
+                        <li><a href="#persistence">Historical Analytics & Persistence</a></li>
                         <li><a href="#data-platforms">Data Platform Services</a></li>
                         <li><a href="#saas-services">SaaS Services</a></li>
                         <li><a href="#configuration">Configuration</a></li>
@@ -828,6 +829,154 @@ python agents/saas_services_telemetry_agent.py \
                             <li><strong>GitHub Actions (macOS):</strong> $0.08/minute</li>
                             <li><strong>DataDog:</strong> ~$15/host/month</li>
                         </ul>
+                    </section>
+
+                    <!-- Historical Analytics & Persistence -->
+                    <section id="persistence">
+                        <h2>Historical Analytics & Data Persistence</h2>
+                        <p class="badge badge-new">NEW IN v0.2.1</p>
+                        <p>
+                            OpenFinOps supports persistent storage for telemetry data, enabling historical analysis
+                            and long-term trend identification. Choose from multiple storage backends based on your needs.
+                        </p>
+
+                        <h3>Storage Backend Options</h3>
+                        <ul>
+                            <li><strong>In-Memory (Default):</strong> Fast performance, no persistence. Suitable for development and testing.</li>
+                            <li><strong>SQLite:</strong> File-based storage with no external database required. Ideal for single-server deployments.</li>
+                            <li><strong>PostgreSQL:</strong> Production-grade reliability with multi-server support.</li>
+                            <li><strong>TimescaleDB:</strong> Optimized for time-series data with automatic compression. Recommended for production workloads.</li>
+                        </ul>
+
+                        <h3>Basic Configuration - SQLite</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>from openfinops.observability import ObservabilityHub, CostObservatory
+from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+
+# Configure SQLite persistence
+config = PersistenceConfig(
+    backend=StorageBackend.SQLITE,
+    connection_string="sqlite:///openfinops.db",
+    retention_days=90  # Keep 90 days of history
+)
+
+# Initialize with persistence
+hub = ObservabilityHub(persistence_config=config)
+cost_obs = CostObservatory(persistence_config=config)
+
+# Data now persists across restarts</code>
+                            </div>
+                        </div>
+
+                        <h3>Production Configuration - TimescaleDB</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+
+# Configure TimescaleDB with compression
+config = PersistenceConfig(
+    backend=StorageBackend.TIMESCALEDB,
+    connection_string="postgresql://user:pass@localhost:5432/openfinops",
+    retention_days=365,  # 1 year of history
+    enable_compression=True  # Enables automatic compression
+)
+
+hub = ObservabilityHub(persistence_config=config)
+cost_obs = CostObservatory(persistence_config=config)</code>
+                            </div>
+                        </div>
+
+                        <h3>Querying Historical Data</h3>
+                        <p>
+                            Query historical metrics to analyze trends and patterns over time.
+                        </p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>import time
+
+# Query last 30 days of metrics
+thirty_days_ago = time.time() - (30 * 24 * 3600)
+metrics = hub.query_historical_metrics(
+    start_time=thirty_days_ago,
+    cluster_id="production",
+    limit=10000
+)
+
+# Query historical cost data
+costs = cost_obs.query_historical_costs(
+    start_time=thirty_days_ago,
+    category="compute"
+)
+
+# Calculate total cost
+total = sum(entry['amount'] for entry in costs)
+print(f"30-day compute cost: ${total:.2f}")</code>
+                            </div>
+                        </div>
+
+                        <h3>Database CLI Tools</h3>
+                        <p>
+                            Command-line utilities for database management:
+                        </p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">BASH</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code># Initialize database
+openfinops database init --backend sqlite
+
+# View statistics
+openfinops database stats --backend sqlite \
+  --connection-string "sqlite:///openfinops.db"
+
+# Query recent data
+openfinops database query --backend sqlite \
+  --connection-string "sqlite:///openfinops.db" --days 7
+
+# Cleanup old data
+openfinops database cleanup --retention-days 90</code>
+                            </div>
+                        </div>
+
+                        <h3>Installation with Database Support</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">BASH</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code># With PostgreSQL support
+pip install openfinops[postgres]
+
+# With all features
+pip install openfinops[all]</code>
+                            </div>
+                        </div>
                     </section>
 
                     <!-- Configuration -->
