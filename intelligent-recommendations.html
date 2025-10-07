@@ -62,16 +62,69 @@
     <style>
         /* Page-specific styles using site color scheme */
         .code-block {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(10, 14, 39, 0.8));
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 16px;
+            padding: 0;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-header {
+            background: rgba(0, 212, 170, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-label {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .code-copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .code-copy-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .code-content {
             padding: 1.5rem;
             overflow-x: auto;
-            margin: 1.5rem 0;
-            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
         }
+
+        .code-block code {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+            color: #00d4aa;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            display: block;
+            white-space: pre;
+        }
+
         .code-comment { color: #6a9955; font-style: italic; }
         .code-keyword { color: #569cd6; font-weight: 500; }
         .code-string { color: #ce9178; }
@@ -337,13 +390,23 @@
             <p class="step-description">
                 Install the OpenFinOps package with all dependencies, or choose specific LLM providers based on your needs.
             </p>
-            <div class="code-block"><span class="code-comment"># Install with all LLM providers</span>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">BASH</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-comment"># Install with all LLM providers</span>
 pip install openfinops[all]
 
 <span class="code-comment"># Or install with specific LLM provider</span>
 pip install openfinops openai      <span class="code-comment"># For OpenAI (GPT-4, GPT-3.5)</span>
 pip install openfinops anthropic   <span class="code-comment"># For Anthropic (Claude)</span>
-pip install openfinops              <span class="code-comment"># No LLM (rule-based only)</span></div>
+pip install openfinops              <span class="code-comment"># No LLM (rule-based only)</span></code>
+                </div>
+            </div>
         </div>
 
         <div class="step-section">
@@ -353,23 +416,43 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
             </p>
 
             <h4>Option A: Environment Variables</h4>
-            <div class="code-block"><span class="code-comment"># Set your API key and model</span>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">BASH</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-comment"># Set your API key and model</span>
 <span class="code-keyword">export</span> <span class="code-variable">OPENAI_API_KEY</span>=<span class="code-string">"sk-your-api-key-here"</span>
 <span class="code-keyword">export</span> <span class="code-variable">OPENAI_MODEL</span>=<span class="code-string">"gpt-4-turbo-preview"</span>
 
 <span class="code-comment"># Or for Anthropic Claude</span>
 <span class="code-keyword">export</span> <span class="code-variable">ANTHROPIC_API_KEY</span>=<span class="code-string">"sk-ant-your-api-key-here"</span>
-<span class="code-keyword">export</span> <span class="code-variable">ANTHROPIC_MODEL</span>=<span class="code-string">"claude-3-opus-20240229"</span></div>
+<span class="code-keyword">export</span> <span class="code-variable">ANTHROPIC_MODEL</span>=<span class="code-string">"claude-3-opus-20240229"</span></code>
+                </div>
+            </div>
 
             <h4>Option B: Configuration File</h4>
             <p>Create a file named <code>llm_config.json</code></p>
-            <div class="code-block">{
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">JSON</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code>{
   <span class="code-string">"provider"</span>: <span class="code-string">"openai"</span>,
   <span class="code-string">"model_name"</span>: <span class="code-string">"gpt-4-turbo-preview"</span>,
   <span class="code-string">"api_key"</span>: <span class="code-string">"sk-your-api-key-here"</span>,
   <span class="code-string">"temperature"</span>: <span class="code-number">0.3</span>,
   <span class="code-string">"max_tokens"</span>: <span class="code-number">1000</span>
-}</div>
+}</code>
+                </div>
+            </div>
         </div>
 
         <div class="step-section">
@@ -377,7 +460,15 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
             <p class="step-description">
                 Provide your current infrastructure metrics and receive intelligent, actionable recommendations for optimization.
             </p>
-            <div class="code-block"><span class="code-keyword">from</span> openfinops.observability.intelligent_recommendations <span class="code-keyword">import</span> get_recommendations
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">PYTHON</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-keyword">from</span> openfinops.observability.intelligent_recommendations <span class="code-keyword">import</span> get_recommendations
 
 <span class="code-comment"># Define your current infrastructure metrics</span>
 <span class="code-variable">current_metrics</span> = {
@@ -402,7 +493,9 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
     <span class="code-function">print</span>(<span class="code-string">f"📌 {rec.title}"</span>)
     <span class="code-function">print</span>(<span class="code-string">f"   Priority: {rec.priority}"</span>)
     <span class="code-function">print</span>(<span class="code-string">f"   Impact: ${rec.impact['cost_monthly_usd']}/month savings"</span>)
-    <span class="code-function">print</span>(<span class="code-string">f"   {rec.description}"</span>)</div>
+    <span class="code-function">print</span>(<span class="code-string">f"   {rec.description}"</span>)</code>
+                </div>
+            </div>
         </div>
 
         <div class="step-section">
@@ -410,7 +503,15 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
             <p class="step-description">
                 Integrate recommendations directly into your executive dashboards for easy visualization and tracking of potential savings.
             </p>
-            <div class="code-block"><span class="code-keyword">from</span> openfinops.dashboard <span class="code-keyword">import</span> COODashboard
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">PYTHON</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-keyword">from</span> openfinops.dashboard <span class="code-keyword">import</span> COODashboard
 
 <span class="code-comment"># Initialize the dashboard</span>
 <span class="code-variable">dashboard</span> = <span class="code-function">COODashboard</span>()
@@ -423,7 +524,9 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
 <span class="code-comment"># Display summary</span>
 <span class="code-function">print</span>(<span class="code-string">f"📊 Total Recommendations: {recommendations['summary']['total_recommendations']}"</span>)
 <span class="code-function">print</span>(<span class="code-string">f"💰 Potential Monthly Savings: ${recommendations['summary']['potential_monthly_savings']:.2f}"</span>)
-<span class="code-function">print</span>(<span class="code-string">f"⚡ High Priority Items: {recommendations['summary']['high_priority_count']}"</span>)</div>
+<span class="code-function">print</span>(<span class="code-string">f"⚡ High Priority Items: {recommendations['summary']['high_priority_count']}"</span>)</code>
+                </div>
+            </div>
         </div>
 
             <div style="background: rgba(0, 212, 170, 0.1); border-left: 4px solid var(--primary-color); padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
@@ -482,7 +585,15 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
         <h2 class="section-header">Advanced Configuration</h2>
 
             <h3 style="margin-top: 2rem;">Custom LLM Configuration</h3>
-        <div class="code-block"><span class="code-keyword">from</span> openfinops.observability.llm_config <span class="code-keyword">import</span> LLMConfig, LLMProvider
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">PYTHON</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-keyword">from</span> openfinops.observability.llm_config <span class="code-keyword">import</span> LLMConfig, LLMProvider
 <span class="code-keyword">from</span> openfinops.observability.intelligent_recommendations <span class="code-keyword">import</span> IntelligentRecommendationsCoordinator
 
 <span class="code-comment"># Custom LLM config</span>
@@ -503,19 +614,29 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
 <span class="code-variable">recs</span> = coordinator.<span class="code-function">get_all_recommendations</span>(
     current_metrics=metrics,
     use_llm=<span class="code-keyword">True</span>
-)
-        </div>
+)</code>
+                </div>
+            </div>
 
             <h3 style="margin-top: 2rem;">Export Recommendations</h3>
-        <div class="code-block"><span class="code-comment"># Export as Markdown report</span>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">PYTHON</span>
+                    <button class="code-copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="code-content">
+                    <code><span class="code-comment"># Export as Markdown report</span>
 <span class="code-variable">markdown_report</span> = coordinator.<span class="code-function">export_recommendations</span>(recommendations, format=<span class="code-string">'markdown'</span>)
 
 <span class="code-comment"># Export as HTML report</span>
 <span class="code-variable">html_report</span> = coordinator.<span class="code-function">export_recommendations</span>(recommendations, format=<span class="code-string">'html'</span>)
 
 <span class="code-comment"># Export as JSON</span>
-<span class="code-variable">json_report</span> = coordinator.<span class="code-function">export_recommendations</span>(recommendations, format=<span class="code-string">'json'</span>)
-        </div>
+<span class="code-variable">json_report</span> = coordinator.<span class="code-function">export_recommendations</span>(recommendations, format=<span class="code-string">'json'</span>)</code>
+                </div>
+            </div>
 
         <h2 class="section-header">Example Recommendations</h2>
         <div class="feature-grid">
