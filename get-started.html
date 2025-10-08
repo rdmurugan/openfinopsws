@@ -399,6 +399,70 @@
         </div>
     </section>
 
+    <!-- Advanced Installation Options -->
+    <section class="code-block-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1f2937;">Advanced Installation Options</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.1rem; margin-bottom: 50px;">
+                Choose the right backend for your needs - from development to enterprise scale
+            </p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <h3 style="color: #667eea;"><i class="fas fa-bolt"></i> Basic Installation</h3>
+                    <p>Quick start with in-memory storage (great for development)</p>
+                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
+                        <code style="display: block; line-height: 1.8;">
+pip install openfinops
+                        </code>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <h3 style="color: #667eea;"><i class="fas fa-database"></i> With PostgreSQL</h3>
+                    <p>Production-ready with PostgreSQL persistence</p>
+                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
+                        <code style="display: block; line-height: 1.8;">
+pip install openfinops[postgres]
+                        </code>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <h3 style="color: #667eea;"><i class="fas fa-server"></i> Full Installation</h3>
+                    <p>All features including AWS, Azure, GCP, and database support</p>
+                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
+                        <code style="display: block; line-height: 1.8;">
+pip install openfinops[all]
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                <h3 style="color: #1f2937; margin-bottom: 20px;"><i class="fas fa-info-circle" style="color: #667eea;"></i> Database Backend Options (v0.2.1)</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #10b981;">
+                        <strong style="color: #1f2937;">In-Memory (Default)</strong>
+                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Fast, no persistence - perfect for development</p>
+                    </div>
+                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                        <strong style="color: #1f2937;">SQLite</strong>
+                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">File-based storage for single-server deployments</p>
+                    </div>
+                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #8b5cf6;">
+                        <strong style="color: #1f2937;">PostgreSQL</strong>
+                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Production-grade relational database</p>
+                    </div>
+                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #f59e0b;">
+                        <strong style="color: #1f2937;">TimescaleDB</strong>
+                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Time-series optimized with 90%+ compression</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Cost Comparison -->
     <section class="pricing-comparison">
         <div class="container">
