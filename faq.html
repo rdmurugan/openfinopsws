@@ -67,7 +67,7 @@ limitations under the License.
           "name": "What is OpenFinOps?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OpenFinOps is an open-source FinOps platform for AI/ML cost observability and optimization. It provides real-time cost monitoring, LLM-powered recommendations, and multi-cloud tracking (AWS, Azure, GCP) to help teams potentially reduce infrastructure costs."
+            "text": "OpenFinOps is an open-source FinOps platform for AI/ML cost observability and optimization. Version 0.3.0 includes plugin architecture, 7 telemetry agents, 8 SaaS integrations, 4 storage backends, and persona-specific insights. It provides real-time cost monitoring, LLM-powered recommendations, and multi-cloud tracking (AWS, Azure, GCP) to help teams potentially reduce infrastructure costs."
           }
         },
         {
@@ -179,7 +179,7 @@ limitations under the License.
           "name": "What's the difference between OpenFinOps and commercial FinOps tools?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OpenFinOps is 100% free and open source with no vendor lock-in. Unlike commercial tools that charge per-node or percentage of spend, OpenFinOps has zero cost. It's specifically designed for AI/ML workloads with GPU optimization, LLM cost tracking, and intelligent recommendations. You have full control over your data and can self-host or customize the platform."
+            "text": "OpenFinOps is 100% free and open source with no vendor lock-in. Unlike commercial tools that charge per-node or percentage of spend, OpenFinOps has zero cost. It's specifically designed for AI/ML workloads with GPU optimization, LLM cost tracking, and intelligent recommendations. Version 0.3.0 adds a comprehensive plugin architecture with 7 plugin types for unlimited extensibility. You have full control over your data and can self-host or customize the platform."
           }
         }
       ]
@@ -461,12 +461,36 @@ limitations under the License.
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What version is currently available?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        OpenFinOps v0.3.0 is the latest release, featuring:<br>
+                        • <strong>Plugin Architecture</strong> - 7 plugin types for unlimited extensibility<br>
+                        • <strong>Persistence Layer</strong> - 4 storage backends (In-Memory, SQLite, PostgreSQL, TimescaleDB)<br>
+                        • <strong>7 Telemetry Agents</strong> - AWS, Azure, GCP, Databricks, Snowflake, SaaS, Generic<br>
+                        • <strong>8 SaaS Integrations</strong> - MongoDB Atlas, Redis Cloud, GitHub Actions, DataDog, Kafka, Vercel, Docker Hub, Elasticsearch<br>
+                        • <strong>Persona-Specific Insights</strong> - Tailored insights for CFO, Engineers, Finance Analysts, and Business Leaders<br><br>
+                        Install via: <code>pip install openfinops</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
                     <span>Which cloud providers does OpenFinOps support?</span>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        OpenFinOps supports Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. You can monitor costs across all three providers in a single dashboard with unified cost attribution and multi-cloud optimization recommendations.
+                        OpenFinOps supports:<br>
+                        • <strong>AWS</strong> - 50+ services including EC2, S3, Lambda, SageMaker, RDS, EKS<br>
+                        • <strong>Azure</strong> - 45+ services including VMs, Storage, Azure ML, Functions, AKS<br>
+                        • <strong>GCP</strong> - 40+ services including Compute Engine, Storage, Vertex AI, BigQuery, GKE<br>
+                        • <strong>Databricks</strong> - Cluster costs, DBU tracking, job attribution<br>
+                        • <strong>Snowflake</strong> - Warehouse costs, query attribution, storage tracking<br><br>
+                        You can monitor costs across all providers in a single unified dashboard.
                     </div>
                 </div>
             </div>
@@ -515,6 +539,101 @@ limitations under the License.
                 <div class="faq-answer">
                     <div class="faq-answer-content">
                         OpenFinOps provides flexible cost attribution by team, project, environment, or custom tags. You can track costs by ML model, training run, department, or any custom dimension. The system automatically aggregates costs across services and provides detailed reports for chargeback or showback.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I extend OpenFinOps with custom plugins?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! OpenFinOps v0.3.0 features a comprehensive plugin architecture with 7 plugin types:<br>
+                        • <strong>Telemetry Plugins</strong> - Custom data collectors for any cloud provider or service<br>
+                        • <strong>Attribution Plugins</strong> - Custom cost allocation logic<br>
+                        • <strong>Recommendation Plugins</strong> - ML-powered optimization suggestions<br>
+                        • <strong>Dashboard Plugins</strong> - Custom visualization widgets<br>
+                        • <strong>Integration Plugins</strong> - Connect to external tools (JIRA, ServiceNow, etc.)<br>
+                        • <strong>Notification Plugins</strong> - Custom alert channels<br>
+                        • <strong>Policy Plugins</strong> - Governance and compliance rules<br><br>
+                        Plugins can be distributed via PyPI and discovered through the plugin marketplace. See the <a href="documentation.html#plugins">Plugin Architecture documentation</a> for details.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What SaaS platforms can I track with OpenFinOps?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        OpenFinOps v0.3.0 includes 8 fully functional SaaS integrations:<br>
+                        • <strong>MongoDB Atlas</strong> - Cluster costs (M10-M300 tiers), replication, sharding<br>
+                        • <strong>Redis Cloud</strong> - Database instances, throughput, multi-cloud support<br>
+                        • <strong>GitHub Actions</strong> - Workflow minutes, per-OS pricing, storage costs<br>
+                        • <strong>DataDog</strong> - Host count, custom metrics, monitoring costs<br>
+                        • <strong>Confluent Kafka</strong> - Cluster costs, CKU tracking, all tiers<br>
+                        • <strong>Vercel</strong> - Projects, deployments, bandwidth, function invocations<br>
+                        • <strong>Docker Hub</strong> - Repositories, pull counts, private repo costs<br>
+                        • <strong>Elasticsearch Cloud</strong> - Deployments, memory usage, data transfer<br><br>
+                        All integrations are production-ready and can be configured in the SaaS Services Agent.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What storage options are available for historical data?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        OpenFinOps supports 4 storage backends (since v0.2.1):<br>
+                        • <strong>In-Memory</strong> - Ultra-fast, for development/testing, ephemeral<br>
+                        • <strong>SQLite</strong> - File-based, zero configuration, perfect for small deployments<br>
+                        • <strong>PostgreSQL</strong> - Production-grade, ACID compliance, enterprise ready<br>
+                        • <strong>TimescaleDB</strong> - Time-series optimized, compression, retention policies, ideal for large-scale monitoring<br><br>
+                        Choose the backend that fits your scale and requirements. You can configure retention periods (90 days, 1 year, custom) to manage storage costs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What are persona-specific insights?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        OpenFinOps provides tailored insights for different organizational roles:<br>
+                        • <strong>CFO</strong> - Unit economics, ROI analysis, budget variance, cost forecasting<br>
+                        • <strong>Engineers</strong> - Idle resources, cost spikes, rightsizing opportunities, ARM migration<br>
+                        • <strong>Finance Analysts</strong> - Forecast variance, trend analysis, cost breakdowns, QoQ comparisons<br>
+                        • <strong>Business Leaders</strong> - Growth efficiency, capacity headroom, revenue-to-infrastructure ROI<br><br>
+                        Each persona receives insights optimized for their decision-making needs, delivered through configured channels (Slack, Email, Teams).
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do telemetry agents work?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        OpenFinOps uses 7 intelligent telemetry agents that automatically discover and track costs:<br>
+                        • <strong>AWS Agent</strong> - Integrates with Cost Explorer API and CloudWatch<br>
+                        • <strong>Azure Agent</strong> - Uses Cost Management API and Azure Monitor<br>
+                        • <strong>GCP Agent</strong> - Leverages Cloud Billing API and Cloud Monitoring<br>
+                        • <strong>Databricks Agent</strong> - Tracks cluster costs and DBU consumption<br>
+                        • <strong>Snowflake Agent</strong> - Monitors warehouse costs and query attribution<br>
+                        • <strong>SaaS Services Agent</strong> - Collects costs from 8 SaaS platforms<br>
+                        • <strong>Generic Agent</strong> - Extensible for custom/on-premise infrastructure<br><br>
+                        Deploy once and agents continuously discover new resources and track costs with minimal overhead.
                     </div>
                 </div>
             </div>
