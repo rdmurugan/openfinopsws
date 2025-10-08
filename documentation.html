@@ -289,9 +289,10 @@ limitations under the License.
                         <li><a href="#observability">Observability Hub</a></li>
                         <li><a href="#dashboards">Dashboards</a></li>
                         <li><a href="#telemetry">Cloud Telemetry Agents</a></li>
-                        <li><a href="#persistence">Historical Analytics & Persistence</a></li>
                         <li><a href="#data-platforms">Data Platform Services</a></li>
                         <li><a href="#saas-services">SaaS Services</a></li>
+                        <li><a href="#persistence">Historical Analytics & Persistence</a></li>
+                        <li><a href="#plugins">Plugin Architecture</a></li>
                         <li><a href="#configuration">Configuration</a></li>
                     </ul>
                 </aside>
@@ -975,6 +976,167 @@ pip install openfinops[postgres]
 # With all features
 pip install openfinops[all]</code>
                             </div>
+                        </div>
+                    </section>
+
+                    <!-- Plugin Architecture -->
+                    <section id="plugins">
+                        <h2>Plugin Architecture</h2>
+                        <p class="badge badge-new">NEW IN v0.2.1</p>
+                        <p>
+                            OpenFinOps features a powerful plugin system that enables unlimited extensibility without modifying core code.
+                            Create custom plugins for telemetry collection, cost attribution, recommendations, dashboards, and more.
+                        </p>
+
+                        <h3>Plugin Types</h3>
+                        <p>OpenFinOps supports 7 plugin types:</p>
+                        <ul>
+                            <li><strong>TelemetryPlugin:</strong> Collect cost and usage data from custom sources</li>
+                            <li><strong>AttributionPlugin:</strong> Implement custom cost attribution and tagging logic</li>
+                            <li><strong>RecommendationPlugin:</strong> Build AI-powered optimization recommendations</li>
+                            <li><strong>DashboardPlugin:</strong> Create custom dashboard widgets and visualizations</li>
+                            <li><strong>IntegrationPlugin:</strong> Integrate with external tools (Slack, JIRA, etc.)</li>
+                            <li><strong>NotificationPlugin:</strong> Send alerts through custom channels</li>
+                            <li><strong>PolicyPlugin:</strong> Enforce governance and compliance policies</li>
+                        </ul>
+
+                        <h3>Creating a Custom Telemetry Plugin</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>from openfinops.plugins import TelemetryPlugin, PluginMetadata, PluginType
+
+class MyCloudPlugin(TelemetryPlugin):
+    @property
+    def metadata(self):
+        return PluginMetadata(
+            name="my-cloud-plugin",
+            version="1.0.0",
+            author="Your Name",
+            description="Collect costs from My Cloud Provider",
+            plugin_type=PluginType.TELEMETRY
+        )
+
+    def initialize(self):
+        # Get configuration
+        self.api_key = self.get_config_value("api_key", required=True)
+        self.endpoint = self.get_config_value("endpoint")
+        # Initialize cloud client
+
+    def collect_telemetry(self):
+        # Collect and return cost data
+        return [
+            {
+                "service": "compute",
+                "resource_id": "vm-12345",
+                "cost": 125.50,
+                "timestamp": time.time()
+            }
+        ]
+
+    def shutdown(self):
+        # Cleanup resources
+        pass</code>
+                            </div>
+                        </div>
+
+                        <h3>Using the Plugin Registry</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>from openfinops.plugins import registry
+
+# Register your plugin
+registry.register(MyCloudPlugin)
+
+# Load with configuration
+plugin = registry.load_plugin("my-cloud-plugin", config={
+    "api_key": "your-api-key",
+    "endpoint": "https://api.mycloud.com"
+})
+
+# Use the plugin
+data = plugin.collect_telemetry()
+
+# Unload when done
+registry.unload_plugin("my-cloud-plugin")</code>
+                            </div>
+                        </div>
+
+                        <h3>Plugin Decorators</h3>
+                        <p>OpenFinOps provides decorators for common patterns:</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>from openfinops.plugins.decorators import retry, cache_result, rate_limit
+
+class MyPlugin(TelemetryPlugin):
+
+    @retry(max_attempts=3, delay=1.0)
+    def fetch_data_with_retry(self):
+        # Automatically retries on failure
+        pass
+
+    @cache_result(ttl=300)  # Cache for 5 minutes
+    def get_expensive_data(self):
+        # Result is cached
+        pass
+
+    @rate_limit(max_calls=10, period=60)  # 10 calls per minute
+    def api_call(self):
+        # Rate limited
+        pass</code>
+                            </div>
+                        </div>
+
+                        <h3>Publishing Plugins</h3>
+                        <p>
+                            Plugins can be distributed via PyPI for easy installation. Add the following
+                            entry point to your <code>setup.py</code>:
+                        </p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">PYTHON</span>
+                                <button class="code-copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <code>setup(
+    name="openfinops-mycloud-plugin",
+    version="1.0.0",
+    entry_points={
+        "openfinops.plugins": [
+            "mycloud = mycloud_plugin:MyCloudPlugin"
+        ]
+    }
+)</code>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>💡 Plugin Development Guide:</strong> For complete plugin development documentation,
+                                examples, and best practices, see the
+                                <a href="https://github.com/rdmurugan/openfinops/blob/main/docs/PLUGIN_ARCHITECTURE.md" target="_blank">
+                                    Plugin Architecture Guide
+                                </a> in the GitHub repository.
+                            </p>
                         </div>
                     </section>
 
