@@ -44,7 +44,6 @@ Force immediate crawling of key pages:
 3. Click "Request Indexing"
 4. Repeat for:
    - `https://openfinops.org/features.html`
-   - `https://openfinops.org/pricing.html`
    - `https://openfinops.org/documentation.html`
    - `https://openfinops.org/blog/reduce-ai-infrastructure-costs.html`
 
