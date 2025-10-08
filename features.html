@@ -165,6 +165,88 @@ limitations under the License.
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Feature Tables */
+        .features-table-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .features-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .features-table thead {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.2), rgba(76, 29, 149, 0.2));
+        }
+
+        .features-table th {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 2px solid rgba(0, 212, 170, 0.3);
+        }
+
+        .features-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .features-table tbody tr:hover {
+            background: rgba(0, 212, 170, 0.05);
+        }
+
+        .features-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .table-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .table-status.coming-soon {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+
+        .feature-highlight {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .features-table {
+                font-size: 0.875rem;
+            }
+
+            .features-table th,
+            .features-table td {
+                padding: 1rem 0.75rem;
+            }
+        }
     </style>
     <!-- Cookie Consent -->
     <link rel="stylesheet" href="css/cookie-consent.css">
@@ -661,6 +743,332 @@ limitations under the License.
                     </div>
                 </div>
             </section>
+
+            <!-- Feature Comparison Tables -->
+            <div class="features-table-section">
+                <div class="section-header">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Platform Capabilities at a Glance</h2>
+                    <p>Comprehensive feature matrix across all OpenFinOps components</p>
+                </div>
+
+                <!-- Plugin Architecture Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-puzzle-piece table-icon"></i>Plugin Architecture
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Extend OpenFinOps with 7 plugin types for unlimited customization
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Plugin Type</th>
+                            <th>Purpose</th>
+                            <th>Use Cases</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-satellite-dish"></i> Telemetry Plugin</span></td>
+                            <td>Custom data collectors</td>
+                            <td>Oracle Cloud, on-premise, custom cost sources</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-project-diagram"></i> Attribution Plugin</span></td>
+                            <td>Cost allocation logic</td>
+                            <td>Team budgets, project costing, business units</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-lightbulb"></i> Recommendation Plugin</span></td>
+                            <td>Optimization suggestions</td>
+                            <td>Custom rightsizing, ML-powered insights</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-chart-line"></i> Dashboard Plugin</span></td>
+                            <td>Custom visualizations</td>
+                            <td>Executive reports, custom metrics widgets</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-exchange-alt"></i> Integration Plugin</span></td>
+                            <td>External tool sync</td>
+                            <td>JIRA, ServiceNow, custom ticketing systems</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-bell"></i> Notification Plugin</span></td>
+                            <td>Alert channels</td>
+                            <td>Slack, Teams, PagerDuty, custom webhooks</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-shield-alt"></i> Policy Plugin</span></td>
+                            <td>Governance rules</td>
+                            <td>Budget enforcement, compliance checks</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Telemetry Agents Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-robot table-icon"></i>Telemetry Agents
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    7 intelligent agents for automatic cost discovery and tracking
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Agent</th>
+                            <th>Coverage</th>
+                            <th>Key Features</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-aws"></i> AWS Agent</span></td>
+                            <td>50+ AWS services</td>
+                            <td>EC2, S3, Lambda, SageMaker, RDS, CloudWatch integration</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-microsoft"></i> Azure Agent</span></td>
+                            <td>45+ Azure services</td>
+                            <td>VMs, Blob Storage, Azure ML, Functions, Cost Management API</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-google"></i> GCP Agent</span></td>
+                            <td>40+ GCP services</td>
+                            <td>Compute Engine, Cloud Storage, Vertex AI, BigQuery</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-database"></i> Databricks Agent</span></td>
+                            <td>Databricks platform</td>
+                            <td>Cluster costs, DBU tracking, job attribution, SQL analytics</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-snowflake"></i> Snowflake Agent</span></td>
+                            <td>Snowflake data cloud</td>
+                            <td>Warehouse costs, query attribution, storage tracking</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-cloud"></i> SaaS Services Agent</span></td>
+                            <td>8 SaaS platforms</td>
+                            <td>MongoDB, Redis, GitHub Actions, DataDog, Kafka, Vercel, Docker Hub, Elasticsearch</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-server"></i> Generic Agent</span></td>
+                            <td>Custom/on-premise</td>
+                            <td>Extensible for any infrastructure, API-based collection</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- SaaS Integrations Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-plug table-icon"></i>SaaS Service Integrations
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Track costs across 8 popular SaaS platforms (v0.3.0)
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Cost Tracking</th>
+                            <th>Key Metrics</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-leaf"></i> MongoDB Atlas</span></td>
+                            <td>Cluster costs (M10-M300)</td>
+                            <td>Replication, sharding, storage tracking, multi-cloud</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-database"></i> Redis Cloud</span></td>
+                            <td>Database instances</td>
+                            <td>Throughput, subscriptions, multi-cloud support</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-github"></i> GitHub Actions</span></td>
+                            <td>Workflow minutes</td>
+                            <td>Per-OS pricing (Linux/Windows/macOS), storage costs</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-dog"></i> DataDog</span></td>
+                            <td>Host & metrics monitoring</td>
+                            <td>Host count, custom metrics, estimated monthly costs</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-stream"></i> Confluent Kafka</span></td>
+                            <td>Cluster costs</td>
+                            <td>Basic/Standard/Dedicated tiers, CKU tracking, multi-cloud</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-triangle"></i> Vercel</span></td>
+                            <td>Deployment costs</td>
+                            <td>Projects, deployments, bandwidth, function invocations</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-docker"></i> Docker Hub</span></td>
+                            <td>Repository costs</td>
+                            <td>Pull counts, private repos, team plans</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-search"></i> Elasticsearch Cloud</span></td>
+                            <td>Deployment costs</td>
+                            <td>Memory usage, instance counts, data transfer</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Persistence Backends Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-database table-icon"></i>Data Persistence Options
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    4 storage backends for flexible deployment scenarios
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Backend</th>
+                            <th>Best For</th>
+                            <th>Capabilities</th>
+                            <th>Recommended Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-memory"></i> In-Memory</span></td>
+                            <td>Testing & development</td>
+                            <td>Ultra-fast, no setup, ephemeral</td>
+                            <td>Development, demos, proof-of-concept</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-file-archive"></i> SQLite</span></td>
+                            <td>Small deployments</td>
+                            <td>File-based, zero config, portable</td>
+                            <td>Single server, < 100GB data, local testing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-elephant"></i> PostgreSQL</span></td>
+                            <td>Production workloads</td>
+                            <td>ACID compliance, scalable, reliable</td>
+                            <td>Enterprise deployments, multi-user access</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-chart-area"></i> TimescaleDB</span></td>
+                            <td>Time-series optimization</td>
+                            <td>Compression, continuous aggregates, retention policies</td>
+                            <td>Large-scale monitoring, long-term retention</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Persona-Specific Insights Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-users table-icon"></i>Persona-Specific Insights
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Tailored insights for 4 organizational roles (Feature #2)
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Persona</th>
+                            <th>Focus Areas</th>
+                            <th>Key Insights</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-chart-line"></i> CFO</span></td>
+                            <td>Strategic finance</td>
+                            <td>Unit economics, ROI analysis, budget variance, cost forecasting</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-code"></i> Engineer</span></td>
+                            <td>Resource optimization</td>
+                            <td>Idle resources, cost spikes, rightsizing, ARM migration opportunities</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-calculator"></i> Finance Analyst</span></td>
+                            <td>Budget tracking</td>
+                            <td>Forecast variance, trend analysis, cost breakdowns, QoQ comparisons</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fas fa-briefcase"></i> Business Leader</span></td>
+                            <td>Strategic KPIs</td>
+                            <td>Growth efficiency, capacity headroom, revenue-to-infrastructure ROI</td>
+                            <td><span class="table-status">✅ Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Cloud Coverage Table -->
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem; font-size: 2rem;">
+                    <i class="fas fa-globe table-icon"></i>Multi-Cloud Coverage
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Comprehensive support across major cloud providers
+                </p>
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Services Covered</th>
+                            <th>AI/ML Services</th>
+                            <th>Integration Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-aws"></i> AWS</span></td>
+                            <td>50+ services including EC2, S3, RDS, Lambda, EKS</td>
+                            <td>SageMaker, Bedrock, Training Jobs, Inference Endpoints</td>
+                            <td>Cost Explorer API, CloudWatch, Billing Reports</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-microsoft"></i> Azure</span></td>
+                            <td>45+ services including VMs, Storage, Functions, AKS</td>
+                            <td>Azure ML, OpenAI Service, Cognitive Services</td>
+                            <td>Cost Management API, Azure Monitor, Billing API</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight"><i class="fab fa-google"></i> GCP</span></td>
+                            <td>40+ services including Compute, Storage, BigQuery, GKE</td>
+                            <td>Vertex AI, AI Platform, TPU Pods, AutoML</td>
+                            <td>Cloud Billing API, Cloud Monitoring, Export to BigQuery</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

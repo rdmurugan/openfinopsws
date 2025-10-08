@@ -512,6 +512,77 @@ body {
     font-weight: 600;
 }
 
+/* Features Summary */
+.features-summary {
+    padding: 100px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.summary-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 212, 170, 0.2);
+}
+
+.summary-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.summary-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.summary-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.summary-card ul li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.summary-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.summary-link:hover {
+    gap: 0.5rem;
+    color: var(--secondary-color);
+}
+
 /* CTA Section */
 .cta {
     padding: 100px 0;
