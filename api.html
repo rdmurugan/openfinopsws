@@ -269,6 +269,9 @@ limitations under the License.
                         <li><a href="#observability">ObservabilityHub</a></li>
                         <li><a href="#llm-observability">LLM Observability</a></li>
                         <li><a href="#cost-observatory">Cost Observatory</a></li>
+                        <li><a href="#plugins">Plugins API</a></li>
+                        <li><a href="#insights">Insights API</a></li>
+                        <li><a href="#persistence">Persistence API</a></li>
                         <li><a href="#dashboards">Dashboards</a></li>
                         <li><a href="#telemetry">Cloud Telemetry</a></li>
                         <li><a href="#databricks">Databricks Agent</a></li>
@@ -502,6 +505,271 @@ for budget_id, info in status.items():
     print(f"  Budget: ${info['amount']:.2f}")
     print(f"  Spent: ${info['spent']:.2f}")
     print(f"  Status: {info['status']}")</code>
+                        </div>
+                    </section>
+
+                    <!-- Plugins API -->
+                    <section id="plugins" class="api-section">
+                        <h2>Plugins API</h2>
+                        <p class="badge" style="background: rgba(0, 212, 170, 0.2); color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">NEW IN v0.3.0</p>
+                        <p style="color: var(--text-secondary);">
+                            Plugin system for extending OpenFinOps with custom telemetry collectors, cost attribution logic,
+                            recommendations, dashboards, and integrations.
+                        </p>
+
+                        <h3>Plugin Registry</h3>
+                        <div class="method-signature">
+                            from openfinops.plugins import registry
+                        </div>
+
+                        <h4>register()</h4>
+                        <div class="method-signature">
+                            registry.register(plugin_class: Type[PluginBase])
+                        </div>
+
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>from openfinops.plugins import registry, TelemetryPlugin
+
+class MyPlugin(TelemetryPlugin):
+    # Plugin implementation
+    pass
+
+# Register the plugin
+registry.register(MyPlugin)</code>
+                        </div>
+
+                        <h4>load_plugin()</h4>
+                        <div class="method-signature">
+                            registry.load_plugin(plugin_name: str, config: Dict[str, Any]) -> PluginBase
+                        </div>
+
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>plugin_name</code></td>
+                                    <td>str</td>
+                                    <td>Name of the plugin to load</td>
+                                </tr>
+                                <tr>
+                                    <td><code>config</code></td>
+                                    <td>Dict[str, Any]</td>
+                                    <td>Plugin configuration dictionary</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>plugin = registry.load_plugin("my-plugin", config={
+    "api_key": "your-api-key",
+    "endpoint": "https://api.example.com"
+})
+
+# Use the plugin
+data = plugin.collect_telemetry()</code>
+                        </div>
+
+                        <h3>Plugin Types</h3>
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>from openfinops.plugins import (
+    TelemetryPlugin,      # Custom data collectors
+    AttributionPlugin,    # Cost attribution logic
+    RecommendationPlugin, # Optimization recommendations
+    DashboardPlugin,      # Custom widgets
+    IntegrationPlugin,    # External tool integrations
+    NotificationPlugin,   # Alert channels
+    PolicyPlugin          # Governance rules
+)</code>
+                        </div>
+                    </section>
+
+                    <!-- Insights API -->
+                    <section id="insights" class="api-section">
+                        <h2>Insights API</h2>
+                        <p class="badge" style="background: rgba(0, 212, 170, 0.2); color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">NEW IN v0.3.0</p>
+                        <p style="color: var(--text-secondary);">
+                            Persona-specific insights tailored to different organizational roles (CFO, Engineer, Finance, Business Lead).
+                        </p>
+
+                        <h3>InsightEngine</h3>
+                        <div class="method-signature">
+                            InsightEngine(hub: ObservabilityHub, cost_obs: CostObservatory)
+                        </div>
+
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>from openfinops.insights import InsightEngine
+from openfinops import ObservabilityHub, CostObservatory
+
+hub = ObservabilityHub()
+cost_obs = CostObservatory()
+engine = InsightEngine(hub=hub, cost_obs=cost_obs)</code>
+                        </div>
+
+                        <h4>generate_insights()</h4>
+                        <div class="method-signature">
+                            generate_insights(persona: str, time_range: str = "30d") -> List[Insight]
+                        </div>
+
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>persona</code></td>
+                                    <td>str</td>
+                                    <td>Target persona: "cfo", "engineer", "finance", or "business_lead"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>time_range</code></td>
+                                    <td>str</td>
+                                    <td>Time range for analysis (e.g., "7d", "30d", "90d")</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code># Generate CFO insights
+cfo_insights = engine.generate_insights(persona="cfo", time_range="30d")
+
+for insight in cfo_insights:
+    print(f"📊 {insight.title}")
+    print(f"   {insight.description}")
+    print(f"   Impact: {insight.impact}")
+    print(f"   Priority: {insight.priority}")
+    print()</code>
+                        </div>
+
+                        <h3>Persona Insight Generators</h3>
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>from openfinops.insights import (
+    CFOInsightGenerator,
+    EngineerInsightGenerator,
+    FinanceInsightGenerator,
+    BusinessLeadInsightGenerator
+)
+
+# Use specific persona generator
+cfo_gen = CFOInsightGenerator(hub=hub, cost_obs=cost_obs)
+insights = cfo_gen.generate(time_range="30d")</code>
+                        </div>
+                    </section>
+
+                    <!-- Persistence API -->
+                    <section id="persistence" class="api-section">
+                        <h2>Persistence API</h2>
+                        <p class="badge" style="background: rgba(0, 212, 170, 0.2); color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">NEW IN v0.2.1</p>
+                        <p style="color: var(--text-secondary);">
+                            Historical data persistence with support for SQLite, PostgreSQL, and TimescaleDB backends.
+                        </p>
+
+                        <h3>PersistenceConfig</h3>
+                        <div class="method-signature">
+                            from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+                        </div>
+
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+
+# SQLite configuration
+config = PersistenceConfig(
+    backend=StorageBackend.SQLITE,
+    connection_string="sqlite:///openfinops.db",
+    retention_days=90
+)
+
+# PostgreSQL configuration
+config = PersistenceConfig(
+    backend=StorageBackend.POSTGRESQL,
+    connection_string="postgresql://user:pass@localhost:5432/openfinops",
+    retention_days=365
+)
+
+# TimescaleDB with compression
+config = PersistenceConfig(
+    backend=StorageBackend.TIMESCALEDB,
+    connection_string="postgresql://user:pass@localhost:5432/openfinops",
+    retention_days=730,
+    enable_compression=True
+)</code>
+                        </div>
+
+                        <h4>Configuration Parameters</h4>
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>backend</code></td>
+                                    <td>StorageBackend</td>
+                                    <td>IN_MEMORY, SQLITE, POSTGRESQL, or TIMESCALEDB</td>
+                                </tr>
+                                <tr>
+                                    <td><code>connection_string</code></td>
+                                    <td>str</td>
+                                    <td>Database connection string</td>
+                                </tr>
+                                <tr>
+                                    <td><code>retention_days</code></td>
+                                    <td>int</td>
+                                    <td>Data retention period in days (default: 90)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>batch_size</code></td>
+                                    <td>int</td>
+                                    <td>Batch size for writes (default: 100)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>enable_compression</code></td>
+                                    <td>bool</td>
+                                    <td>Enable compression (TimescaleDB only)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Querying Historical Data</h3>
+                        <div class="code-example">
+                            <span class="code-label">PYTHON</span>
+                            <code>import time
+
+# Initialize with persistence
+hub = ObservabilityHub(persistence_config=config)
+
+# Query last 30 days
+thirty_days_ago = time.time() - (30 * 24 * 3600)
+metrics = hub.query_historical_metrics(
+    start_time=thirty_days_ago,
+    cluster_id="production",
+    limit=10000
+)
+
+# Query historical costs
+costs = cost_obs.query_historical_costs(
+    start_time=thirty_days_ago,
+    category="compute"
+)</code>
                         </div>
                     </section>
 
