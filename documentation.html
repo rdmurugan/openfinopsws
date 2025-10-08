@@ -811,16 +811,19 @@ python agents/saas_services_telemetry_agent.py \
 
                         <h3>Supported Services</h3>
                         <div class="info-box">
-                            <p><strong>Currently Supported Services:</strong></p>
+                            <p><strong>Supported SaaS Services (v0.3.0):</strong></p>
                             <ul>
                                 <li><strong>MongoDB Atlas:</strong> Cluster costs (M10-M300 tiers), replication, sharding, storage tracking</li>
                                 <li><strong>Redis Cloud:</strong> Database instances, throughput, subscriptions, multi-cloud support</li>
                                 <li><strong>GitHub Actions:</strong> Workflow minutes, storage, per-OS pricing (Linux/Windows/macOS)</li>
                                 <li><strong>DataDog:</strong> Host count, custom metrics, estimated monthly costs</li>
+                                <li><strong>Confluent Kafka:</strong> Cluster costs (Basic/Standard/Dedicated), CKU tracking, multi-cloud</li>
+                                <li><strong>Vercel:</strong> Projects, deployments, bandwidth, function invocations</li>
+                                <li><strong>Docker Hub:</strong> Repositories, pull counts, private repo costs</li>
+                                <li><strong>Elasticsearch Cloud:</strong> Deployments, memory usage, instance counts</li>
                             </ul>
-                            <div class="warning-box" style="margin-top: 1rem;">
-                                <p><strong>⏳ In Development (v0.4.0):</strong> Elasticsearch/OpenSearch, Confluent Kafka, Vercel, Docker Hub, New Relic</p>
-                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">These integrations are planned for the next release. Want to contribute? Check our <a href="https://github.com/rdmurugan/openfinops/blob/master/CONTRIBUTING.md" target="_blank" style="color: var(--primary-color);">Contributing Guide</a>!</p>
+                            <div class="info-box" style="margin-top: 1rem; background: rgba(16, 185, 129, 0.1);">
+                                <p><strong>✅ All integrations are fully functional!</strong> Configure any combination of services in your <code>saas_services_config.json</code> file.</p>
                             </div>
                         </div>
 
