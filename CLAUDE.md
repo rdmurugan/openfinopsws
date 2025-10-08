@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 OpenFinOps Website - A static marketing website for the OpenFinOps platform (Open Source FinOps Platform for AI/ML Cost Intelligence). This is a fully static site designed for GitHub Pages deployment.
 
 **Live URL**: https://openfinops.org/ (also https://rdmurugan.github.io/openfinopsws/)
+**Current Version**: v0.3.0
 
 ## Development Commands
 
