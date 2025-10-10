@@ -22,29 +22,29 @@ limitations under the License.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>API Reference - OpenFinOps | Complete REST API Documentation</title>
-    <meta name="description" content="OpenFinOps REST API documentation. Complete reference for cost tracking, metrics collection, recommendations engine, alerts, and cloud integrations. Python SDK examples included.">
+    <title>API Reference - FinOpsMetrics | Complete REST API Documentation</title>
+    <meta name="description" content="FinOpsMetrics REST API documentation. Complete reference for cost tracking, metrics collection, recommendations engine, alerts, and cloud integrations. Python SDK examples included.">
     <meta name="keywords" content="finops api, cost monitoring api, cloud cost api, rest api documentation, python finops sdk, cost tracking api, metrics api, finops integration">
-    <meta name="author" content="OpenFinOps Contributors">
+    <meta name="author" content="FinOpsMetrics Contributors">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="https://openfinops.org/api.html">
+    <link rel="canonical" href="https://finopsmetrics.org/api.html">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://openfinops.org/api.html">
-    <meta property="og:title" content="OpenFinOps API Reference - Complete REST API Documentation">
+    <meta property="og:url" content="https://finopsmetrics.org/api.html">
+    <meta property="og:title" content="FinOpsMetrics API Reference - Complete REST API Documentation">
     <meta property="og:description" content="Complete REST API reference for cost tracking, metrics, and recommendations with Python SDK examples.">
-    <meta property="og:image" content="https://openfinops.org/images/og-image.png">
-    <meta property="og:site_name" content="OpenFinOps">
+    <meta property="og:image" content="https://finopsmetrics.org/images/og-image.png">
+    <meta property="og:site_name" content="FinOpsMetrics">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://openfinops.org/api.html">
-    <meta name="twitter:title" content="OpenFinOps API Reference">
+    <meta name="twitter:url" content="https://finopsmetrics.org/api.html">
+    <meta name="twitter:title" content="FinOpsMetrics API Reference">
     <meta name="twitter:description" content="Complete REST API documentation with Python examples">
-    <meta name="twitter:image" content="https://openfinops.org/images/twitter-card.png">
+    <meta name="twitter:image" content="https://finopsmetrics.org/images/twitter-card.png">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -238,7 +238,7 @@ limitations under the License.
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                    <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
@@ -284,7 +284,7 @@ limitations under the License.
                 <div class="api-content">
                     <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">API Reference</h1>
                     <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem;">
-                        Complete API documentation for OpenFinOps
+                        Complete API documentation for FinOpsMetrics
                     </p>
 
                     <!-- ObservabilityHub -->
@@ -301,7 +301,7 @@ limitations under the License.
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops import ObservabilityHub
+                            <code>from finopsmetrics import ObservabilityHub
 
 # Server-side initialization
 hub = ObservabilityHub()</code>
@@ -383,7 +383,7 @@ for cluster_id, metrics in health.items():
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.observability.llm_observability import LLMObservabilityHub
+                            <code>from finopsmetrics.observability.llm_observability import LLMObservabilityHub
 
 llm_hub = LLMObservabilityHub()</code>
                         </div>
@@ -395,7 +395,7 @@ llm_hub = LLMObservabilityHub()</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.observability.llm_observability import LLMTrainingMetrics
+                            <code>from finopsmetrics.observability.llm_observability import LLMTrainingMetrics
 import time
 
 metrics = LLMTrainingMetrics(
@@ -444,7 +444,7 @@ print(f"Best Loss: {summary['best_loss']:.4f}")</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.observability.cost_observatory import CostObservatory
+                            <code>from finopsmetrics.observability.cost_observatory import CostObservatory
 
 cost_obs = CostObservatory()</code>
                         </div>
@@ -456,7 +456,7 @@ cost_obs = CostObservatory()</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.observability.cost_observatory import Budget
+                            <code>from finopsmetrics.observability.cost_observatory import Budget
 import time
 
 budget = Budget(
@@ -512,13 +512,13 @@ for budget_id, info in status.items():
                         <h2>Plugins API</h2>
                         <p class="badge" style="background: rgba(0, 212, 170, 0.2); color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">NEW IN v0.3.0</p>
                         <p style="color: var(--text-secondary);">
-                            Plugin system for extending OpenFinOps with custom telemetry collectors, cost attribution logic,
+                            Plugin system for extending FinOpsMetrics with custom telemetry collectors, cost attribution logic,
                             recommendations, dashboards, and integrations.
                         </p>
 
                         <h3>Plugin Registry</h3>
                         <div class="method-signature">
-                            from openfinops.plugins import registry
+                            from finopsmetrics.plugins import registry
                         </div>
 
                         <h4>register()</h4>
@@ -528,7 +528,7 @@ for budget_id, info in status.items():
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.plugins import registry, TelemetryPlugin
+                            <code>from finopsmetrics.plugins import registry, TelemetryPlugin
 
 class MyPlugin(TelemetryPlugin):
     # Plugin implementation
@@ -579,7 +579,7 @@ data = plugin.collect_telemetry()</code>
                         <h3>Plugin Types</h3>
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.plugins import (
+                            <code>from finopsmetrics.plugins import (
     TelemetryPlugin,      # Custom data collectors
     AttributionPlugin,    # Cost attribution logic
     RecommendationPlugin, # Optimization recommendations
@@ -606,8 +606,8 @@ data = plugin.collect_telemetry()</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.insights import InsightEngine
-from openfinops import ObservabilityHub, CostObservatory
+                            <code>from finopsmetrics.insights import InsightEngine
+from finopsmetrics import ObservabilityHub, CostObservatory
 
 hub = ObservabilityHub()
 cost_obs = CostObservatory()
@@ -657,7 +657,7 @@ for insight in cfo_insights:
                         <h3>Persona Insight Generators</h3>
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.insights import (
+                            <code>from finopsmetrics.insights import (
     CFOInsightGenerator,
     EngineerInsightGenerator,
     FinanceInsightGenerator,
@@ -680,31 +680,31 @@ insights = cfo_gen.generate(time_range="30d")</code>
 
                         <h3>PersistenceConfig</h3>
                         <div class="method-signature">
-                            from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+                            from finopsmetrics.observability.persistence import PersistenceConfig, StorageBackend
                         </div>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.observability.persistence import PersistenceConfig, StorageBackend
+                            <code>from finopsmetrics.observability.persistence import PersistenceConfig, StorageBackend
 
 # SQLite configuration
 config = PersistenceConfig(
     backend=StorageBackend.SQLITE,
-    connection_string="sqlite:///openfinops.db",
+    connection_string="sqlite:///finopsmetrics.db",
     retention_days=90
 )
 
 # PostgreSQL configuration
 config = PersistenceConfig(
     backend=StorageBackend.POSTGRESQL,
-    connection_string="postgresql://user:pass@localhost:5432/openfinops",
+    connection_string="postgresql://user:pass@localhost:5432/finopsmetrics",
     retention_days=365
 )
 
 # TimescaleDB with compression
 config = PersistenceConfig(
     backend=StorageBackend.TIMESCALEDB,
-    connection_string="postgresql://user:pass@localhost:5432/openfinops",
+    connection_string="postgresql://user:pass@localhost:5432/finopsmetrics",
     retention_days=730,
     enable_compression=True
 )</code>
@@ -786,7 +786,7 @@ costs = cost_obs.query_historical_costs(
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.dashboard import CFODashboard
+                            <code>from finopsmetrics.dashboard import CFODashboard
 
 cfo_dash = CFODashboard(hub)
 
@@ -804,7 +804,7 @@ print(f"Budget Status: {report.budget_utilization}%")</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.dashboard import COODashboard
+                            <code>from finopsmetrics.dashboard import COODashboard
 
 coo_dash = COODashboard(hub)
 
@@ -821,7 +821,7 @@ print(f"Efficiency Score: {metrics.operational_efficiency}%")</code>
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.dashboard import InfrastructureLeaderDashboard
+                            <code>from finopsmetrics.dashboard import InfrastructureLeaderDashboard
 
 infra_dash = InfrastructureLeaderDashboard(hub)
 
@@ -842,7 +842,7 @@ print(f"Storage: {util.storage_percent}%")</code>
 
                         <h3>AWSTelemetryAgent</h3>
                         <div class="method-signature">
-                            AWSTelemetryAgent(openfinops_endpoint: str, aws_region: str)
+                            AWSTelemetryAgent(finopsmetrics_endpoint: str, aws_region: str)
                         </div>
 
                         <table class="params-table">
@@ -855,9 +855,9 @@ print(f"Storage: {util.storage_percent}%")</code>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>openfinops_endpoint</code></td>
+                                    <td><code>finopsmetrics_endpoint</code></td>
                                     <td>str</td>
-                                    <td>OpenFinOps server URL</td>
+                                    <td>FinOpsMetrics server URL</td>
                                 </tr>
                                 <tr>
                                     <td><code>aws_region</code></td>
@@ -873,7 +873,7 @@ print(f"Storage: {util.storage_percent}%")</code>
 
 # Initialize agent (uses boto3 credential chain)
 agent = AWSTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     aws_region="us-west-2"
 )
 
@@ -894,7 +894,7 @@ if agent.register_agent():
                             <code>from agents.azure_telemetry_agent import AzureTelemetryAgent
 
 agent = AzureTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     subscription_id="your-subscription-id"
 )
 agent.register_agent()
@@ -907,7 +907,7 @@ agent.run_continuous(interval_seconds=300)</code>
                             <code>from agents.gcp_telemetry_agent import GCPTelemetryAgent
 
 agent = GCPTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     project_id="your-project-id"
 )
 agent.register_agent()
@@ -924,7 +924,7 @@ agent.run_continuous(interval_seconds=300)</code>
 
                         <h3>DatabricksTelemetryAgent</h3>
                         <div class="method-signature">
-                            DatabricksTelemetryAgent(openfinops_endpoint: str, databricks_host: str, databricks_token: str, workspace_name: str = None)
+                            DatabricksTelemetryAgent(finopsmetrics_endpoint: str, databricks_host: str, databricks_token: str, workspace_name: str = None)
                         </div>
 
                         <table class="params-table">
@@ -937,9 +937,9 @@ agent.run_continuous(interval_seconds=300)</code>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>openfinops_endpoint</code></td>
+                                    <td><code>finopsmetrics_endpoint</code></td>
                                     <td>str</td>
-                                    <td>OpenFinOps server URL (e.g., http://localhost:8080)</td>
+                                    <td>FinOpsMetrics server URL (e.g., http://localhost:8080)</td>
                                 </tr>
                                 <tr>
                                     <td><code>databricks_host</code></td>
@@ -965,7 +965,7 @@ agent.run_continuous(interval_seconds=300)</code>
 
 # Initialize agent
 agent = DatabricksTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     databricks_host="https://your-workspace.cloud.databricks.com",
     databricks_token="dapi***",
     workspace_name="production"
@@ -1076,7 +1076,7 @@ export DATABRICKS_TOKEN=dapi***
 
 # Run agent
 python agents/databricks_telemetry_agent.py \
-  --openfinops-endpoint http://localhost:8080 \
+  --finopsmetrics-endpoint http://localhost:8080 \
   --databricks-host $DATABRICKS_HOST \
   --databricks-token $DATABRICKS_TOKEN \
   --interval 300</code>
@@ -1092,7 +1092,7 @@ python agents/databricks_telemetry_agent.py \
 
                         <h3>SnowflakeTelemetryAgent</h3>
                         <div class="method-signature">
-                            SnowflakeTelemetryAgent(openfinops_endpoint: str, snowflake_account: str, snowflake_user: str, snowflake_password: str, snowflake_warehouse: str, edition: str = 'enterprise')
+                            SnowflakeTelemetryAgent(finopsmetrics_endpoint: str, snowflake_account: str, snowflake_user: str, snowflake_password: str, snowflake_warehouse: str, edition: str = 'enterprise')
                         </div>
 
                         <table class="params-table">
@@ -1105,9 +1105,9 @@ python agents/databricks_telemetry_agent.py \
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>openfinops_endpoint</code></td>
+                                    <td><code>finopsmetrics_endpoint</code></td>
                                     <td>str</td>
-                                    <td>OpenFinOps server URL</td>
+                                    <td>FinOpsMetrics server URL</td>
                                 </tr>
                                 <tr>
                                     <td><code>snowflake_account</code></td>
@@ -1143,7 +1143,7 @@ python agents/databricks_telemetry_agent.py \
 
 # Initialize agent
 agent = SnowflakeTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     snowflake_account="xy12345.us-east-1",
     snowflake_user="admin_user",
     snowflake_password="***",
@@ -1256,7 +1256,7 @@ export SNOWFLAKE_PASSWORD=***
 
 # Run agent
 python agents/snowflake_telemetry_agent.py \
-  --openfinops-endpoint http://localhost:8080 \
+  --finopsmetrics-endpoint http://localhost:8080 \
   --snowflake-account xy12345.us-east-1 \
   --snowflake-warehouse COMPUTE_WH \
   --edition enterprise \
@@ -1273,7 +1273,7 @@ python agents/snowflake_telemetry_agent.py \
 
                         <h3>SaaSServicesTelemetryAgent</h3>
                         <div class="method-signature">
-                            SaaSServicesTelemetryAgent(openfinops_endpoint: str, config_file: str)
+                            SaaSServicesTelemetryAgent(finopsmetrics_endpoint: str, config_file: str)
                         </div>
 
                         <table class="params-table">
@@ -1286,9 +1286,9 @@ python agents/snowflake_telemetry_agent.py \
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>openfinops_endpoint</code></td>
+                                    <td><code>finopsmetrics_endpoint</code></td>
                                     <td>str</td>
-                                    <td>OpenFinOps server URL</td>
+                                    <td>FinOpsMetrics server URL</td>
                                 </tr>
                                 <tr>
                                     <td><code>config_file</code></td>
@@ -1335,7 +1335,7 @@ python agents/snowflake_telemetry_agent.py \
 
 # Initialize agent with config
 agent = SaaSServicesTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     config_file="saas_config.json"
 )
 
@@ -1428,7 +1428,7 @@ python agents/saas_services_telemetry_agent.py \
 # Edit the configuration file with your credentials
 # Then run the agent
 python agents/saas_services_telemetry_agent.py \
-  --openfinops-endpoint http://localhost:8080 \
+  --finopsmetrics-endpoint http://localhost:8080 \
   --config saas_config.json \
   --interval 3600</code>
                         </div>
@@ -1453,7 +1453,7 @@ class CustomServiceCollector:
 
 # Add to agent configuration
 agent = SaaSServicesTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     config_file="config.json"
 )
 agent.collectors.append(("custom", CustomServiceCollector("api_key")))
@@ -1465,10 +1465,10 @@ agent.run_continuous(interval_seconds=3600)</code>
                     <section id="server-setup" class="api-section">
                         <h2>Server Setup & Configuration</h2>
                         <p style="color: var(--text-secondary);">
-                            Set up the OpenFinOps server to receive telemetry from agents and serve dashboards.
+                            Set up the FinOpsMetrics server to receive telemetry from agents and serve dashboards.
                         </p>
 
-                        <h3>Step 1: Start the OpenFinOps Server</h3>
+                        <h3>Step 1: Start the FinOpsMetrics Server</h3>
                         <p style="color: var(--text-secondary);">
                             The server provides both web dashboards and API endpoints for telemetry ingestion.
                         </p>
@@ -1477,19 +1477,19 @@ agent.run_continuous(interval_seconds=3600)</code>
                         <div class="code-example">
                             <span class="code-label">BASH</span>
                             <code># Start server on default port 8080
-openfinops-dashboard
+finopsmetrics-dashboard
 
 # Start on custom host/port
-openfinops-dashboard --host 0.0.0.0 --port 8080
+finopsmetrics-dashboard --host 0.0.0.0 --port 8080
 
 # Alternative command
-openfinops-server --host 0.0.0.0 --port 8080</code>
+finopsmetrics-server --host 0.0.0.0 --port 8080</code>
                         </div>
 
                         <h4>Option B: Using Python</h4>
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops.webui import start_server
+                            <code>from finopsmetrics.webui import start_server
 
 # Start server
 start_server(
@@ -1509,7 +1509,7 @@ curl http://localhost:8080/api/health
 
 # Verify server in logs
 # You should see:
-# 🚀 Starting OpenFinOps Web UI Server...
+# 🚀 Starting FinOpsMetrics Web UI Server...
 #    Host: 0.0.0.0
 #    Port: 8080</code>
                         </div>
@@ -1574,9 +1574,9 @@ curl http://localhost:8080/api/health
 
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
-                            <code>from openfinops import ObservabilityHub
-from openfinops.observability.cost_observatory import CostObservatory
-from openfinops.observability.llm_observability import LLMObservabilityHub
+                            <code>from finopsmetrics import ObservabilityHub
+from finopsmetrics.observability.cost_observatory import CostObservatory
+from finopsmetrics.observability.llm_observability import LLMObservabilityHub
 
 # Initialize components (done automatically by server)
 hub = ObservabilityHub()
@@ -1599,7 +1599,7 @@ from agents.aws_telemetry_agent import AWSTelemetryAgent
 
 # Point agent to your server
 agent = AWSTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",  # Your server URL
+    finopsmetrics_endpoint="http://localhost:8080",  # Your server URL
     aws_region="us-west-2"
 )
 
@@ -1616,13 +1616,13 @@ if agent.register_agent():
                         <div class="code-example">
                             <span class="code-label">PYTHON</span>
                             <code># 1. Start server (in one terminal/process)
-# openfinops-dashboard --port 8080
+# finopsmetrics-dashboard --port 8080
 
 # 2. Deploy agent (in another terminal/process)
 from agents.aws_telemetry_agent import AWSTelemetryAgent
 
 agent = AWSTelemetryAgent(
-    openfinops_endpoint="http://localhost:8080",
+    finopsmetrics_endpoint="http://localhost:8080",
     aws_region="us-west-2"
 )
 
@@ -1643,44 +1643,44 @@ agent.run_continuous(interval_seconds=300)
                         <div class="code-example">
                             <span class="code-label">BASH</span>
                             <code># Using systemd service
-# /etc/systemd/system/openfinops-server.service
+# /etc/systemd/system/finopsmetrics-server.service
 [Unit]
-Description=OpenFinOps Server
+Description=FinOpsMetrics Server
 After=network.target
 
 [Service]
 Type=simple
-User=openfinops
-WorkingDirectory=/opt/openfinops
+User=finopsmetrics
+WorkingDirectory=/opt/finopsmetrics
 Environment="HOST=0.0.0.0"
 Environment="PORT=8080"
-ExecStart=/usr/bin/openfinops-dashboard --host 0.0.0.0 --port 8080
+ExecStart=/usr/bin/finopsmetrics-dashboard --host 0.0.0.0 --port 8080
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 
 # Enable and start
-sudo systemctl enable openfinops-server
-sudo systemctl start openfinops-server</code>
+sudo systemctl enable finopsmetrics-server
+sudo systemctl start finopsmetrics-server</code>
                         </div>
 
                         <div class="code-example">
                             <span class="code-label">DOCKER</span>
                             <code># Using Docker
 docker run -d \
-  --name openfinops-server \
+  --name finopsmetrics-server \
   -p 8080:8080 \
   -e HOST=0.0.0.0 \
   -e PORT=8080 \
-  openfinops/server:latest
+  finopsmetrics/server:latest
 
 # Using Docker Compose
 # docker-compose.yml
 version: '3.8'
 services:
-  openfinops-server:
-    image: openfinops/server:latest
+  finopsmetrics-server:
+    image: finopsmetrics/server:latest
     ports:
       - "8080:8080"
     environment:
@@ -1808,7 +1808,7 @@ socket.on('metrics_update', (data) => {
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                        <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                     </div>
                     <p>Enterprise FinOps platform for AI/ML cost intelligence</p>
                     <div class="social-links">
@@ -1818,7 +1818,8 @@ socket.on('metrics_update', (data) => {
                     <h4>Product</h4>
                     <ul>
                         <li><a href="features.html">Features</a></li>
-                        <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
                         <li><a href="api.html">API Reference</a></li>
                         <li><a href="demo.html">Live Demo</a></li>
                     </ul>
@@ -1846,7 +1847,7 @@ socket.on('metrics_update', (data) => {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Infinidatum LLC. OpenFinOps is licensed under Apache-2.0</p>
+                <p>&copy; 2025 Infinidatum LLC. FinOpsMetrics is licensed under Apache-2.0</p>
             </div>
         </div>
     </footer>

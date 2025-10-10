@@ -7,7 +7,11 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Read(//Users/durai/Documents/Github/openFinops/**)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(if [ -f \"/Users/durai/Documents/GitHub/openfinopsws/intelligent-recommendations.html\" ])",
+      "Bash(then grep -A 10 'class=\"\"\"\"nav-menu\"\"\"\"' /Users/durai/Documents/GitHub/openfinopsws/intelligent-recommendations.html)",
+      "Bash(else echo \"File does not exist\")",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []

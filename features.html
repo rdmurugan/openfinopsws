@@ -22,29 +22,29 @@ limitations under the License.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Features - OpenFinOps | AI/ML Cost Monitoring & Cloud Optimization</title>
-    <meta name="description" content="Explore OpenFinOps features: multi-cloud cost tracking, AI/ML monitoring, GPU optimization, LLM-powered recommendations, real-time dashboards, budget alerts, and auto-scaling for AWS, Azure, GCP.">
-    <meta name="keywords" content="finops features, ai cost monitoring, ml cost tracking, gpu optimization, cloud cost management, kubernetes monitoring, aws cost tracking, gcp billing, azure cost management, llm costs, openai monitoring, anthropic costs, cost attribution, budget alerts, auto-scaling, spot instances">
-    <meta name="author" content="OpenFinOps Contributors">
+    <title>Features - FinOpsMetrics | Comprehensive Cloud Cost Management Platform</title>
+    <meta name="description" content="Explore FinOpsMetrics comprehensive features: AI/ML workload monitoring, multi-cloud cost tracking, executive dashboards, AI-powered optimization, cost attribution, VizlyChart visualization, enterprise collaboration, and 50+ integrations.">
+    <meta name="keywords" content="finops features, ai cost monitoring, ml cost tracking, gpu optimization, cloud cost management, llm training costs, rag pipeline analytics, multi-cloud tracking, executive dashboards, cost attribution, chargeback, vizlychart, workspace collaboration, sso, audit logging, aws azure gcp, openai anthropic costs, databricks snowflake, kubernetes monitoring">
+    <meta name="author" content="FinOpsMetrics Contributors">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="https://openfinops.org/features.html">
+    <link rel="canonical" href="https://finopsmetrics.org/features.html">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://openfinops.org/features.html">
-    <meta property="og:title" content="OpenFinOps Features - AI/ML Cost Monitoring & Optimization">
-    <meta property="og:description" content="Comprehensive FinOps features: multi-cloud cost tracking, GPU optimization, LLM monitoring, intelligent recommendations, and real-time dashboards.">
-    <meta property="og:image" content="https://openfinops.org/images/og-image.png">
-    <meta property="og:site_name" content="OpenFinOps">
+    <meta property="og:url" content="https://finopsmetrics.org/features.html">
+    <meta property="og:title" content="FinOpsMetrics Features - Comprehensive Cloud Cost Management">
+    <meta property="og:description" content="Complete platform features: AI/ML monitoring, multi-cloud tracking, executive dashboards, AI optimization, cost attribution, VizlyChart, and enterprise collaboration.">
+    <meta property="og:image" content="https://finopsmetrics.org/images/og-image.png">
+    <meta property="og:site_name" content="FinOpsMetrics">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://openfinops.org/features.html">
-    <meta name="twitter:title" content="OpenFinOps Features - AI/ML Cost Monitoring">
-    <meta name="twitter:description" content="Multi-cloud cost tracking, GPU optimization, LLM monitoring, and intelligent recommendations.">
-    <meta name="twitter:image" content="https://openfinops.org/images/twitter-card.png">
+    <meta name="twitter:url" content="https://finopsmetrics.org/features.html">
+    <meta name="twitter:title" content="FinOpsMetrics Features - Cloud Cost Management Platform">
+    <meta name="twitter:description" content="AI/ML monitoring, multi-cloud tracking, executive dashboards, AI optimization, and comprehensive cost attribution.">
+    <meta name="twitter:image" content="https://finopsmetrics.org/images/twitter-card.png">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -247,6 +247,12 @@ limitations under the License.
                 padding: 1rem 0.75rem;
             }
         }
+
+        /* Navigation card hover effects */
+        .feature-nav-card:hover {
+            background: rgba(0, 212, 170, 0.2) !important;
+            transform: translateY(-2px);
+        }
     </style>
     <!-- Cookie Consent -->
     <link rel="stylesheet" href="css/cookie-consent.css">
@@ -257,7 +263,7 @@ limitations under the License.
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                    <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
@@ -279,107 +285,159 @@ limitations under the License.
     <div class="features-page">
         <div class="container">
             <div class="section-header">
-                <h1 style="font-size: 3.5rem;">Comprehensive FinOps Features</h1>
-                <p>Everything you need for AI/ML cost intelligence and optimization</p>
+                <h1 style="font-size: 3.5rem;">Comprehensive Cloud Cost Management. One Powerful Platform.</h1>
+                <p>From real-time monitoring to AI-powered optimization, FinOpsMetrics has everything you need to master cloud costs</p>
             </div>
 
-            <!-- AI/ML Cost Tracking -->
-            <section id="ai-ml" class="feature-section">
+            <!-- Feature Categories Navigation -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; margin: 3rem 0;">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Quick Navigation</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <a href="#aiml-monitoring" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-brain" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        AI/ML Monitoring
+                    </a>
+                    <a href="#multi-cloud" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-cloud" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        Multi-Cloud Tracking
+                    </a>
+                    <a href="#dashboards" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-chart-pie" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        Executive Dashboards
+                    </a>
+                    <a href="#ai-optimization" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-lightbulb" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        AI Optimization
+                    </a>
+                    <a href="#attribution" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-project-diagram" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        Cost Attribution
+                    </a>
+                    <a href="#vizlychart" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-chart-line" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        VizlyChart
+                    </a>
+                    <a href="#enterprise" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-building" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        Enterprise Features
+                    </a>
+                    <a href="#integrations" style="background: rgba(0, 212, 170, 0.1); padding: 1rem; border-radius: 8px; text-align: center; text-decoration: none; color: var(--text-primary); transition: all 0.3s;">
+                        <i class="fas fa-plug" style="font-size: 1.5rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        Integrations
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI/ML Workload Monitoring -->
+            <section id="aiml-monitoring" class="feature-section">
                 <div class="feature-content">
                     <div class="feature-text">
-                        <span class="feature-badge">CORE FEATURE</span>
-                        <h2>AI/ML Cost Tracking</h2>
+                        <span class="feature-badge">SPECIALIZED FOR AI/ML</span>
+                        <h2>AI/ML Workload Monitoring</h2>
                         <p>
-                            Get complete visibility into your AI/ML infrastructure costs. Track training expenses,
-                            inference costs, and model performance metrics in real-time.
+                            The only FinOps platform designed specifically for AI/ML teams. Track costs for LLM training,
+                            RAG pipelines, GPU workloads, and inference APIs with unprecedented detail.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>LLM Training Monitoring</strong><br>
-                                    Track costs per training job, GPU utilization, and training duration
+                                    <strong>LLM Training Cost Tracking</strong><br>
+                                    Monitor training costs per model, per epoch, with GPU utilization breakdown. See exactly where your money goes with cost/performance trade-off analysis and hyperparameter cost correlation.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Inference Cost Analysis</strong><br>
-                                    Monitor API usage, token consumption, and cost per request
+                                    <strong>RAG Pipeline Cost Analysis</strong><br>
+                                    Track costs for retrieval-augmented generation pipelines end-to-end: embedding generation, vector database, LLM inference, per-query breakdown, cache hit rates and savings.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Model Performance Metrics</strong><br>
-                                    Correlate costs with model performance and accuracy metrics
+                                    <strong>GPU Utilization Monitoring</strong><br>
+                                    Real-time GPU utilization per device, memory usage, cost per GPU hour, idle GPU detection, spot vs. on-demand comparison, and multi-GPU training efficiency tracking.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>RAG Pipeline Analytics</strong><br>
-                                    Track embedding costs, vector database usage, and retrieval performance
+                                    <strong>AI API Cost Tracking</strong><br>
+                                    Monitor costs for OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Cohere, Hugging Face APIs with per-model cost breakdown, token usage, rate limit monitoring, and budget alerts.
                                 </div>
                             </li>
                         </ul>
+                        <div style="background: rgba(0, 212, 170, 0.1); padding: 1.5rem; border-left: 4px solid var(--primary-color); border-radius: 8px; margin-top: 1.5rem;">
+                            <strong style="color: var(--primary-color);">Use Case Example:</strong>
+                            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+                                Training a 7B parameter model? See that it cost $2,847 over 3 days, with GPU utilization at 78%.
+                                Get recommendations to improve efficiency to 90% and save $400 per training run.
+                            </p>
+                        </div>
                     </div>
                     <div class="feature-visual">
                         <i class="fas fa-brain"></i>
-                        <h3 style="margin-top: 2rem;">Real-time AI/ML Monitoring</h3>
+                        <h3 style="margin-top: 2rem;">AI/ML Cost Intelligence</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Comprehensive visibility into all AI/ML workloads
+                            Complete visibility into training, inference, and API costs
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Multi-Cloud Support -->
+            <!-- Multi-Cloud Cost Tracking -->
             <section id="multi-cloud" class="feature-section">
                 <div class="feature-content reverse">
                     <div class="feature-text">
-                        <span class="feature-badge">ENTERPRISE READY</span>
-                        <h2>Multi-Cloud Cost Management</h2>
+                        <span class="feature-badge">UNIFIED PLATFORM</span>
+                        <h2>Multi-Cloud Cost Tracking</h2>
                         <p>
-                            Unified cost tracking across AWS, Azure, and GCP. Consolidate all your cloud
-                            spending into a single dashboard with intelligent cost attribution.
+                            Manage AWS, Azure, and GCP costs from a single platform. No more juggling multiple dashboards
+                            or reconciling different billing formats.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <strong>AWS Integration</strong><br>
-                                    EC2, S3, SageMaker, Lambda, and all AWS services
+                                    50+ services: EC2 (instances, reserved, spot), EKS, Lambda, RDS, S3, CloudWatch, Cost Explorer data, Savings Plans & Reserved Instances with real-time cost streaming and RI/SP utilization tracking.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Azure Support</strong><br>
-                                    Virtual Machines, Blob Storage, Azure ML, and Functions
+                                    <strong>Azure Integration</strong><br>
+                                    45+ services: Virtual Machines, AKS, Azure Functions, Azure SQL, Blob Storage, Azure Monitor, Cost Management data with subscription-level tracking and Azure Hybrid Benefit optimization.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>GCP Coverage</strong><br>
-                                    Compute Engine, Cloud Storage, Vertex AI, and Cloud Functions
+                                    <strong>GCP Integration</strong><br>
+                                    40+ services: Compute Engine, GKE, Cloud Functions, Cloud SQL, Cloud Storage, Cloud Monitoring, BigQuery billing with project-level tracking and committed use discount monitoring.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Cost Attribution</strong><br>
-                                    Tag-based allocation, department tracking, and project costing
+                                    <strong>Unified Dashboard</strong><br>
+                                    Real-time aggregation, normalized cost metrics, cross-cloud comparisons, trend analysis, and anomaly detection all in one view.
                                 </div>
                             </li>
                         </ul>
+                        <div style="background: rgba(0, 212, 170, 0.1); padding: 1.5rem; border-left: 4px solid var(--primary-color); border-radius: 8px; margin-top: 1.5rem;">
+                            <strong style="color: var(--primary-color);">Cross-Cloud Optimization:</strong>
+                            <p style="margin-top: 0.5rem; margin-bottom: 0;">
+                                Get recommendations like "Move workload X from AWS to GCP and save 23%" or "This workload is cheaper on Azure spot instances."
+                            </p>
+                        </div>
                     </div>
                     <div class="feature-visual">
                         <i class="fas fa-cloud"></i>
                         <h3 style="margin-top: 2rem;">Unified Multi-Cloud View</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            One dashboard for all your cloud providers
+                            One dashboard for AWS, Azure, and GCP
                         </p>
                     </div>
                 </div>
@@ -389,39 +447,39 @@ limitations under the License.
             <section id="dashboards" class="feature-section">
                 <div class="feature-content">
                     <div class="feature-text">
-                        <span class="feature-badge">ROLE-BASED</span>
+                        <span class="feature-badge">ROLE-BASED VIEWS</span>
                         <h2>Executive Dashboards</h2>
                         <p>
-                            Purpose-built dashboards for different roles in your organization. Each dashboard
-                            provides the right level of detail and metrics for decision-makers.
+                            Role-based dashboards designed for every stakeholder in your organization. From CFO to DevOps engineer,
+                            everyone gets the view they need with real-time WebSocket updates.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <strong>CFO Dashboard</strong><br>
-                                    Financial KPIs, ROI analysis, budget tracking, and cost forecasting
+                                    Total cloud spend (monthly/quarterly/annually), budget vs. actual with variance %, cost trends and forecasting, top cost drivers, ROI on optimization initiatives, cost per customer/product. Export to PDF/Excel for board meetings.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <strong>COO Dashboard</strong><br>
-                                    Operational efficiency, SLA compliance, and performance metrics
+                                    Service health & uptime, performance metrics, resource utilization efficiency, capacity planning status, cost per transaction, operational KPIs with real-time updates and SLA tracking.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Infrastructure Leader</strong><br>
-                                    Resource utilization, capacity planning, and infrastructure optimization
+                                    <strong>Infrastructure Leader Dashboard</strong><br>
+                                    Resource utilization (CPU, memory, GPU, storage), capacity planning & growth trends, infrastructure health score, performance vs. cost trade-offs, auto-scaling effectiveness with drill-down to instance level.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Finance Analyst</strong><br>
-                                    Detailed cost breakdowns, trend analysis, and reporting tools
+                                    <strong>Finance Analyst Dashboard</strong><br>
+                                    Detailed cost breakdown by all dimensions, variance analysis (actual vs. budget vs. forecast), cost attribution by tag, trend analysis with seasonality, anomaly detection & investigation, unit economics with advanced filtering.
                                 </div>
                             </li>
                         </ul>
@@ -436,318 +494,383 @@ limitations under the License.
                 </div>
             </section>
 
-            <!-- Smart Recommendations -->
-            <section id="recommendations" class="feature-section">
+            <!-- AI-Powered Optimization -->
+            <section id="ai-optimization" class="feature-section">
                 <div class="feature-content reverse">
                     <div class="feature-text">
-                        <span class="feature-badge">AI-POWERED</span>
-                        <h2>Smart Cost Optimization</h2>
+                        <span class="feature-badge">ENTERPRISE FEATURE</span>
+                        <h2>AI-Powered Optimization</h2>
                         <p>
-                            AI-powered recommendations that analyze your infrastructure and suggest
-                            actionable optimizations with estimated savings.
+                            Machine learning algorithms analyze your spending patterns and provide intelligent, actionable
+                            recommendations to reduce costs. Each recommendation includes confidence scoring and ROI estimates.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Right-sizing Recommendations</strong><br>
-                                    Identify over-provisioned resources and suggest optimal instance sizes
+                                    <strong>Hardware Right-Sizing</strong><br>
+                                    Analyzes CPU, memory, GPU utilization patterns and recommends optimal instance sizes. Example: "EC2 instance using 15% CPU. Downsize from m5.2xlarge to m5.large and save $87/month."
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Reserved Instance Planning</strong><br>
-                                    Analyze usage patterns and recommend RI purchases for maximum savings
+                                    <strong>Auto-Scaling Optimization</strong><br>
+                                    Analyzes traffic patterns, scaling events, and performance metrics. Recommends optimal scaling thresholds, minimum/maximum instances, and provides one-click implementation.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Spot Instance Opportunities</strong><br>
-                                    Identify workloads suitable for spot instances with 70-90% savings
+                                    <strong>Spot Instance Recommendations</strong><br>
+                                    Analyzes workload interruptibility and spot availability. Identifies fault-tolerant workloads for spot instances with 65-70% savings and optimal region selection.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Storage Optimization</strong><br>
-                                    Lifecycle policies, tiering recommendations, and cleanup suggestions
+                                    <strong>Reserved Instance & Savings Plan Optimization</strong><br>
+                                    Analyzes usage patterns and commitment levels. Recommends 1-year or 3-year RIs, expiration tracking, and underutilized RI detection with marketplace selling options.
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Zombie Resource Detection</strong><br>
+                                    Identifies idle EC2 instances (< 1% CPU for 7 days), empty S3 buckets, unattached EBS volumes, unused load balancers, abandoned snapshots, and old test environments with automatic savings calculations.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="feature-visual">
                         <i class="fas fa-lightbulb"></i>
-                        <h3 style="margin-top: 2rem;">Intelligent Optimization</h3>
+                        <h3 style="margin-top: 2rem;">ML-Powered Intelligence</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Save 40% on average with AI recommendations
+                            Save 40%+ with intelligent recommendations
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Alerting & Monitoring -->
-            <section id="alerts" class="feature-section">
+            <!-- Cost Attribution & Chargeback -->
+            <section id="attribution" class="feature-section">
                 <div class="feature-content">
                     <div class="feature-text">
-                        <span class="feature-badge">PROACTIVE</span>
-                        <h2>Intelligent Alerts & Monitoring</h2>
+                        <span class="feature-badge">ACCOUNTABILITY</span>
+                        <h2>Cost Attribution & Chargeback</h2>
                         <p>
-                            Stay ahead of budget overruns with proactive alerting and anomaly detection.
-                            Get notified before issues become costly problems.
+                            Automatically allocate costs to teams, projects, customers, or any custom dimension.
+                            Eliminate manual spreadsheet work and increase accountability.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Budget Alerts</strong><br>
-                                    Set thresholds and get notified when spending approaches limits
+                                    <strong>Tag-Based Attribution</strong><br>
+                                    Automatic cost allocation based on resource tags (team, project, environment, cost center, customer, application) with automatic tag syncing, validation, missing tag detection, and tag inheritance rules.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Anomaly Detection</strong><br>
-                                    ML-powered detection of unusual spending patterns and spikes
+                                    <strong>Virtual Tagging</strong><br>
+                                    Apply tags retroactively or to resources that can't be tagged. Perfect for historical data, shared resources (VPCs, NAT gateways), third-party services, and cloud provider charges with rule-based auto-tagging.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Performance Alerts</strong><br>
-                                    Monitor SLAs, response times, and system health
+                                    <strong>Chargeback & Showback Reports</strong><br>
+                                    Generate monthly team cost summaries, project P&L statements, customer profitability analysis, and department budget tracking in PDF, Excel, CSV, or via API.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Multi-channel Notifications</strong><br>
-                                    Email, Teams, and webhook integrations
+                                    <strong>Automated Distribution</strong><br>
+                                    Scheduled email delivery, Slack/Teams notifications, automated invoice generation, and ERP system integration for seamless financial operations.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="feature-visual">
-                        <i class="fas fa-bell"></i>
-                        <h3 style="margin-top: 2rem;">Proactive Monitoring</h3>
+                        <i class="fas fa-project-diagram"></i>
+                        <h3 style="margin-top: 2rem;">Automated Cost Allocation</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Catch issues before they impact your budget
+                            Eliminate manual cost allocation spreadsheets
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Telemetry Agents -->
-            <section id="telemetry" class="feature-section">
+            <!-- VizlyChart Visualization Engine -->
+            <section id="vizlychart" class="feature-section">
                 <div class="feature-content reverse">
                     <div class="feature-text">
-                        <span class="feature-badge">SCALABLE</span>
-                        <h2>Distributed Telemetry Agents</h2>
+                        <span class="feature-badge">VISUALIZATION</span>
+                        <h2>VizlyChart Visualization Engine</h2>
                         <p>
-                            Deploy lightweight agents across your infrastructure for comprehensive
-                            cost data collection with minimal overhead.
+                            Built-in charting library with 15+ chart types designed specifically for FinOps data visualization.
+                            Real-time streaming updates and comprehensive export capabilities.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>AWS Telemetry Agent</strong><br>
-                                    CloudWatch integration, Cost Explorer API, and real-time metrics
+                                    <strong>15+ Chart Types (Community)</strong><br>
+                                    Line charts for trends, bar charts for comparisons, scatter plots for analysis, financial charts (candlestick, waterfall, burn-down, Sankey), heatmaps for utilization, and treemaps for hierarchical cost breakdown.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Azure Monitor Agent</strong><br>
-                                    Azure Monitor integration, cost management API, and billing data
+                                    <strong>Real-Time Streaming</strong><br>
+                                    WebSocket-based live updates with smooth animations, buffer management, and auto-scaling axes. Perfect for live dashboards, NOC/SOC monitoring, and training job progress tracking.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>GCP Telemetry Agent</strong><br>
-                                    Cloud Monitoring integration, billing export, and usage tracking
+                                    <strong>Export Capabilities</strong><br>
+                                    Community: PNG images (high resolution), SVG vector graphics, HTML interactive charts, CSV/JSON data. Enterprise: PDF reports, PowerPoint presentations, Excel workbooks with custom templates.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Custom Agents</strong><br>
-                                    Build your own agents with our SDK and API
+                                    <strong>Enterprise API Server</strong><br>
+                                    RESTful API for programmatic chart generation, automated report generation, Slack/Teams bot integration, email digest charts, and custom dashboard creation with PostgreSQL, MongoDB, S3, BigQuery, and Snowflake connectors.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="feature-visual">
-                        <i class="fas fa-satellite-dish"></i>
-                        <h3 style="margin-top: 2rem;">Enterprise-grade Telemetry</h3>
+                        <i class="fas fa-chart-line"></i>
+                        <h3 style="margin-top: 2rem;">Professional Visualizations</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Collect metrics from anywhere in your infrastructure
+                            15+ chart types with real-time updates
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Historical Analytics & Persistence -->
-            <section id="persistence" class="feature-section">
+            <!-- Enterprise Features -->
+            <section id="enterprise" class="feature-section">
                 <div class="feature-content">
                     <div class="feature-text">
-                        <span class="feature-badge">NEW IN v0.2.1</span>
-                        <h2>Historical Analytics & Data Persistence</h2>
+                        <span class="feature-badge">ENTERPRISE</span>
+                        <h2>Enterprise Features</h2>
                         <p>
-                            Store and analyze historical cost data with flexible database backends.
-                            Query past metrics, identify trends, and make data-driven decisions based on historical patterns.
+                            Advanced collaboration, security, and performance features designed for large organizations
+                            with complex requirements and compliance needs.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Multiple Storage Backends</strong><br>
-                                    Choose from In-Memory, SQLite, PostgreSQL, or TimescaleDB based on your needs
+                                    <strong>Workspace Collaboration</strong><br>
+                                    Multi-user workspaces with team-specific dashboards, shared cost views, collaborative annotations, activity feed, @mentions, and notifications. RBAC with Admin, FinOps Manager, Analyst, Viewer, and custom roles.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Historical Data Queries</strong><br>
-                                    Query metrics and costs from days, weeks, or months ago for trend analysis
+                                    <strong>GPU Acceleration (CuPy)</strong><br>
+                                    Leverage GPU computing for 10-100x faster cost aggregation, real-time processing of millions of cost entries, sub-second query responses, and instant dashboard refreshes at enterprise scale.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Configurable Retention</strong><br>
-                                    Set data retention policies (90 days, 1 year, or custom) to manage storage
+                                    <strong>GIS & Regional Analysis</strong><br>
+                                    Geographic cost distribution with interactive world maps, regional heat maps, cost density by geography, traffic flow diagrams. Multi-region optimization recommendations for cost savings.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Time-Series Optimization</strong><br>
-                                    TimescaleDB support with compression for efficient long-term storage
+                                    <strong>Enterprise Security</strong><br>
+                                    SSO integration (Okta, Azure AD, Google Workspace, SAML 2.0), comprehensive audit logging for SOC 2/GDPR/HIPAA compliance, row-level security, AES-256 encryption at rest, TLS 1.3 in transit, and key management integration.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="feature-visual">
-                        <i class="fas fa-database"></i>
-                        <h3 style="margin-top: 2rem;">Long-term Data Storage</h3>
+                        <i class="fas fa-building"></i>
+                        <h3 style="margin-top: 2rem;">Enterprise-Grade Platform</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Persistent storage for historical analysis and trend identification
+                            Security, compliance, and scalability
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Plugin Architecture -->
-            <section id="plugins" class="feature-section">
+            <!-- Integrations -->
+            <section id="integrations" class="feature-section">
                 <div class="feature-content reverse">
                     <div class="feature-text">
-                        <span class="feature-badge">EXTENSIBILITY</span>
-                        <h2>Plugin Architecture</h2>
+                        <span class="feature-badge">50+ INTEGRATIONS</span>
+                        <h2>Comprehensive Integrations</h2>
                         <p>
-                            Extend OpenFinOps with custom plugins for any use case. Our comprehensive plugin system
-                            enables developers to add custom telemetry collectors, cost attribution logic, optimization
-                            recommendations, and integrations without modifying core code.
+                            Connect to all your cloud providers, IaC tools, AI platforms, data platforms, Kubernetes,
+                            SaaS services, communication tools, ticketing systems, and BI platforms.
                         </p>
                         <ul class="feature-list">
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>7 Plugin Types</strong><br>
-                                    Telemetry, Attribution, Recommendation, Dashboard, Integration, Notification, and Policy plugins
+                                    <strong>Cloud Providers & IaC</strong><br>
+                                    AWS (CloudWatch, Cost Explorer, Organizations), Azure (Monitor, Cost Management), GCP (Monitoring, Billing), Terraform, CloudFormation, ARM Templates, Pulumi for cost estimation before deployment.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Hook System</strong><br>
-                                    Register event hooks for pre/post processing and custom workflows
+                                    <strong>AI Platforms & Data Services</strong><br>
+                                    OpenAI, Anthropic (Claude), Cohere, Hugging Face for API usage. Databricks, Snowflake, MongoDB Atlas, Redis Cloud, Elasticsearch for cluster and warehouse costs.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Decorator Library</strong><br>
-                                    Built-in decorators for retry, caching, rate limiting, and time measurement
+                                    <strong>Kubernetes & SaaS</strong><br>
+                                    Amazon EKS, Azure AKS, Google GKE, self-hosted Kubernetes. GitHub Actions, CircleCI, Datadog, PagerDuty, and custom SaaS via API.
                                 </div>
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Community Marketplace</strong><br>
-                                    Discover and share plugins via PyPI with standardized metadata
+                                    <strong>Communication & BI</strong><br>
+                                    Slack, Microsoft Teams, Email (SMTP), Webhooks for alerts. Jira, ServiceNow for ticketing. Tableau, Power BI, Looker, Grafana for business intelligence.
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="feature-visual">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <h3 style="margin-top: 2rem;">Unlimited Extensibility</h3>
+                        <i class="fas fa-plug"></i>
+                        <h3 style="margin-top: 2rem;">50+ Integrations</h3>
                         <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Build custom plugins for any cloud provider, tool, or workflow
+                            Connect your entire cloud ecosystem
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Telemetry Agents -->
-            <section id="agents" class="feature-section">
-                <div class="feature-content">
-                    <div class="feature-text">
-                        <span class="feature-badge">AUTO-DISCOVERY</span>
-                        <h2>7 Telemetry Agents</h2>
-                        <p>
-                            Deploy intelligent agents that automatically discover resources and collect cost data
-                            from multiple cloud providers and data platforms. No manual configuration required.
-                        </p>
-                        <ul class="feature-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>AWS Telemetry Agent</strong><br>
-                                    Auto-discover EC2, S3, RDS, Lambda, SageMaker, and 50+ AWS services
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Azure & GCP Agents</strong><br>
-                                    Comprehensive coverage for Azure Virtual Machines, Azure ML, GCP Compute, and Vertex AI
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>Data Platform Agents</strong><br>
-                                    Databricks clusters, Snowflake warehouses, and query cost attribution
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <strong>SaaS Services Agent</strong><br>
-                                    Monitor MongoDB Atlas, Redis Cloud, GitHub Actions, and DataDog spending
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <i class="fas fa-robot"></i>
-                        <h3 style="margin-top: 2rem;">Automated Cost Collection</h3>
-                        <p style="color: var(--text-secondary); margin-top: 1rem;">
-                            Deploy once and let agents continuously discover and track costs
-                        </p>
-                    </div>
+            <!-- Feature Comparison: Community vs Enterprise -->
+            <div class="features-table-section">
+                <div class="section-header">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Feature Comparison: Community vs. Enterprise</h2>
+                    <p>Choose the edition that fits your organization's needs</p>
                 </div>
-            </section>
 
-            <!-- Feature Comparison Tables -->
+                <table class="features-table">
+                    <thead>
+                        <tr>
+                            <th>Feature Category</th>
+                            <th>Community (Free)</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature-highlight">Multi-Cloud Tracking</span></td>
+                            <td><span class="table-status">✅ AWS, Azure, GCP</span></td>
+                            <td><span class="table-status">✅ AWS, Azure, GCP + Private Cloud</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">AI/ML Monitoring</span></td>
+                            <td><span class="table-status">✅ Full</span></td>
+                            <td><span class="table-status">✅ Full + Advanced</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Dashboards</span></td>
+                            <td><span class="table-status">✅ 4 Role-Based</span></td>
+                            <td><span class="table-status">✅ 4 + Custom</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Users</span></td>
+                            <td><span class="table-status">✅ Unlimited</span></td>
+                            <td><span class="table-status">✅ Unlimited</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Real-Time Updates</span></td>
+                            <td><span class="table-status">✅ Yes</span></td>
+                            <td><span class="table-status">✅ Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Anomaly Detection</span></td>
+                            <td><span class="table-status">✅ ML-Based</span></td>
+                            <td><span class="table-status">✅ ML-Based + Tuning</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Cost Attribution</span></td>
+                            <td><span class="table-status">✅ Tag-Based</span></td>
+                            <td><span class="table-status">✅ Tag-Based + Virtual Tags</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">VizlyChart</span></td>
+                            <td><span class="table-status">✅ 15+ Chart Types</span></td>
+                            <td><span class="table-status">✅ 15+ + API Server</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Exports</span></td>
+                            <td><span class="table-status">✅ PNG, SVG, CSV</span></td>
+                            <td><span class="table-status">✅ + PDF, PPT, Excel</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">AI Recommendations</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Full Suite</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Workspace Collaboration</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">GPU Acceleration</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ CuPy</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">GIS Analysis</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">SSO</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Okta, Azure AD, etc.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Audit Logging</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Enterprise Grade</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">SLA Support</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Custom SLA</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Dedicated Support</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature-highlight">Custom Integrations</span></td>
+                            <td>❌</td>
+                            <td><span class="table-status">✅ Professional Services</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Platform Capabilities -->
             <div class="features-table-section">
                 <div class="section-header">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Platform Capabilities at a Glance</h2>
-                    <p>Comprehensive feature matrix across all OpenFinOps components</p>
+                    <p>Comprehensive feature matrix across all FinOpsMetrics components</p>
                 </div>
 
                 <!-- Plugin Architecture Table -->
@@ -755,7 +878,7 @@ limitations under the License.
                     <i class="fas fa-puzzle-piece table-icon"></i>Plugin Architecture
                 </h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    Extend OpenFinOps with 7 plugin types for unlimited customization
+                    Extend FinOpsMetrics with 7 plugin types for unlimited customization
                 </p>
                 <table class="features-table">
                     <thead>
@@ -1074,14 +1197,14 @@ limitations under the License.
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Start Optimizing?</h2>
-            <p>Get started with OpenFinOps today</p>
+            <h2>Ready to Master Your Cloud Costs?</h2>
+            <p>Get started with FinOpsMetrics today and take control of your cloud spending</p>
             <div class="cta-buttons">
-                <a href="documentation.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-book"></i> View Documentation
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-rocket"></i> Start Free with Community Edition
                 </a>
-                <a href="demo.html" class="btn btn-outline btn-lg">
-                    <i class="fas fa-desktop"></i> Try Live Demo
+                <a href="mailto:finops@infinidatum.net?subject=Enterprise Demo Request" class="btn btn-outline btn-lg">
+                    <i class="fas fa-calendar"></i> Book Enterprise Demo
                 </a>
             </div>
         </div>
@@ -1093,7 +1216,7 @@ limitations under the License.
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                        <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                     </div>
                     <p>Enterprise FinOps platform for AI/ML cost intelligence</p>
                     <div class="social-links">
@@ -1103,7 +1226,8 @@ limitations under the License.
                     <h4>Product</h4>
                     <ul>
                         <li><a href="features.html">Features</a></li>
-                        <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
                         <li><a href="api.html">API Reference</a></li>
                         <li><a href="demo.html">Live Demo</a></li>
                     </ul>
@@ -1131,7 +1255,7 @@ limitations under the License.
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Infinidatum LLC. OpenFinOps is licensed under Apache-2.0</p>
+                <p>&copy; 2025 Infinidatum LLC. FinOpsMetrics is licensed under Apache-2.0</p>
             </div>
         </div>
     </footer>

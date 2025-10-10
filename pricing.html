@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Pricing - FinOpsMetrics | Simple, Transparent Cloud Cost Optimization Pricing</title>
+    <meta name="description" content="FinOpsMetrics pricing starts free forever. Enterprise plans from $500/month with AI recommendations, GPU acceleration, and advanced analytics. 14-day free trial.">
+    <meta name="keywords" content="finops pricing, cloud cost optimization pricing, ai cost monitoring pricing, gpu cost tracking pricing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://finopsmetrics.org/pricing/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FinOpsMetrics Pricing - Start Free Forever">
+    <meta property="og:description" content="Simple, transparent pricing for cloud cost optimization. Free tier available.">
+    <meta property="og:url" content="https://finopsmetrics.org/pricing/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .pricing-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .pricing-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .pricing-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pricing-tiers {
+            max-width: 1300px;
+            margin: -40px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25);
+        }
+        .pricing-card.popular {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+        .pricing-badge {
+            background: #667eea;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .pricing-badge.free {
+            background: #10b981;
+        }
+        .pricing-badge.popular {
+            background: #f59e0b;
+        }
+        .pricing-badge.custom {
+            background: #6366f1;
+        }
+        .pricing-card h2 {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            margin: 20px 0 10px;
+        }
+        .pricing-price span {
+            font-size: 1.2rem;
+            color: #6b7280;
+            font-weight: 400;
+        }
+        .pricing-billing {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .pricing-tagline {
+            color: #4b5563;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .pricing-features li {
+            padding: 10px 0;
+            color: #374151;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+        }
+        .pricing-features li i {
+            color: #10b981;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .pricing-features li.negative i {
+            color: #ef4444;
+        }
+        .pricing-cta {
+            margin-top: 30px;
+        }
+        .pricing-note {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-top: 15px;
+        }
+        .feature-category {
+            font-weight: 700;
+            color: #1f2937;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .comparison-section {
+            background: #f9fafb;
+            padding: 80px 20px;
+        }
+        .comparison-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 50px;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+        }
+        .faq-question {
+            font-weight: 700;
+            color: #1f2937;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        .trust-signals {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .trust-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        .trust-item {
+            padding: 20px;
+        }
+        .trust-item i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .trust-item h3 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .trust-item p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .btn-white {
+            background: white;
+            color: #667eea;
+        }
+        .btn-white:hover {
+            background: #f3f4f6;
+        }
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="images/finops-logo.png" alt="FinOpsMetrics Logo"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="get-started.html" class="btn btn-primary btn-sm">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Start free, scale as you grow. No surprises, no hidden fees.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <div class="pricing-tiers">
+        <!-- Community Edition -->
+        <div class="pricing-card">
+            <span class="pricing-badge free">FREE FOREVER</span>
+            <h2>Community Edition</h2>
+            <div class="pricing-price">$0<span>/month</span></div>
+            <p class="pricing-tagline">Perfect for teams getting started with cloud cost optimization</p>
+
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Unlimited users</li>
+                <li><i class="fas fa-check"></i> Multi-cloud support (AWS, Azure, GCP)</li>
+                <li><i class="fas fa-check"></i> Real-time cost monitoring</li>
+                <li><i class="fas fa-check"></i> 4 role-based dashboards</li>
+                <li><i class="fas fa-check"></i> AI/ML workload monitoring</li>
+                <li><i class="fas fa-check"></i> ML anomaly detection</li>
+                <li><i class="fas fa-check"></i> Tag-based cost allocation</li>
+                <li><i class="fas fa-check"></i> REST API access</li>
+                <li class="negative"><i class="fas fa-times"></i> No AI recommendations</li>
+                <li class="negative"><i class="fas fa-times"></i> No workspace collaboration</li>
+                <li class="negative"><i class="fas fa-times"></i> No GPU acceleration</li>
+            </ul>
+
+            <div class="pricing-cta">
+                <a href="get-started.html" class="btn btn-primary btn-block">Get Started Free</a>
+                <p class="pricing-note">No credit card required • 5-minute setup</p>
+            </div>
+        </div>
+
+        <!-- Startup Edition -->
+        <div class="pricing-card">
+            <span class="pricing-badge">BEST FOR GROWING TEAMS</span>
+            <h2>Startup Edition</h2>
+            <div class="pricing-price">$500<span>/month</span></div>
+            <p class="pricing-billing">Billed annually or $600/month billed monthly</p>
+            <p class="pricing-tagline">Scale your FinOps practice with AI-powered optimization</p>
+
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Everything in Community, plus:</li>
+                <div class="feature-category">AI-Powered Optimization</div>
+                <li><i class="fas fa-check"></i> Intelligent cost recommendations</li>
+                <li><i class="fas fa-check"></i> Hardware right-sizing suggestions</li>
+                <li><i class="fas fa-check"></i> Spot instance recommendations</li>
+                <li><i class="fas fa-check"></i> Zombie resource detection</li>
+                <div class="feature-category">Collaboration</div>
+                <li><i class="fas fa-check"></i> Up to 10 workspace users</li>
+                <li><i class="fas fa-check"></i> Shared dashboards</li>
+                <li><i class="fas fa-check"></i> Comments and annotations</li>
+                <div class="feature-category">Support</div>
+                <li><i class="fas fa-check"></i> Email support (24-hour response)</li>
+                <li><i class="fas fa-check"></i> Monthly office hours</li>
+            </ul>
+
+            <div class="pricing-cta">
+                <a href="get-started.html" class="btn btn-primary btn-block">Start 14-Day Free Trial</a>
+                <p class="pricing-note">No credit card required • Full enterprise features</p>
+            </div>
+        </div>
+
+        <!-- Business Edition -->
+        <div class="pricing-card popular">
+            <span class="pricing-badge popular">MOST POPULAR</span>
+            <h2>Business Edition</h2>
+            <div class="pricing-price">$2,000<span>/month</span></div>
+            <p class="pricing-billing">Billed annually or $2,400/month billed monthly</p>
+            <p class="pricing-tagline">Enterprise-grade FinOps for serious cloud operations</p>
+
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Everything in Startup, plus:</li>
+                <div class="feature-category">Advanced Collaboration</div>
+                <li><i class="fas fa-check"></i> Up to 50 workspace users</li>
+                <li><i class="fas fa-check"></i> Role-based access control</li>
+                <li><i class="fas fa-check"></i> Multiple workspaces</li>
+                <div class="feature-category">GPU Acceleration</div>
+                <li><i class="fas fa-check"></i> 10-100x faster queries</li>
+                <li><i class="fas fa-check"></i> Sub-second dashboard refreshes</li>
+                <div class="feature-category">Advanced Security</div>
+                <li><i class="fas fa-check"></i> SSO integration (Okta, Azure AD)</li>
+                <li><i class="fas fa-check"></i> Advanced audit logging</li>
+                <div class="feature-category">Premium Support</div>
+                <li><i class="fas fa-check"></i> 4-hour response time SLA</li>
+                <li><i class="fas fa-check"></i> 99.5% uptime SLA</li>
+            </ul>
+
+            <div class="pricing-cta">
+                <a href="get-started.html" class="btn btn-primary btn-block">Start 14-Day Free Trial</a>
+                <p class="pricing-note">No credit card required</p>
+            </div>
+        </div>
+
+        <!-- Enterprise Edition -->
+        <div class="pricing-card">
+            <span class="pricing-badge custom">CUSTOM SOLUTION</span>
+            <h2>Enterprise Edition</h2>
+            <div class="pricing-price">Custom<span></span></div>
+            <p class="pricing-billing">Contact us for a quote</p>
+            <p class="pricing-tagline">Tailored solutions for large enterprises and complex environments</p>
+
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Everything in Business, plus:</li>
+                <div class="feature-category">Unlimited Scale</div>
+                <li><i class="fas fa-check"></i> Unlimited users & workspaces</li>
+                <li><i class="fas fa-check"></i> Real-time data refresh (< 1 min)</li>
+                <li><i class="fas fa-check"></i> 99.9% uptime SLA</li>
+                <div class="feature-category">Custom Development</div>
+                <li><i class="fas fa-check"></i> Custom integrations</li>
+                <li><i class="fas fa-check"></i> Private deployment options</li>
+                <div class="feature-category">White-Labeling</div>
+                <li><i class="fas fa-check"></i> Complete UI customization</li>
+                <li><i class="fas fa-check"></i> Custom branding</li>
+                <div class="feature-category">Dedicated Support</div>
+                <li><i class="fas fa-check"></i> 24/7 phone support</li>
+                <li><i class="fas fa-check"></i> 1-hour response time SLA</li>
+                <li><i class="fas fa-check"></i> Named customer success manager</li>
+            </ul>
+
+            <div class="pricing-cta">
+                <a href="mailto:finops@infinidatum.net" class="btn btn-primary btn-block">Contact Sales</a>
+                <p class="pricing-note">Custom quote available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #1f2937; margin-bottom: 50px;">Feature Comparison</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Community</th>
+                            <th>Startup</th>
+                            <th>Business</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td><strong>Free</strong></td>
+                            <td><strong>$500/mo</strong></td>
+                            <td><strong>$2,000/mo</strong></td>
+                            <td><strong>Custom</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Users</td>
+                            <td>Unlimited</td>
+                            <td>Up to 10</td>
+                            <td>Up to 50</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Cloud Tracking</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>AI/ML Monitoring</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Dashboards</td>
+                            <td>4 Built-in</td>
+                            <td>4 Built-in</td>
+                            <td>4 Built-in + Custom</td>
+                            <td>Unlimited Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Real-Time Updates</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅ (< 1 min)</td>
+                        </tr>
+                        <tr>
+                            <td>Anomaly Detection</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅ Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>AI Recommendations</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅ Custom ML</td>
+                        </tr>
+                        <tr>
+                            <td>Workspace Collaboration</td>
+                            <td>❌</td>
+                            <td>✅ (10 users)</td>
+                            <td>✅ (50 users)</td>
+                            <td>✅ Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>GPU Acceleration</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>GIS Analysis</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>SSO</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>SLA</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>99.5%</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td>Community</td>
+                            <td>Email (24h)</td>
+                            <td>Priority (4h)</td>
+                            <td>24/7 (1h)</td>
+                        </tr>
+                        <tr>
+                            <td>Data Refresh</td>
+                            <td>Real-time</td>
+                            <td>24-hour</td>
+                            <td>5-minute</td>
+                            <td>< 1-minute</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there a free trial for Enterprise editions?</div>
+            <div class="faq-answer">Yes! All Enterprise tiers include a 14-day free trial with full access to all features. No credit card required.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I switch between tiers?</div>
+            <div class="faq-answer">Yes, you can upgrade or downgrade at any time. Upgrades take effect immediately. Downgrades take effect at the next billing cycle.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What happens if I exceed my tier limits?</div>
+            <div class="faq-answer">We'll notify you when you approach limits. You can upgrade to the next tier or purchase add-ons. We never shut down your service without notice.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do you offer discounts for annual billing?</div>
+            <div class="faq-answer">Yes! Save 17% with annual billing ($500/month becomes $6,000/year for Startup, $2,000/month becomes $24,000/year for Business).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What payment methods do you accept?</div>
+            <div class="faq-answer">Credit card (Visa, MasterCard, Amex), ACH transfer, wire transfer, and purchase orders (Enterprise only).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What's your refund policy?</div>
+            <div class="faq-answer">30-day money-back guarantee for annual plans. Monthly plans can be cancelled anytime (no refunds for partial months).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I use Community Edition commercially?</div>
+            <div class="faq-answer">Yes! Community Edition is free for commercial use with no restrictions.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How fast is support response for Enterprise tiers?</div>
+            <div class="faq-answer">Startup: 24 hours, Business: 4 hours, Enterprise: 1 hour (24/7).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there a limit on cloud spend I can track?</div>
+            <div class="faq-answer">No! Track unlimited cloud spend on all tiers.</div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: #1f2937; margin-bottom: 50px;">Enterprise-Grade Security & Compliance</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>SOC 2 Type II</h3>
+                    <p>Independently audited security controls</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>GDPR Ready</h3>
+                    <p>Full compliance with EU data protection</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-hospital"></i>
+                    <h3>HIPAA Ready</h3>
+                    <p>Healthcare-grade data protection</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>30-Day Guarantee</h3>
+                    <p>Full refund, no questions asked</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Optimize Your Cloud Costs?</h2>
+            <p>Join hundreds of companies saving millions with FinOpsMetrics</p>
+            <div class="cta-buttons">
+                <a href="get-started.html" class="btn btn-white btn-lg">Start Free with Community Edition</a>
+                <a href="get-started.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Start 14-Day Enterprise Trial</a>
+            </div>
+            <p style="font-size: 1rem; opacity: 0.9;">
+                Have questions? Contact our sales team: <a href="mailto:finops@infinidatum.net" style="color: white; text-decoration: underline;">finops@infinidatum.net</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
+                    </div>
+                    <p>Enterprise AI/ML cost intelligence platform</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="get-started.html">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="api.html">API Reference</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog/index.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="license.html">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infinidatum LLC. Licensed under Apache-2.0</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

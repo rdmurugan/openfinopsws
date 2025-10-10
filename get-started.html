@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Get Started with OpenFinOps | Free AI/ML Cost Optimization</title>
-    <meta name="description" content="Start optimizing your AI/ML costs in 5 minutes. Free Enterprise FinOps platform with LLM-powered recommendations. Potential savings up to 40% on cloud infrastructure.">
-    <meta name="keywords" content="get started finops, ai cost optimization guide, ml infrastructure setup, free cost monitoring, cloud cost reduction, finops tutorial, install openfinops, finops quick start">
-    <meta name="author" content="OpenFinOps Contributors">
+    <title>Get Started with FinOpsMetrics | Enterprise Cloud Cost Intelligence Platform</title>
+    <meta name="description" content="Complete installation and setup guide for FinOpsMetrics. Community and Enterprise editions. Multi-cloud support (AWS, Azure, GCP). Get up and running in 5-10 minutes with AI-powered cost optimization.">
+    <meta name="keywords" content="finops installation, enterprise cost monitoring, cloud cost optimization setup, multi-cloud finops, kubernetes cost tracking, docker deployment, finops configuration, ai cost intelligence">
+    <meta name="author" content="FinOpsMetrics Contributors">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="https://openfinops.org/get-started.html">
+    <link rel="canonical" href="https://finopsmetrics.org/get-started.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Get Started with OpenFinOps - Free AI/ML Cost Optimization">
-    <meta property="og:description" content="Start optimizing AI/ML infrastructure costs in 5 minutes. Potential savings up to 40%. 100% free and open source.">
-    <meta property="og:url" content="https://openfinops.org/get-started.html">
+    <meta property="og:title" content="Get Started with FinOpsMetrics - Enterprise Cloud Cost Intelligence">
+    <meta property="og:description" content="Complete installation guide for Community and Enterprise editions. Multi-cloud deployment, AI-powered recommendations, and real-time cost tracking.">
+    <meta property="og:url" content="https://finopsmetrics.org/get-started.html">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://openfinops.org/images/og-image.png">
-    <meta property="og:site_name" content="OpenFinOps">
+    <meta property="og:image" content="https://finopsmetrics.org/images/og-image.png">
+    <meta property="og:site_name" content="FinOpsMetrics">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://openfinops.org/get-started.html">
-    <meta name="twitter:title" content="Get Started with OpenFinOps">
-    <meta name="twitter:description" content="Start optimizing AI/ML costs in 5 minutes. Potential savings up to 40%. Free and open source.">
-    <meta name="twitter:image" content="https://openfinops.org/images/twitter-card.png">
+    <meta name="twitter:url" content="https://finopsmetrics.org/get-started.html">
+    <meta name="twitter:title" content="Get Started with FinOpsMetrics - Enterprise Edition">
+    <meta name="twitter:description" content="Multi-cloud cost intelligence with AI recommendations. Community and Enterprise editions available.">
+    <meta name="twitter:image" content="https://finopsmetrics.org/images/twitter-card.png">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +58,49 @@
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.95;
+        }
+
+        .edition-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .edition-card {
+            background: white;
+            color: #1f2937;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .edition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .edition-card.enterprise {
+            border: 3px solid #10b981;
+        }
+
+        .edition-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .edition-card.enterprise .edition-badge {
+            background: #10b981;
         }
 
         .social-proof {
@@ -144,6 +187,87 @@
             padding: 60px 0;
         }
 
+        .code-example {
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .code-example code {
+            display: block;
+            line-height: 1.8;
+            white-space: pre;
+        }
+
+        .code-comment {
+            color: #6b7280;
+        }
+
+        .troubleshooting-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .troubleshooting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .troubleshooting-card {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #ef4444;
+        }
+
+        .troubleshooting-card h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .config-section {
+            background: #f9fafb;
+            padding: 80px 0;
+        }
+
+        .config-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist li::before {
+            content: "□";
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
         .pricing-comparison {
             background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
             color: white;
@@ -183,61 +307,6 @@
             font-size: 0.9rem;
             display: inline-block;
             margin-top: 10px;
-        }
-
-        .testimonial-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #4b5563;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-        }
-
-        .author-info h4 {
-            margin: 0;
-            color: #1f2937;
-        }
-
-        .author-info p {
-            margin: 5px 0 0 0;
-            color: #6b7280;
-            font-size: 0.9rem;
         }
 
         .cta-section {
@@ -304,6 +373,45 @@
             color: #6b7280;
             line-height: 1.6;
         }
+
+        .prerequisites-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .prerequisites-box h4 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .prerequisites-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .prerequisites-box li {
+            color: #4b5563;
+            margin: 5px 0;
+        }
+
+        .scenario-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .scenario-card h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
     <!-- Cookie Consent -->
     <link rel="stylesheet" href="css/cookie-consent.css">
@@ -314,11 +422,12 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                    <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="intelligent-recommendations.html">AI Recommendations</a></li>
                     <li><a href="get-started.html" class="active">Get Started</a></li>
                     <li><a href="documentation.html">Documentation</a></li>
@@ -332,175 +441,601 @@
     <!-- Hero Section -->
     <section class="get-started-hero">
         <div class="container">
-            <h1>Start Saving on AI/ML Costs in 5 Minutes</h1>
-            <p>100% Free. Open Source. No Credit Card Required.</p>
+            <h1>Get Up and Running in 5 Minutes</h1>
+            <p>From installation to your first insights, FinOpsMetrics makes cloud cost monitoring effortless</p>
 
-            <div class="install-command" style="max-width: 600px; margin: 30px auto;">
-                <code style="font-size: 1.2rem;">pip install openfinops</code>
-                <button class="copy-btn" onclick="copyToClipboard('pip install openfinops')">
-                    <i class="fas fa-copy"></i>
-                </button>
-            </div>
+            <div class="edition-selector">
+                <div class="edition-card" onclick="location.href='#community-installation'">
+                    <div class="edition-badge">COMMUNITY EDITION</div>
+                    <h3 style="color: #1f2937; margin-bottom: 10px;">Free & Open Source</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;">Best for individual developers, small teams, and POCs</p>
+                    <div style="color: #667eea; font-weight: 600;">5 minutes to first insight</div>
+                    <div style="margin-top: 15px;">
+                        <a href="#community-installation" style="color: #667eea; text-decoration: none; font-weight: 600;">Start with Community →</a>
+                    </div>
+                </div>
 
-            <div class="social-proof">
-                <div class="social-proof-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">30-50%</div>
-                        <div class="stat-label">Average Cost Savings</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5 Min</div>
-                        <div class="stat-label">Setup Time</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Free & Open Source</div>
+                <div class="edition-card enterprise" onclick="location.href='#enterprise-installation'">
+                    <div class="edition-badge">ENTERPRISE EDITION</div>
+                    <h3 style="color: #1f2937; margin-bottom: 10px;">AI-Powered Recommendations</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;">Best for teams needing AI recommendations and collaboration</p>
+                    <div style="color: #10b981; font-weight: 600;">10 minutes to first insight</div>
+                    <div style="margin-top: 15px;">
+                        <a href="#enterprise-installation" style="color: #10b981; text-decoration: none; font-weight: 600;">Start Enterprise Trial →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3 Simple Steps -->
-    <section class="step-section">
+    <!-- Community Edition Installation -->
+    <section id="community-installation" class="step-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Get Started in 3 Simple Steps</h2>
-            <p style="text-align: center; color: #6b7280; font-size: 1.2rem;">No complex setup. No steep learning curve.</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Community Edition Installation</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.2rem; margin-bottom: 40px;">Free and open source - perfect for getting started</p>
+
+            <div class="prerequisites-box">
+                <h4><i class="fas fa-info-circle"></i> Prerequisites</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <strong>System Requirements:</strong>
+                        <ul>
+                            <li>Python 3.8 or higher</li>
+                            <li>pip (Python package manager)</li>
+                            <li>Cloud account access</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Permissions Needed:</strong>
+                        <ul>
+                            <li>AWS: CloudWatch, Cost Explorer (read-only)</li>
+                            <li>Azure: Reader role on subscription</li>
+                            <li>GCP: Monitoring Viewer, Billing Account Viewer</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Time Required:</strong>
+                        <ul>
+                            <li>Installation: 2 minutes</li>
+                            <li>Configuration: 3-5 minutes</li>
+                            <li>First insights: 5-10 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3><i class="fas fa-download"></i> Install OpenFinOps</h3>
-                    <p>Install via pip in seconds. Works with Python 3.8+</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                        <code>pip install openfinops</code>
+                    <h3><i class="fas fa-download"></i> Install FinOpsMetrics</h3>
+                    <p>Install the community edition via pip</p>
+                    <div class="code-example">
+                        <code># Install the community edition
+pip install finopsmetrics
+
+# Verify installation
+python -c "import finopsmetrics; print(finopsmetrics.__version__)"
+# Output: 0.3.1</code>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: #fef3c7; border-radius: 8px;">
+                        <strong style="color: #92400e;">Troubleshooting:</strong>
+                        <ul style="margin: 10px 0 0 20px; color: #78350f;">
+                            <li>If pip not found: Install Python and pip</li>
+                            <li>Permission errors: Use <code>pip install --user finopsmetrics</code></li>
+                            <li>Python version issues: Upgrade to Python 3.8+</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3><i class="fas fa-cog"></i> Configure Your Cloud</h3>
-                    <p>Set up AWS, Azure, or GCP credentials in minutes</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                        <code>export AWS_PROFILE=your-profile</code>
+                    <h3><i class="fas fa-database"></i> Install Dashboard</h3>
+                    <p>Optional but recommended for visualization</p>
+                    <div class="code-example">
+                        <code># Install the web dashboard
+pip install finopsmetrics-dashboard
+
+# Verify
+finopsmetrics-dashboard --help</code>
                     </div>
                 </div>
 
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3><i class="fas fa-rocket"></i> Start Monitoring</h3>
-                    <p>Launch the dashboard and get instant insights</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                        <code>openfinops-dashboard</code>
+                    <h3><i class="fas fa-server"></i> Start Observability Server</h3>
+                    <p>Launch the server to collect telemetry data</p>
+                    <div class="code-example">
+                        <code># Start the server on default port 8080
+finopsmetrics-server
+
+# Or specify custom port
+finopsmetrics-server --port 9000
+
+# Run in background (Linux/Mac)
+nohup finopsmetrics-server --port 8080 &</code>
                     </div>
+                    <div style="margin-top: 15px; padding: 15px; background: #d1fae5; border-radius: 8px;">
+                        <strong style="color: #065f46;">Expected Output:</strong>
+                        <pre style="margin: 10px 0 0 0; color: #047857; font-size: 0.85rem;">FinOpsMetrics Server v0.3.1
+Server running on http://localhost:8080
+ObservabilityHub initialized
+Ready to receive telemetry data</pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3><i class="fas fa-cloud"></i> Deploy Telemetry Agent</h3>
+                    <p>Choose your cloud provider and deploy the agent</p>
+
+                    <div style="margin-top: 20px;">
+                        <strong>For AWS:</strong>
+                        <div class="code-example">
+                            <code># Set AWS credentials
+export AWS_PROFILE=your-profile
+# or
+aws configure
+
+# Run AWS telemetry agent
+python -m agents.aws_telemetry_agent \
+  --endpoint http://localhost:8080 \
+  --region us-west-2 \
+  --interval 300</code>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <strong>For Azure:</strong>
+                        <div class="code-example">
+                            <code># Login to Azure
+az login
+
+# Run Azure telemetry agent
+python -m agents.azure_telemetry_agent \
+  --endpoint http://localhost:8080 \
+  --subscription-id YOUR_SUBSCRIPTION_ID \
+  --interval 300</code>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <strong>For GCP:</strong>
+                        <div class="code-example">
+                            <code># Authenticate with GCP
+gcloud auth application-default login
+
+# Run GCP telemetry agent
+python -m agents.gcp_telemetry_agent \
+  --endpoint http://localhost:8080 \
+  --project-id YOUR_PROJECT_ID \
+  --interval 300</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3><i class="fas fa-chart-line"></i> Start Dashboard</h3>
+                    <p>Launch the web dashboard to visualize your data</p>
+                    <div class="code-example">
+                        <code># In a new terminal window
+finopsmetrics-dashboard --port 5000</code>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: #d1fae5; border-radius: 8px;">
+                        <strong style="color: #065f46;">Expected Output:</strong>
+                        <pre style="margin: 10px 0 0 0; color: #047857; font-size: 0.85rem;">FinOpsMetrics Dashboard v0.3.1
+Dashboard running on http://localhost:5000
+WebSocket server ready
+Open your browser to http://localhost:5000</pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3><i class="fas fa-user"></i> Create Your First User</h3>
+                    <p>Set up admin credentials for dashboard access</p>
+                    <div class="code-example">
+                        <code># Create admin user
+python -m finopsmetrics.dashboard.iam_cli add-user \
+  --username admin \
+  --email your@email.com \
+  --role admin \
+  --password SecurePassword123!</code>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <h3><i class="fas fa-sign-in-alt"></i> Access Dashboard</h3>
+                    <p>Login and explore your cost insights</p>
+                    <ol style="margin: 15px 0 0 20px; color: #4b5563; line-height: 1.8;">
+                        <li>Open browser to <code>http://localhost:5000</code></li>
+                        <li>Login with username: <code>admin</code></li>
+                        <li>Navigate to dashboards:
+                            <ul style="margin-top: 10px;">
+                                <li>CFO Dashboard: <code>/dashboard/cfo</code></li>
+                                <li>COO Dashboard: <code>/dashboard/coo</code></li>
+                                <li>Infrastructure: <code>/dashboard/infrastructure</code></li>
+                                <li>Finance Analyst: <code>/dashboard/finance</code></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">8</div>
+                    <h3><i class="fas fa-check-circle"></i> View First Insights</h3>
+                    <p>Within 5-10 minutes you'll see:</p>
+                    <ul style="margin: 15px 0 0 20px; color: #4b5563; line-height: 1.8;">
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Real-time cost data</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Resource utilization metrics</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Cost trends</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Top cost drivers</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Anomaly detections</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Advanced Installation Options -->
-    <section class="code-block-section">
+    <!-- Enterprise Edition Installation -->
+    <section id="enterprise-installation" class="code-block-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1f2937;">Advanced Installation Options</h2>
-            <p style="text-align: center; color: #6b7280; font-size: 1.1rem; margin-bottom: 50px;">
-                Choose the right backend for your needs - from development to enterprise scale
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1f2937;">
+                <i class="fas fa-star" style="color: #10b981;"></i> Enterprise Edition Installation
+            </h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.2rem; margin-bottom: 40px;">
+                Add AI-powered recommendations and advanced collaboration features
             </p>
+
+            <div class="prerequisites-box">
+                <h4><i class="fas fa-info-circle"></i> Prerequisites</h4>
+                <ul>
+                    <li>Community Edition installed (see above)</li>
+                    <li>Enterprise license key (from sales team or trial)</li>
+                    <li>All Community Edition prerequisites</li>
+                </ul>
+            </div>
 
             <div class="steps-grid">
                 <div class="step-card">
-                    <h3 style="color: #667eea;"><i class="fas fa-bolt"></i> Basic Installation</h3>
-                    <p>Quick start with in-memory storage (great for development)</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
-                        <code style="display: block; line-height: 1.8;">
-pip install openfinops
-                        </code>
+                    <div class="step-number">1</div>
+                    <h3><i class="fas fa-check"></i> Install Community First</h3>
+                    <p>Follow steps 1-7 from Community Edition installation above</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3><i class="fas fa-download"></i> Install Enterprise Package</h3>
+                    <p>Add Enterprise features on top of Community</p>
+                    <div class="code-example">
+                        <code># Option A: From wheel file (provided by sales)
+pip install finopsmetrics_enterprise-0.3.1-py3-none-any.whl
+
+# Option B: From private PyPI (if configured)
+pip install --index-url https://your-private-pypi.com finopsmetrics-enterprise</code>
                     </div>
                 </div>
 
                 <div class="step-card">
-                    <h3 style="color: #667eea;"><i class="fas fa-database"></i> With PostgreSQL</h3>
-                    <p>Production-ready with PostgreSQL persistence</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
-                        <code style="display: block; line-height: 1.8;">
-pip install openfinops[postgres]
-                        </code>
+                    <div class="step-number">3</div>
+                    <h3><i class="fas fa-key"></i> Activate License</h3>
+                    <p>Activate your Enterprise license key</p>
+                    <div class="code-example">
+                        <code># Python script or interactive shell
+from finopsmetrics.enterprise import activate_license
+
+activate_license(
+    license_key="FOM-ENT-BUS-xxxxxxxx-yyyyyyyy",
+    organization="Your Company Name"
+)</code>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: #d1fae5; border-radius: 8px;">
+                        <strong style="color: #065f46;">Expected Output:</strong>
+                        <pre style="margin: 10px 0 0 0; color: #047857; font-size: 0.85rem;">✓ License activated successfully
+Organization: Your Company Name
+Tier: BUSINESS
+Max Users: 50
+Features: ai_recommendations, advanced_analytics,
+          workspace_collaboration, priority_support,
+          gpu_acceleration
+Expires: 2026-10-09</pre>
                     </div>
                 </div>
 
                 <div class="step-card">
-                    <h3 style="color: #667eea;"><i class="fas fa-server"></i> Full Installation</h3>
-                    <p>All features including AWS, Azure, GCP, and database support</p>
-                    <div class="code-example" style="background: #1f2937; color: white; padding: 20px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;">
-                        <code style="display: block; line-height: 1.8;">
-pip install openfinops[all]
-                        </code>
+                    <div class="step-number">4</div>
+                    <h3><i class="fas fa-robot"></i> Verify Enterprise Features</h3>
+                    <p>Test AI recommendations engine</p>
+                    <div class="code-example">
+                        <code># Test AI recommendations
+from finopsmetrics.observability import IntelligentRecommendationEngine
+
+engine = IntelligentRecommendationEngine()
+recommendations = engine.generate_recommendations(time_range_hours=24)
+
+print(f"Found {len(recommendations)} optimization opportunities")</code>
                     </div>
                 </div>
-            </div>
 
-            <div style="margin-top: 50px; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                <h3 style="color: #1f2937; margin-bottom: 20px;"><i class="fas fa-info-circle" style="color: #667eea;"></i> Database Backend Options (v0.2.1)</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #10b981;">
-                        <strong style="color: #1f2937;">In-Memory (Default)</strong>
-                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Fast, no persistence - perfect for development</p>
-                    </div>
-                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #3b82f6;">
-                        <strong style="color: #1f2937;">SQLite</strong>
-                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">File-based storage for single-server deployments</p>
-                    </div>
-                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #8b5cf6;">
-                        <strong style="color: #1f2937;">PostgreSQL</strong>
-                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Production-grade relational database</p>
-                    </div>
-                    <div style="padding: 20px; background: #f9fafb; border-radius: 10px; border-left: 4px solid #f59e0b;">
-                        <strong style="color: #1f2937;">TimescaleDB</strong>
-                        <p style="color: #6b7280; margin: 10px 0 0 0; font-size: 0.9rem;">Time-series optimized with 90%+ compression</p>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3><i class="fas fa-chart-pie"></i> Access Enterprise Dashboards</h3>
+                    <p>New features available in the same dashboard</p>
+                    <ul style="margin: 15px 0 0 20px; color: #4b5563; line-height: 1.8;">
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> AI Recommendations tab</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Workspace management</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li style="color: #10b981;"><i class="fas fa-check"></i> Team collaboration</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cost Comparison -->
-    <section class="pricing-comparison">
+    <!-- Common Setup Scenarios -->
+    <section class="step-section" style="background: white;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem;">Potential Cost Savings</h2>
-            <p style="text-align: center; opacity: 0.8; font-size: 1.2rem; margin-top: 15px;">Example scenarios showing potential savings</p>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Common Setup Scenarios</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.2rem; margin-bottom: 40px;">
+                Real-world deployment patterns and best practices
+            </p>
 
-            <div class="comparison-cards">
-                <div class="comparison-card">
-                    <h3>❌ Before OpenFinOps</h3>
-                    <div class="price">$24,000<span style="font-size: 1rem;">/month</span></div>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="margin: 10px 0;">✗ No cost visibility</li>
-                        <li style="margin: 10px 0;">✗ Over-provisioned GPUs</li>
-                        <li style="margin: 10px 0;">✗ No auto-scaling</li>
-                        <li style="margin: 10px 0;">✗ Manual optimization</li>
-                    </ul>
+            <div class="scenario-card">
+                <h3><i class="fas fa-cloud" style="color: #667eea;"></i> Scenario 1: Multi-Cloud Environment</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">Deploy one server with agents for each cloud provider</p>
+                <div class="code-example">
+                    <code># Terminal 1: Server
+finopsmetrics-server --port 8080
+
+# Terminal 2: AWS Agent
+python -m agents.aws_telemetry_agent --endpoint http://localhost:8080 --region us-west-2
+
+# Terminal 3: Azure Agent
+python -m agents.azure_telemetry_agent --endpoint http://localhost:8080 --subscription-id XXX
+
+# Terminal 4: GCP Agent
+python -m agents.gcp_telemetry_agent --endpoint http://localhost:8080 --project-id YYY
+
+# Terminal 5: Dashboard
+finopsmetrics-dashboard --port 5000</code>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <h3><i class="fas fa-globe" style="color: #667eea;"></i> Scenario 2: Multiple Regions (Same Cloud)</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">Deploy one agent per region, all reporting to same server</p>
+                <div class="code-example">
+                    <code># US East agent
+python -m agents.aws_telemetry_agent --endpoint http://localhost:8080 --region us-east-1 &
+
+# US West agent
+python -m agents.aws_telemetry_agent --endpoint http://localhost:8080 --region us-west-2 &
+
+# EU agent
+python -m agents.aws_telemetry_agent --endpoint http://localhost:8080 --region eu-west-1 &</code>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <h3><i class="fas fa-rocket" style="color: #667eea;"></i> Scenario 3: Production Deployment</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">Using systemd service and reverse proxy</p>
+
+                <strong>1. Create systemd service (Linux):</strong>
+                <div class="code-example">
+                    <code># /etc/systemd/system/finopsmetrics-server.service
+[Unit]
+Description=FinOpsMetrics Server
+After=network.target
+
+[Service]
+Type=simple
+User=finops
+WorkingDirectory=/opt/finopsmetrics
+ExecStart=/usr/bin/python3 -m finopsmetrics.cli server --port 8080
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</code>
                 </div>
 
-                <div class="comparison-card highlight">
-                    <h3>✅ After OpenFinOps</h3>
-                    <div class="price">$12,000<span style="font-size: 1rem;">/month</span></div>
-                    <div class="savings-badge">Save $144,000/year</div>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="margin: 10px 0;">✓ Real-time cost tracking</li>
-                        <li style="margin: 10px 0;">✓ Right-sized instances</li>
-                        <li style="margin: 10px 0;">✓ Auto-scaling enabled</li>
-                        <li style="margin: 10px 0;">✓ LLM recommendations</li>
-                    </ul>
+                <strong style="display: block; margin-top: 20px;">2. Enable and start service:</strong>
+                <div class="code-example">
+                    <code>sudo systemctl enable finopsmetrics-server
+sudo systemctl start finopsmetrics-server</code>
                 </div>
 
-                <div class="comparison-card">
-                    <h3>💰 Your Savings</h3>
-                    <div class="price">50%<span style="font-size: 1rem;"> reduction</span></div>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="margin: 10px 0;">💡 GPU optimization</li>
-                        <li style="margin: 10px 0;">💡 Spot instances</li>
-                        <li style="margin: 10px 0;">💡 Auto-scaling</li>
-                        <li style="margin: 10px 0;">💡 Reserved capacity</li>
+                <strong style="display: block; margin-top: 20px;">3. Configure Nginx reverse proxy:</strong>
+                <div class="code-example">
+                    <code># /etc/nginx/sites-available/finopsmetrics
+server {
+    listen 80;
+    server_name finops.yourcompany.com;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /socket.io {
+        proxy_pass http://localhost:5000/socket.io;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Section -->
+    <section class="config-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1f2937;">Configuration</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.2rem; margin-bottom: 40px;">
+                Customize FinOpsMetrics for your environment
+            </p>
+
+            <div class="config-card">
+                <h3><i class="fas fa-cog" style="color: #667eea;"></i> Server Configuration</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">Create <code>~/.finopsmetrics/config.yaml</code>:</p>
+                <div class="code-example">
+                    <code>observability:
+  host: "0.0.0.0"
+  port: 8080
+
+telemetry:
+  collection_interval: 300  # 5 minutes
+  retention_days: 90
+
+budgets:
+  default_currency: "USD"
+  alert_threshold: 0.8  # 80%
+
+notifications:
+  slack_webhook: "https://hooks.slack.com/services/YOUR/WEBHOOK"
+  email_enabled: true
+  email_smtp_server: "smtp.gmail.com"
+  email_smtp_port: 587
+  email_from: "finops@yourcompany.com"</code>
+                </div>
+            </div>
+
+            <div class="config-card">
+                <h3><i class="fas fa-satellite" style="color: #667eea;"></i> Agent Configuration</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">AWS agent with advanced options:</p>
+                <div class="code-example">
+                    <code>python -m agents.aws_telemetry_agent \
+  --endpoint http://localhost:8080 \
+  --region us-west-2 \
+  --interval 300 \
+  --include-services ec2,eks,lambda,rds,s3 \
+  --tag-filters Environment=production,Team=platform</code>
+                </div>
+            </div>
+
+            <div class="config-card">
+                <h3><i class="fas fa-clipboard-check" style="color: #667eea;"></i> Verification Checklist</h3>
+                <p style="color: #6b7280; margin-bottom: 20px;">After installation, verify:</p>
+                <ul class="checklist">
+                    <li>Server is running and accessible</li>
+                    <li>At least one telemetry agent is running</li>
+                    <li>Dashboard loads in browser</li>
+                    <li>You can login to dashboard</li>
+                    <li>Cost data appears within 10 minutes</li>
+                    <li>Charts are rendering</li>
+                    <li>Real-time updates are working</li>
+                </ul>
+                <div style="margin-top: 20px; padding: 15px; background: #fef3c7; border-radius: 8px;">
+                    <strong style="color: #92400e;">If any issues:</strong>
+                    <ul style="margin: 10px 0 0 20px; color: #78350f;">
+                        <li>Check server logs: <code>tail -f ~/.finopsmetrics/logs/server.log</code></li>
+                        <li>Check agent logs: Look for error messages in terminal</li>
+                        <li>Verify network: <code>curl http://localhost:8080/health</code></li>
+                        <li>Review documentation or contact support</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting Section -->
+    <section class="troubleshooting-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #1f2937;">Troubleshooting</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.2rem; margin-bottom: 40px;">
+                Common issues and solutions
+            </p>
+
+            <div class="troubleshooting-grid">
+                <div class="troubleshooting-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> Cannot connect to server</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;"><strong>Solution:</strong></p>
+                    <div class="code-example">
+                        <code># Check if server is running
+curl http://localhost:8080/health
+
+# Check firewall
+sudo ufw allow 8080
+
+# Check logs
+tail -f ~/.finopsmetrics/logs/server.log</code>
+                    </div>
+                </div>
+
+                <div class="troubleshooting-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> No cost data appearing</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;"><strong>Possible Causes:</strong></p>
+                    <ul style="margin: 10px 0 0 20px; color: #4b5563; line-height: 1.8;">
+                        <li>Agent not running</li>
+                        <li>Wrong cloud credentials</li>
+                        <li>Network connectivity issues</li>
+                        <li>Insufficient cloud permissions</li>
+                    </ul>
+                    <p style="color: #6b7280; margin: 15px 0 10px 0;"><strong>Solution:</strong></p>
+                    <div class="code-example">
+                        <code># Verify agent is running
+ps aux | grep telemetry_agent
+
+# Test AWS credentials
+aws sts get-caller-identity
+
+# Check agent can reach server
+curl http://localhost:8080/api/v1/telemetry/status</code>
+                    </div>
+                </div>
+
+                <div class="troubleshooting-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> Dashboard won't load</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;"><strong>Solution:</strong></p>
+                    <div class="code-example">
+                        <code># Restart dashboard
+finopsmetrics-dashboard --port 5000 --debug
+
+# Check browser console for errors
+# Clear browser cache
+# Try incognito mode</code>
+                    </div>
+                </div>
+
+                <div class="troubleshooting-card">
+                    <h3><i class="fas fa-exclamation-circle"></i> Enterprise features not showing</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px;"><strong>Solution:</strong></p>
+                    <div class="code-example">
+                        <code># Verify license
+from finopsmetrics.enterprise import check_license_status
+status = check_license_status()
+print(status)
+
+# If expired or invalid, reactivate
+from finopsmetrics.enterprise import activate_license
+activate_license('NEW_LICENSE_KEY', 'ORG')</code>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding: 30px; background: #f9fafb; border-radius: 15px; border-left: 4px solid #3b82f6;">
+                <h3 style="color: #1f2937; margin-bottom: 15px;"><i class="fas fa-life-ring" style="color: #3b82f6;"></i> Getting Help</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div>
+                        <strong style="color: #1f2937;">Community Support (Free)</strong>
+                        <ul style="margin: 10px 0 0 20px; color: #6b7280;">
+                            <li>Community Forum</li>
+                            <li>GitHub Issues</li>
+                            <li>Email: support@finopsmetrics.com</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: #1f2937;">Enterprise Support</strong>
+                        <ul style="margin: 10px 0 0 20px; color: #6b7280;">
+                            <li>Priority Email Support</li>
+                            <li>Response: 1-24 hours</li>
+                            <li>Slack Channel (Business+)</li>
+                            <li>Phone Support (Enterprise)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -513,28 +1048,43 @@ pip install openfinops[all]
 
             <div class="faq-grid">
                 <div class="faq-item">
-                    <div class="faq-question">Is OpenFinOps really free?</div>
-                    <div class="faq-answer">Yes! OpenFinOps is 100% free and open source under the Apache 2.0 license. No hidden costs, no premium tiers, no credit card required.</div>
+                    <div class="faq-question">What's the difference between Community and Enterprise editions?</div>
+                    <div class="faq-answer">Community Edition is free and open source with core cost monitoring features. Enterprise Edition adds AI-powered recommendations, advanced analytics, workspace collaboration, priority support, and GPU acceleration. Both editions can be used for production workloads.</div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Which cloud providers are supported?</div>
-                    <div class="faq-answer">OpenFinOps supports AWS, Azure, and GCP. You can monitor costs across all three providers in a single dashboard.</div>
+                    <div class="faq-answer">FinOpsMetrics supports AWS, Azure, and GCP. You can monitor costs across all three providers in a single unified dashboard with multi-cloud correlation and analysis.</div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">How does the LLM-powered recommendation work?</div>
-                    <div class="faq-answer">OpenFinOps can integrate with OpenAI, Anthropic, Azure OpenAI, or Ollama to analyze your infrastructure and provide intelligent recommendations. You can also use rule-based recommendations without an LLM.</div>
+                    <div class="faq-question">How does the AI recommendation engine work?</div>
+                    <div class="faq-answer">The Enterprise Edition uses machine learning to analyze your infrastructure patterns, resource utilization, and cost trends. It provides intelligent recommendations for right-sizing, spot instance usage, reserved capacity, and auto-scaling opportunities. Works with OpenAI, Anthropic, Azure OpenAI, or local models.</div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">How long does setup take?</div>
-                    <div class="faq-answer">Most teams are up and running in under 5 minutes. Just install via pip, configure your cloud credentials, and launch the dashboard.</div>
+                    <div class="faq-question">How long does installation and setup take?</div>
+                    <div class="faq-answer">Community Edition: 5-10 minutes from installation to first insights. Enterprise Edition: 10-15 minutes including license activation. Both include time for agent deployment and initial data collection.</div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">Can I use this for production workloads?</div>
-                    <div class="faq-answer">Absolutely! OpenFinOps is designed for production environments and built to handle large-scale AI/ML workloads.</div>
+                    <div class="faq-answer">Absolutely! Both Community and Enterprise editions are designed for production environments. Supports systemd services, Docker containers, Kubernetes deployments, and includes production-grade features like PostgreSQL/TimescaleDB backends, reverse proxy integration, and high availability configurations.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What kind of cost savings can I expect?</div>
+                    <div class="faq-answer">Organizations typically see 30-50% reduction in cloud costs within the first 90 days. Common optimizations include: GPU right-sizing (40-60% savings), spot instance adoption (50-70% savings), reserved capacity planning (30-40% savings), and auto-scaling implementation (20-40% savings).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to install anything on my cloud infrastructure?</div>
+                    <div class="faq-answer">No modifications to your cloud infrastructure required. FinOpsMetrics uses read-only API access to collect metrics. Telemetry agents run on your local infrastructure or management instances and only require standard cloud provider SDK permissions (CloudWatch, Cost Explorer for AWS; similar for Azure/GCP).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I upgrade from Community to Enterprise?</div>
+                    <div class="faq-answer">Simple! Install the Enterprise package on top of your existing Community installation, activate your license key, and restart the dashboard. No data migration required - all your existing data and configurations are preserved.</div>
                 </div>
             </div>
         </div>
@@ -543,24 +1093,49 @@ pip install openfinops[all]
     <!-- Final CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Optimize Your AI/ML Costs?</h2>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Start saving up to 30-50% on infrastructure costs</p>
+            <h2>Ready to Start Your FinOps Journey?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Choose your edition and get started in minutes</p>
 
-            <div class="cta-buttons">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 800px; margin: 40px auto;">
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; text-align: left;">
+                    <h3 style="margin-bottom: 15px;">Community Edition</h3>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Free & Open Source</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Multi-cloud monitoring</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Real-time dashboards</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Budget tracking</li>
+                    </ul>
+                    <div class="install-command" style="margin: 20px 0;">
+                        <code>pip install finopsmetrics</code>
+                    </div>
+                </div>
+
+                <div style="background: rgba(16, 185, 129, 0.2); padding: 30px; border-radius: 15px; border: 2px solid #10b981; text-align: left;">
+                    <h3 style="margin-bottom: 15px;">Enterprise Edition</h3>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Everything in Community</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> AI-powered recommendations</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Advanced analytics</li>
+                        <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981;"></i> Priority support</li>
+                    </ul>
+                    <a href="pricing.html" style="display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 10px;">
+                        Start Enterprise Trial
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-buttons" style="margin-top: 40px;">
                 <a href="documentation.html" class="btn-white">
-                    <i class="fas fa-book"></i> Read Documentation
+                    <i class="fas fa-book"></i> Full Documentation
                 </a>
-                
+
                 <a href="demo.html" class="btn-white">
                     <i class="fas fa-play"></i> Try Live Demo
                 </a>
-            </div>
 
-            <div class="install-command" style="max-width: 600px; margin: 40px auto;">
-                <code style="font-size: 1.2rem;">pip install openfinops</code>
-                <button class="copy-btn" onclick="copyToClipboard('pip install openfinops')">
-                    <i class="fas fa-copy"></i>
-                </button>
+                <a href="https://github.com/openfinops/finopsmetrics" class="btn-white">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
         </div>
     </section>
@@ -570,16 +1145,17 @@ pip install openfinops[all]
         <div class="container">
             <div class="logo" style="margin-bottom: 20px;">
                 <i class="fas fa-chart-line"></i>
-                <span>OpenFinOps</span>
+                <span>FinOpsMetrics</span>
             </div>
-            <p style="opacity: 0.7; margin-bottom: 20px;">Open Source FinOps for AI/ML Infrastructure</p>
+            <p style="opacity: 0.7; margin-bottom: 20px;">Enterprise AI/ML Cost Intelligence Platform</p>
             <div style="display: flex; gap: 30px; justify-content: center; margin-top: 30px;">
-                
+                <a href="features.html" style="color: white; opacity: 0.7; text-decoration: none;">Features</a>
+                <a href="pricing.html" style="color: white; opacity: 0.7; text-decoration: none;">Pricing</a>
                 <a href="documentation.html" style="color: white; opacity: 0.7; text-decoration: none;">Documentation</a>
                 <a href="api.html" style="color: white; opacity: 0.7; text-decoration: none;">API Reference</a>
-                <a href="https://pypi.org/project/openfinops/" style="color: white; opacity: 0.7; text-decoration: none;">PyPI</a>
+                <a href="https://pypi.org/project/finopsmetrics/" style="color: white; opacity: 0.7; text-decoration: none;">PyPI</a>
             </div>
-            <p style="margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2025 OpenFinOps Contributors. Apache 2.0 License.</p>
+            <p style="margin-top: 40px; opacity: 0.5; font-size: 0.9rem;">&copy; 2025 FinOpsMetrics Contributors. Apache 2.0 License.</p>
         </div>
     </footer>
 

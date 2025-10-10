@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>AI-Powered Cost Recommendations - OpenFinOps | LLM Optimization</title>
+    <title>AI-Powered Cost Recommendations - FinOpsMetrics | LLM Optimization</title>
     <meta name="description" content="LLM-powered intelligent cost recommendations for AWS, Azure, GCP. Auto-scaling suggestions, spot instance optimization, GPU right-sizing, and storage cost reduction.">
     <meta name="keywords" content="ai cost recommendations, llm powered finops, intelligent cost optimization, auto-scaling recommendations, spot instance optimization, gpu right-sizing, storage optimization, cloud cost ai">
-    <meta name="author" content="OpenFinOps Contributors">
+    <meta name="author" content="FinOpsMetrics Contributors">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="https://openfinops.org/intelligent-recommendations.html">
+    <link rel="canonical" href="https://finopsmetrics.org/intelligent-recommendations.html">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://openfinops.org/intelligent-recommendations.html">
-    <meta property="og:title" content="AI-Powered Cost Recommendations - OpenFinOps">
+    <meta property="og:url" content="https://finopsmetrics.org/intelligent-recommendations.html">
+    <meta property="og:title" content="AI-Powered Cost Recommendations - FinOpsMetrics">
     <meta property="og:description" content="LLM-powered recommendations for auto-scaling, spot instances, GPU optimization, and cost reduction.">
-    <meta property="og:image" content="https://openfinops.org/images/og-image.png">
-    <meta property="og:site_name" content="OpenFinOps">
+    <meta property="og:image" content="https://finopsmetrics.org/images/og-image.png">
+    <meta property="og:site_name" content="FinOpsMetrics">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://openfinops.org/intelligent-recommendations.html">
+    <meta name="twitter:url" content="https://finopsmetrics.org/intelligent-recommendations.html">
     <meta name="twitter:title" content="AI-Powered Cost Recommendations">
     <meta name="twitter:description" content="LLM-powered cost optimization recommendations">
-    <meta name="twitter:image" content="https://openfinops.org/images/twitter-card.png">
+    <meta name="twitter:image" content="https://finopsmetrics.org/images/twitter-card.png">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,11 +229,12 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                    <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="intelligent-recommendations.html" class="active">AI Recommendations</a></li>
                     <li><a href="get-started.html">Get Started</a></li>
                     <li><a href="documentation.html">Documentation</a></li>
@@ -267,7 +268,7 @@
             <div class="section-header">
                 <h2>Overview</h2>
                 <p>
-                    OpenFinOps provides intelligent, AI-powered recommendations to optimize your AI/ML infrastructure.
+                    FinOpsMetrics provides intelligent, AI-powered recommendations to optimize your AI/ML infrastructure.
                     Configure your preferred LLM provider (OpenAI, Anthropic, Azure OpenAI, Ollama) or use our built-in
                     rule-based engine for hardware optimization, scaling strategies, and cost reduction opportunities.
                 </p>
@@ -384,9 +385,9 @@
             </div>
 
             <div class="step-section">
-            <h3><span class="step-number">1</span> Install OpenFinOps</h3>
+            <h3><span class="step-number">1</span> Install FinOpsMetrics</h3>
             <p class="step-description">
-                Install the OpenFinOps package with all dependencies, or choose specific LLM providers based on your needs.
+                Install the FinOpsMetrics package with all dependencies, or choose specific LLM providers based on your needs.
             </p>
             <div class="code-block">
                 <div class="code-header">
@@ -397,12 +398,12 @@
                 </div>
                 <div class="code-content">
                     <code><span class="code-comment"># Install with all LLM providers</span>
-pip install openfinops[all]
+pip install finopsmetrics[all]
 
 <span class="code-comment"># Or install with specific LLM provider</span>
-pip install openfinops openai      <span class="code-comment"># For OpenAI (GPT-4, GPT-3.5)</span>
-pip install openfinops anthropic   <span class="code-comment"># For Anthropic (Claude)</span>
-pip install openfinops              <span class="code-comment"># No LLM (rule-based only)</span></code>
+pip install finopsmetrics openai      <span class="code-comment"># For OpenAI (GPT-4, GPT-3.5)</span>
+pip install finopsmetrics anthropic   <span class="code-comment"># For Anthropic (Claude)</span>
+pip install finopsmetrics              <span class="code-comment"># No LLM (rule-based only)</span></code>
                 </div>
             </div>
         </div>
@@ -466,7 +467,7 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
                     </button>
                 </div>
                 <div class="code-content">
-                    <code><span class="code-keyword">from</span> openfinops.observability.intelligent_recommendations <span class="code-keyword">import</span> get_recommendations
+                    <code><span class="code-keyword">from</span> finopsmetrics.observability.intelligent_recommendations <span class="code-keyword">import</span> get_recommendations
 
 <span class="code-comment"># Define your current infrastructure metrics</span>
 <span class="code-variable">current_metrics</span> = {
@@ -509,7 +510,7 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
                     </button>
                 </div>
                 <div class="code-content">
-                    <code><span class="code-keyword">from</span> openfinops.dashboard <span class="code-keyword">import</span> COODashboard
+                    <code><span class="code-keyword">from</span> finopsmetrics.dashboard <span class="code-keyword">import</span> COODashboard
 
 <span class="code-comment"># Initialize the dashboard</span>
 <span class="code-variable">dashboard</span> = <span class="code-function">COODashboard</span>()
@@ -591,8 +592,8 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
                     </button>
                 </div>
                 <div class="code-content">
-                    <code><span class="code-keyword">from</span> openfinops.observability.llm_config <span class="code-keyword">import</span> LLMConfig, LLMProvider
-<span class="code-keyword">from</span> openfinops.observability.intelligent_recommendations <span class="code-keyword">import</span> IntelligentRecommendationsCoordinator
+                    <code><span class="code-keyword">from</span> finopsmetrics.observability.llm_config <span class="code-keyword">import</span> LLMConfig, LLMProvider
+<span class="code-keyword">from</span> finopsmetrics.observability.intelligent_recommendations <span class="code-keyword">import</span> IntelligentRecommendationsCoordinator
 
 <span class="code-comment"># Custom LLM config</span>
 <span class="code-variable">llm_config</span> = <span class="code-function">LLMConfig</span>(
@@ -717,7 +718,7 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/finops-logo.png" alt="OpenFinOps Logo">
+                        <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                     </div>
                     <p>The easiest telemetry & API for FinOps - extensible and Enterprise</p>
                     <div class="social-links">
@@ -755,7 +756,7 @@ pip install openfinops              <span class="code-comment"># No LLM (rule-ba
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Infinidatum LLC. OpenFinOps is licensed under Apache-2.0</p>
+                <p>&copy; 2025 Infinidatum LLC. FinOpsMetrics is licensed under Apache-2.0</p>
             </div>
         </div>
     </footer>
