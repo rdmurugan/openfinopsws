@@ -1,18 +1,7 @@
 /*
- * Copyright (c) 2025 Infinidatum
+ * Copyright (c) 2025 Infinidatum LLC
  * Author: Duraimurugan Rajamanickam
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *     http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * All Rights Reserved. Proprietary and Confidential.
  */
 
 /* Reset and Base Styles */
@@ -30,8 +19,8 @@
     --dark-bg-2: #16213e;
     --dark-bg-3: #0f3460;
     --text-primary: #ffffff;
-    --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
+    --text-secondary: #c1c9d2;
+    --text-muted: #9ba3af;
 }
 
 body {
