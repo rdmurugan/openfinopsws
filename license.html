@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <!--
-Copyright (c) 2025 Infinidatum
+Copyright (c) 2025 Infinidatum LLC
 Author: Duraimurugan Rajamanickam
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+All Rights Reserved. Proprietary and Confidential.
 -->
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apache 2.0 License - FinOpsMetrics</title>
-    <meta name="description" content="FinOpsMetrics is licensed under Apache License 2.0 - full license text and explanation.">
+    <title>Proprietary License - FinOpsMetrics | End User License Agreement</title>
+    <meta name="description" content="FinOpsMetrics End User License Agreement (EULA) - Proprietary software license for Community and Enterprise editions.">
     <link rel="icon" type="image/png" href="images/finops-logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -49,67 +38,42 @@ limitations under the License.
         }
 
         .legal-content {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
+            background: white;
             padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .legal-content h2 {
-            font-size: 1.75rem;
-            margin: 2rem 0 1rem;
             color: var(--primary-color);
-        }
-
-        .legal-content h2:first-child {
-            margin-top: 0;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
         }
 
         .legal-content h3 {
-            font-size: 1.25rem;
-            margin: 1.5rem 0 0.75rem;
             color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
         }
 
-        .legal-content p {
+        .legal-content p, .legal-content li {
             color: var(--text-secondary);
-            margin-bottom: 1rem;
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         .legal-content ul, .legal-content ol {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            line-height: 1.8;
-        }
-
-        .legal-content ul li, .legal-content ol li {
-            margin-bottom: 0.5rem;
-        }
-
-        .legal-content a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .legal-content a:hover {
-            text-decoration: underline;
-        }
-
-        .last-updated {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-top: 2rem;
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .highlight-box {
-            background: rgba(0, 212, 170, 0.1);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
             border-left: 4px solid var(--primary-color);
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             border-radius: 8px;
         }
 
@@ -117,36 +81,21 @@ limitations under the License.
             margin-bottom: 0;
         }
 
-        .license-text {
-            background: rgba(10, 14, 39, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 2rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            overflow-x: auto;
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
             margin: 2rem 0;
-            white-space: pre-wrap;
-            line-height: 1.6;
+            border-radius: 8px;
         }
 
-        @media (max-width: 768px) {
-            .legal-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .legal-header h1 {
-                font-size: 2rem;
-            }
-
-            .license-text {
-                padding: 1.5rem;
-                font-size: 0.75rem;
-            }
+        .last-updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 3rem;
         }
     </style>
-    <!-- Cookie Consent -->
-    <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -154,18 +103,15 @@ limitations under the License.
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
+                    <a href="index.html"><img src="images/finops-logo.png" alt="FinOpsMetrics Logo"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="documentation.html">Documentation</a></li>
-                    <li><a href="demo.html" class="demo-btn">Live Demo</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                 </ul>
-                <div class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
             </div>
         </div>
     </nav>
@@ -174,230 +120,199 @@ limitations under the License.
     <section class="legal-page">
         <div class="container">
             <div class="legal-header">
-                <h1>Apache License 2.0</h1>
-                <p>FinOpsMetrics Commercial License</p>
+                <h1>End User License Agreement</h1>
+                <p>FinOpsMetrics Proprietary Software License</p>
             </div>
 
             <div class="legal-content">
                 <div class="highlight-box">
-                    <p><strong>FinOpsMetrics is licensed under Apache License 2.0</strong> - one of the most permissive and business-friendly commercial licenses. You are free to use, modify, and distribute FinOpsMetrics for any purpose, including commercial use, without any royalties or fees.</p>
+                    <p><strong>PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED</strong></p>
+                    <p style="margin-top: 1rem;">FinOpsMetrics is proprietary software owned by Infinidatum LLC. The software is provided in binary form only. No source code is provided or made available. By downloading, installing, or using FinOpsMetrics, you agree to the terms of this End User License Agreement (EULA).</p>
                 </div>
 
-                <h2>What This Means for You</h2>
+                <p><strong>Effective Date:</strong> January 1, 2025</p>
+                <p><strong>Last Updated:</strong> January 10, 2025</p>
 
-                <h3>✅ You CAN:</h3>
+                <h2>1. Grant of License</h2>
+
+                <h3>1.1 Community Edition (Free License)</h3>
+                <p>Subject to the terms of this Agreement, Infinidatum LLC grants you a limited, non-exclusive, non-transferable, revocable license to:</p>
                 <ul>
-                    <li><strong>Commercial Use:</strong> Use FinOpsMetrics in your business, including revenue-generating products</li>
-                    <li><strong>Modify:</strong> Change, adapt, and customize the code to fit your needs</li>
-                    <li><strong>Distribute:</strong> Share FinOpsMetrics with others, including modified versions</li>
-                    <li><strong>Patent Use:</strong> Use any patents licensed by contributors</li>
-                    <li><strong>Private Use:</strong> Use FinOpsMetrics privately without sharing your modifications</li>
-                    <li><strong>Sublicense:</strong> Grant sublicenses to others under different terms</li>
+                    <li>Install and use the FinOpsMetrics Community Edition software in binary form</li>
+                    <li>Use the software for commercial or non-commercial purposes</li>
+                    <li>Use the software on unlimited servers and devices</li>
+                    <li>Create unlimited user accounts</li>
                 </ul>
 
-                <h3>📋 You MUST:</h3>
+                <h3>1.2 Enterprise Editions (Paid License)</h3>
+                <p>Enterprise Editions (Startup, Business, Enterprise) require a valid paid subscription. The license grants additional rights as specified in your subscription agreement:</p>
                 <ul>
-                    <li><strong>Include License:</strong> Include a copy of the Apache 2.0 License in any distribution</li>
-                    <li><strong>Include Notice:</strong> Preserve copyright notices and attribution</li>
-                    <li><strong>State Changes:</strong> Document any modifications you make to the original code</li>
-                    <li><strong>Include NOTICE:</strong> If a NOTICE file exists, include it in distributions</li>
+                    <li>Access to advanced features (AI recommendations, GPU acceleration, etc.)</li>
+                    <li>Priority technical support</li>
+                    <li>Service level agreements (SLA)</li>
+                    <li>Custom feature development (Enterprise tier)</li>
                 </ul>
 
-                <h3>❌ You CANNOT:</h3>
+                <h2>2. Restrictions</h2>
+
+                <p>You <strong>MAY NOT</strong>:</p>
                 <ul>
-                    <li><strong>Hold Liable:</strong> Hold contributors liable for damages</li>
-                    <li><strong>Use Trademarks:</strong> Use FinOpsMetrics trademarks without permission</li>
-                    <li><strong>Expect Warranty:</strong> Expect any warranty - software is provided "AS IS"</li>
+                    <li><strong>Reverse Engineer:</strong> Decompile, disassemble, reverse engineer, or attempt to derive the source code of the software</li>
+                    <li><strong>Modify:</strong> Modify, adapt, translate, or create derivative works based on the software</li>
+                    <li><strong>Redistribute:</strong> Sell, rent, lease, distribute, sublicense, or transfer the software to third parties</li>
+                    <li><strong>Remove Notices:</strong> Remove, alter, or obscure any proprietary notices, labels, or marks on the software</li>
+                    <li><strong>Compete:</strong> Use the software to develop competing products or services</li>
+                    <li><strong>Resell:</strong> Offer the software as a hosted or managed service without written authorization from Infinidatum LLC</li>
+                    <li><strong>Access Source Code:</strong> Attempt to access, view, or obtain the source code through any means</li>
                 </ul>
 
-                <h2>Key Benefits of Apache 2.0</h2>
+                <h2>3. Intellectual Property</h2>
+
+                <p>FinOpsMetrics and all related intellectual property rights are and shall remain the exclusive property of Infinidatum LLC. This Agreement does not grant you any rights to:</p>
                 <ul>
-                    <li><strong>Patent Protection:</strong> Contributors grant you rights to any patents necessary to use the software</li>
-                    <li><strong>Business-Friendly:</strong> Compatible with most commercial licenses and business models</li>
-                    <li><strong>Clear Terms:</strong> Well-defined permissions and conditions</li>
-                    <li><strong>Contributor Agreement:</strong> Anyone who contributes code grants the same license to everyone</li>
-                    <li><strong>Defensive Termination:</strong> License terminates for anyone who sues over patents</li>
+                    <li>Patents, copyrights, trade secrets, trademarks, or other proprietary rights</li>
+                    <li>Source code, design documents, or technical specifications</li>
+                    <li>The FinOpsMetrics name, logo, or trademarks</li>
                 </ul>
 
-                <h2>FinOpsMetrics Editions</h2>
-                <p>FinOpsMetrics is available in multiple editions:</p>
+                <h2>4. Data and Privacy</h2>
+
+                <p>You retain all rights to your data processed by FinOpsMetrics. The software:</p>
                 <ul>
-                    <li><strong>Community Edition:</strong> Free forever with core features under Apache 2.0</li>
-                    <li><strong>Enterprise Editions:</strong> Paid tiers with advanced features (AI recommendations, GPU acceleration, priority support)</li>
-                    <li><strong>Your Choice:</strong> Start free with Community Edition and upgrade when you need enterprise features</li>
+                    <li>Operates on your infrastructure with your cloud credentials</li>
+                    <li>Does not transmit your cost data to Infinidatum LLC servers</li>
+                    <li>Stores data locally or in your chosen data persistence backend</li>
+                    <li>Collects anonymous usage telemetry only (opt-out available)</li>
                 </ul>
 
-                <h2>Contributing to FinOpsMetrics</h2>
-                <p>When you contribute to FinOpsMetrics:</p>
+                <h2>5. Updates and Maintenance</h2>
+
+                <h3>5.1 Community Edition</h3>
                 <ul>
-                    <li>Your contributions are licensed under Apache 2.0</li>
-                    <li>You retain copyright to your contributions</li>
-                    <li>You grant everyone the same rights you received</li>
-                    <li>See our  for details</li>
+                    <li>Updates provided on a best-effort basis</li>
+                    <li>No guaranteed update schedule or bug fix timeline</li>
+                    <li>May be discontinued at any time without notice</li>
                 </ul>
 
-                <h2>Full License Text</h2>
-                <p>Below is the complete Apache License 2.0 text. FinOpsMetrics includes this license in its source code repository.</p>
-
-                <div class="license-text">Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
-
-TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
-
-1. Definitions.
-
-"License" shall mean the terms and conditions for use, reproduction,
-and distribution as defined by Sections 1 through 9 of this document.
-
-"Licensor" shall mean the copyright owner or entity authorized by
-the copyright owner that is granting the License.
-
-"Legal Entity" shall mean the union of the acting entity and all
-other entities that control, are controlled by, or are under common
-control with that entity. For the purposes of this definition,
-"control" means (i) the power, direct or indirect, to cause the
-direction or management of such entity, whether by contract or
-otherwise, or (ii) ownership of fifty percent (50%) or more of the
-outstanding shares, or (iii) beneficial ownership of such entity.
-
-"You" (or "Your") shall mean an individual or Legal Entity
-exercising permissions granted by this License.
-
-"Source" form shall mean the preferred form for making modifications,
-including but not limited to software source code, documentation
-source, and configuration files.
-
-"Object" form shall mean any form resulting from mechanical
-transformation or translation of a Source form, including but
-not limited to compiled object code, generated documentation,
-and conversions to other media types.
-
-"Work" shall mean the work of authorship, whether in Source or
-Object form, made available under the License, as indicated by a
-copyright notice that is included in or attached to the work.
-
-"Derivative Works" shall mean any work, whether in Source or Object
-form, that is based on (or derived from) the Work and for which the
-editorial revisions, annotations, elaborations, or other modifications
-represent, as a whole, an original work of authorship. For the purposes
-of this License, Derivative Works shall not include works that remain
-separable from, or merely link (or bind by name) to the interfaces of,
-the Work and Derivative Works thereof.
-
-"Contribution" shall mean any work of authorship, including
-the original version of the Work and any modifications or additions
-to that Work or Derivative Works thereof, that is intentionally
-submitted to Licensor for inclusion in the Work by the copyright owner
-or by an individual or Legal Entity authorized to submit on behalf of
-the copyright owner.
-
-"Contributor" shall mean Licensor and any individual or Legal Entity
-on behalf of whom a Contribution has been received by Licensor and
-subsequently incorporated within the Work.
-
-2. Grant of Copyright License. Subject to the terms and conditions of
-this License, each Contributor hereby grants to You a perpetual,
-worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-copyright license to reproduce, prepare Derivative Works of,
-publicly display, publicly perform, sublicense, and distribute the
-Work and such Derivative Works in Source or Object form.
-
-3. Grant of Patent License. Subject to the terms and conditions of
-this License, each Contributor hereby grants to You a perpetual,
-worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-(except as stated in this section) patent license to make, have made,
-use, offer to sell, sell, import, and otherwise transfer the Work.
-
-4. Redistribution. You may reproduce and distribute copies of the
-Work or Derivative Works thereof in any medium, with or without
-modifications, and in Source or Object form, provided that You
-meet the following conditions:
-
-(a) You must give any other recipients of the Work or Derivative Works
-a copy of this License; and
-
-(b) You must cause any modified files to carry prominent notices
-stating that You changed the files; and
-
-(c) You must retain, in the Source form of any Derivative Works that
-You distribute, all copyright, patent, trademark, and attribution
-notices from the Source form of the Work; and
-
-(d) If the Work includes a "NOTICE" text file as part of its
-distribution, then any Derivative Works that You distribute must
-include a readable copy of the attribution notices contained
-within such NOTICE file.
-
-5. Submission of Contributions. Unless You explicitly state otherwise,
-any Contribution intentionally submitted for inclusion in the Work
-by You to the Licensor shall be under the terms and conditions of
-this License, without any additional terms or conditions.
-
-6. Trademarks. This License does not grant permission to use the trade
-names, trademarks, service marks, or product names of the Licensor.
-
-7. Disclaimer of Warranty. Unless required by applicable law or
-agreed to in writing, Licensor provides the Work (and each
-Contributor provides its Contributions) on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied, including, without limitation, any warranties or conditions
-of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-PARTICULAR PURPOSE. You are solely responsible for determining the
-appropriateness of using or redistributing the Work and assume any
-risks associated with Your exercise of permissions under this License.
-
-8. Limitation of Liability. In no event and under no legal theory,
-whether in tort (including negligence), contract, or otherwise,
-unless required by applicable law (such as deliberate and grossly
-negligent acts) or agreed to in writing, shall any Contributor be
-liable to You for damages, including any direct, indirect, special,
-incidental, or consequential damages of any character arising as a
-result of this License or out of the use or inability to use the
-Work (including but not limited to damages for loss of goodwill,
-work stoppage, computer failure or malfunction, or any and all
-other commercial damages or losses), even if such Contributor
-has been advised of the possibility of such damages.
-
-9. Accepting Warranty or Additional Liability. While redistributing
-the Work or Derivative Works thereof, You may choose to offer,
-and charge a fee for, acceptance of support, warranty, indemnity,
-or other liability obligations and/or rights consistent with this
-License. However, in accepting such obligations, You may act only
-on Your own behalf and on Your sole responsibility, not on behalf
-of any other Contributor, and only if You agree to indemnify,
-defend, and hold each Contributor harmless for any liability
-incurred by, or claims asserted against, such Contributor by reason
-of your accepting any such warranty or additional liability.
-
-END OF TERMS AND CONDITIONS
-
-Copyright 2025 Infinidatum LLC
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.</div>
-
-                <h2>Additional Resources</h2>
+                <h3>5.2 Enterprise Editions</h3>
                 <ul>
-                    <li><strong>Official License:</strong> <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache.org License Page</a></li>
-                    
-                    <li><strong>PyPI Package:</strong> <a href="https://pypi.org/project/finopsmetrics/" target="_blank">PyPI - FinOpsMetrics</a></li>
-                    
+                    <li>Regular updates and security patches</li>
+                    <li>Priority bug fixes and feature requests</li>
+                    <li>Advance notice of any breaking changes</li>
+                </ul>
+
+                <h2>6. Warranty Disclaimer</h2>
+
+                <div class="warning-box">
+                    <p><strong>THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.</strong></p>
+                    <p style="margin-top: 1rem;">Infinidatum LLC expressly disclaims all warranties, whether express, implied, or statutory, including but not limited to:</p>
+                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>Warranties of merchantability</li>
+                        <li>Fitness for a particular purpose</li>
+                        <li>Non-infringement</li>
+                        <li>Accuracy, reliability, or availability</li>
+                        <li>Error-free or uninterrupted operation</li>
+                        <li>Security or data integrity</li>
+                    </ul>
+                </div>
+
+                <p>You acknowledge that:</p>
+                <ul>
+                    <li>Use of the software is at your own risk</li>
+                    <li>You are solely responsible for data backup and disaster recovery</li>
+                    <li>Infinidatum LLC does not guarantee cost savings or optimization results</li>
+                    <li>The software may contain bugs, errors, or security vulnerabilities</li>
+                </ul>
+
+                <h2>7. Limitation of Liability</h2>
+
+                <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW</strong>, Infinidatum LLC shall not be liable for:</p>
+                <ul>
+                    <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                    <li>Loss of profits, revenue, data, or business opportunities</li>
+                    <li>Cost of procurement of substitute goods or services</li>
+                    <li>Business interruption or system downtime</li>
+                    <li>Damages arising from reliance on software recommendations</li>
+                </ul>
+
+                <p><strong>TOTAL LIABILITY CAP:</strong> In no event shall Infinidatum LLC's total liability exceed the amount you paid for the software in the 12 months preceding the claim. For Community Edition users, the total liability shall not exceed $100 USD.</p>
+
+                <h2>8. Term and Termination</h2>
+
+                <h3>8.1 Community Edition</h3>
+                <p>This license is effective until terminated. We may terminate your license at any time for any reason. You may terminate by ceasing all use and destroying all copies of the software.</p>
+
+                <h3>8.2 Enterprise Editions</h3>
+                <p>Your license continues until the end of your paid subscription period. Non-payment or violation of terms results in immediate termination of enterprise features.</p>
+
+                <h3>8.3 Effect of Termination</h3>
+                <p>Upon termination, you must:</p>
+                <ul>
+                    <li>Immediately cease all use of the software</li>
+                    <li>Uninstall and destroy all copies of the software</li>
+                    <li>Certify in writing that all copies have been destroyed (if requested)</li>
+                </ul>
+
+                <h2>9. Export Control</h2>
+
+                <p>The software is subject to United States export control laws. You agree to comply with all applicable export and import laws and regulations. You may not download or use the software if you are:</p>
+                <ul>
+                    <li>Located in a country subject to U.S. embargo</li>
+                    <li>Listed on any U.S. government list of prohibited or restricted parties</li>
+                    <li>Using the software for prohibited end uses (e.g., nuclear, missile, or chemical/biological weapons)</li>
+                </ul>
+
+                <h2>10. Indemnification</h2>
+
+                <p>You agree to indemnify, defend, and hold harmless Infinidatum LLC, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including attorney fees) arising from:</p>
+                <ul>
+                    <li>Your use or misuse of the software</li>
+                    <li>Your violation of this Agreement</li>
+                    <li>Your violation of any third-party rights</li>
+                    <li>Your violation of applicable laws or regulations</li>
+                </ul>
+
+                <h2>11. Governing Law</h2>
+
+                <p>This Agreement shall be governed by and construed in accordance with the laws of the State of Connecticut, United States, without regard to its conflict of law provisions.</p>
+
+                <p>Any disputes arising from this Agreement shall be resolved exclusively in the state or federal courts located in Connecticut.</p>
+
+                <h2>12. Entire Agreement</h2>
+
+                <p>This Agreement constitutes the entire agreement between you and Infinidatum LLC regarding the software and supersedes all prior agreements, understandings, and communications, whether oral or written.</p>
+
+                <h2>13. Modifications</h2>
+
+                <p>Infinidatum LLC reserves the right to modify this Agreement at any time. Continued use of the software after modifications constitutes acceptance of the modified terms. Material changes will be communicated via email or through the software interface.</p>
+
+                <h2>14. Severability</h2>
+
+                <p>If any provision of this Agreement is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+                <h2>15. No Waiver</h2>
+
+                <p>Failure to enforce any provision of this Agreement shall not constitute a waiver of that provision or any other provision.</p>
+
+                <h2>16. Contact Information</h2>
+
+                <p>For questions about this License Agreement:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a></li>
+                    <li><strong>Company:</strong> Infinidatum LLC</li>
+                    <li><strong>Address:</strong> Connecticut, United States</li>
                 </ul>
 
                 <div class="highlight-box" style="margin-top: 3rem;">
-                    <p><strong>Questions about licensing?</strong> Contact us at <a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a> or open an issue on .</p>
+                    <p><strong>ACKNOWLEDGMENT:</strong> By downloading, installing, or using FinOpsMetrics, you acknowledge that you have read this Agreement, understand it, and agree to be bound by its terms and conditions. If you do not agree to these terms, do not download, install, or use the software.</p>
                 </div>
             </div>
+
+            <p class="last-updated">
+                FinOpsMetrics End User License Agreement (EULA)<br>
+                Version 1.0 - Effective January 1, 2025<br>
+                Copyright © 2025 Infinidatum LLC. All Rights Reserved.
+            </p>
         </div>
     </section>
 
@@ -409,17 +324,23 @@ limitations under the License.</div>
                     <div class="footer-logo">
                         <img src="images/finops-logo.png" alt="FinOpsMetrics Logo">
                     </div>
-                    <p>The easiest telemetry & API for FinOps - extensible and Enterprise</p>
-                    <div class="social-links">
-                    </div>
+                    <p>Enterprise AI/ML cost intelligence platform</p>
                 </div>
                 <div class="footer-col">
                     <h4>Product</h4>
                     <ul>
                         <li><a href="features.html">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="documentation.html">Documentation</a></li>
-                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="get-started.html">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="api.html">API Reference</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog/index.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -427,46 +348,20 @@ limitations under the License.</div>
                     <ul>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="license.html">Apache 2.0 License</a></li>
+                        <li><a href="license.html">License (EULA)</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:finops@infinidatum.net">Email Support</a></li>
+                        <li><a href="mailto:finops@infinidatum.net">finops@infinidatum.net</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Infinidatum LLC. FinOpsMetrics is licensed under Apache-2.0</p>
+                <p>&copy; 2025 Infinidatum LLC. All Rights Reserved. Proprietary Software.</p>
             </div>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-consent-container">
-            <div class="cookie-consent-text">
-                <h3><span class="cookie-icon">🍪</span> We Value Your Privacy</h3>
-                <p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. You can also choose to decline non-essential cookies.</p>
-                <p><a href="privacy.html">Privacy Policy</a> • <a href="privacy.html#cookies">Cookie Policy</a></p>
-            </div>
-            <div class="cookie-consent-actions">
-                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">
-                    <i class="fas fa-check"></i> Accept All
-                </button>
-                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">
-                    <i class="fas fa-times"></i> Decline
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <a href="#" id="cookie-settings" class="cookie-settings-link" style="display: none;">
-        <i class="fas fa-cookie-bite"></i> Cookie Settings
-    </a>
-
-    <script src="js/cookie-consent.js"></script>
 </body>
 </html>
